@@ -38,16 +38,16 @@ public class FrmPrincipal extends javax.swing.JFrame {
         panelGeneral2 = new javax.swing.JPanel();
         panelGeneral3 = new javax.swing.JPanel();
         panelGeneral4 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(670, 670));
         setResizable(false);
         setSize(new java.awt.Dimension(670, 670));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(670, 670));
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        panelMenu.setLayout(new java.awt.GridLayout());
+        panelMenu.setLayout(new java.awt.GridLayout(1, 0));
 
         botonGeneral.setText("GENERAL");
         panelMenu.add(botonGeneral);
@@ -70,11 +70,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         panelGeneral.setLayout(panelGeneralLayout);
         panelGeneralLayout.setHorizontalGroup(
             panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         panelGeneralLayout.setVerticalGroup(
             panelGeneralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 645, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel1.add(panelGeneral, java.awt.BorderLayout.CENTER);
@@ -83,11 +83,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         panelGeneral1.setLayout(panelGeneral1Layout);
         panelGeneral1Layout.setHorizontalGroup(
             panelGeneral1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         panelGeneral1Layout.setVerticalGroup(
             panelGeneral1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 645, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel1.add(panelGeneral1, java.awt.BorderLayout.CENTER);
@@ -96,11 +96,11 @@ public class FrmPrincipal extends javax.swing.JFrame {
         panelGeneral2.setLayout(panelGeneral2Layout);
         panelGeneral2Layout.setHorizontalGroup(
             panelGeneral2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         panelGeneral2Layout.setVerticalGroup(
             panelGeneral2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 645, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel1.add(panelGeneral2, java.awt.BorderLayout.CENTER);
@@ -109,24 +109,32 @@ public class FrmPrincipal extends javax.swing.JFrame {
         panelGeneral3.setLayout(panelGeneral3Layout);
         panelGeneral3Layout.setHorizontalGroup(
             panelGeneral3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         panelGeneral3Layout.setVerticalGroup(
             panelGeneral3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 645, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel1.add(panelGeneral3, java.awt.BorderLayout.CENTER);
+
+        jButton1.setText("jButton1");
 
         javax.swing.GroupLayout panelGeneral4Layout = new javax.swing.GroupLayout(panelGeneral4);
         panelGeneral4.setLayout(panelGeneral4Layout);
         panelGeneral4Layout.setHorizontalGroup(
             panelGeneral4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelGeneral4Layout.createSequentialGroup()
+                .addContainerGap(515, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(82, 82, 82))
         );
         panelGeneral4Layout.setVerticalGroup(
             panelGeneral4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 645, Short.MAX_VALUE)
+            .addGroup(panelGeneral4Layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jButton1)
+                .addContainerGap(541, Short.MAX_VALUE))
         );
 
         jPanel1.add(panelGeneral4, java.awt.BorderLayout.CENTER);
@@ -182,6 +190,7 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonGeneral;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
