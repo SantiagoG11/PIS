@@ -10,8 +10,8 @@ package modelo;
  */
 public class Campeonato {
     private Calendario calendario;
-    private Partido partido;
-    private Equipo equipo;
+    private Partido partido; //muchos
+    private Equipo equipo;  //muchos
     
     public Campeonato(Partido partido, Equipo equipo) {
         this.partido=partido;

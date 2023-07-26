@@ -25,190 +25,34 @@ public class FrmEquipo extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
-
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        txtCedula = new javax.swing.JTextField();
-        txtNombres = new javax.swing.JTextField();
-        txtApellidos = new javax.swing.JTextField();
-        txtCorreo = new javax.swing.JTextField();
-        btBuscar = new javax.swing.JButton();
-        btModificar = new javax.swing.JButton();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        btCalcular = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(587, 428));
-        jPanel1.setLayout(new java.awt.BorderLayout());
-
-        jPanel2.setPreferredSize(new java.awt.Dimension(587, 213));
-        jPanel2.setLayout(new java.awt.GridBagLayout());
-
-        jLabel1.setText("Nombre");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
-        jPanel2.add(jLabel1, gridBagConstraints);
-
-        jLabel2.setText("Entrenador");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
-        jPanel2.add(jLabel2, gridBagConstraints);
-
-        jLabel3.setText("Estadio");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
-        jPanel2.add(jLabel3, gridBagConstraints);
-
-        jLabel4.setText("Escudo");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
-        jPanel2.add(jLabel4, gridBagConstraints);
-
-        txtCedula.setMinimumSize(new java.awt.Dimension(45, 26));
-        txtCedula.setPreferredSize(new java.awt.Dimension(68, 22));
-        txtCedula.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCedulaActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
-        jPanel2.add(txtCedula, gridBagConstraints);
-
-        txtNombres.setMinimumSize(new java.awt.Dimension(45, 26));
-        txtNombres.setPreferredSize(new java.awt.Dimension(68, 22));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
-        jPanel2.add(txtNombres, gridBagConstraints);
-
-        txtApellidos.setMinimumSize(new java.awt.Dimension(45, 26));
-        txtApellidos.setPreferredSize(new java.awt.Dimension(68, 22));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
-        jPanel2.add(txtApellidos, gridBagConstraints);
-
-        txtCorreo.setMinimumSize(new java.awt.Dimension(45, 26));
-        txtCorreo.setPreferredSize(new java.awt.Dimension(68, 22));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
-        jPanel2.add(txtCorreo, gridBagConstraints);
-
-        btBuscar.setText("Buscar");
-        btBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btBuscarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
-        jPanel2.add(btBuscar, gridBagConstraints);
-
-        btModificar.setText("Modificar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        jPanel2.add(btModificar, gridBagConstraints);
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("EQUIPO");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
-        jPanel2.add(jLabel7, gridBagConstraints);
-
-        jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
-
-        jPanel4.setPreferredSize(new java.awt.Dimension(563, 60));
-        jPanel4.setLayout(new java.awt.GridBagLayout());
-
-        jPanel5.setLayout(new java.awt.GridBagLayout());
-
-        btCalcular.setText("Guardar");
-        btCalcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCalcularActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        jPanel5.add(btCalcular, gridBagConstraints);
-
-        jPanel4.add(jPanel5, new java.awt.GridBagConstraints());
-
-        jPanel1.add(jPanel4, java.awt.BorderLayout.PAGE_END);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
+    private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCedulaActionPerformed
+    }                                         
 
-    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
+    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {                                         
 
-    }//GEN-LAST:event_btBuscarActionPerformed
+    }                                        
 
-    private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
+    private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {                                           
 
-    }//GEN-LAST:event_btCalcularActionPerformed
+    }                                          
 
     /**
      * @param args the command line arguments
@@ -247,21 +91,5 @@ public class FrmEquipo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btBuscar;
-    private javax.swing.JButton btCalcular;
-    private javax.swing.JButton btModificar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField txtApellidos;
-    private javax.swing.JTextField txtCedula;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtNombres;
     // End of variables declaration//GEN-END:variables
 }

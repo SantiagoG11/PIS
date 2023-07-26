@@ -11,7 +11,15 @@ package modelo;
 public class Partido {
 
     private Estadistica estadistica;
+    private Equipo equipoLocal;
+    private Equipo equipoVisitante;
 
+    public Partido(Equipo equipoLocal, Equipo equipoVisitante) {
+        estadistica = new Estadistica();
+        this.equipoLocal = equipoLocal;
+        this.equipoVisitante = equipoVisitante;
+    }
+    
     /**
      * @return the estadistica
      */

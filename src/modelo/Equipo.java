@@ -6,6 +6,7 @@ package modelo;
 
 import Modelo.Entrenador;
 import Modelo.Jugador;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,12 +14,12 @@ import java.util.List;
  * @author ixcd2
  */
 public class Equipo {
-
+    //afregar partidoss
     private Entrenador entrenador;
     private List<Jugador> listaJugadores;
 
-    public Equipo(List<Jugador> listaJugadores) {
-        this.listaJugadores = listaJugadores;
+    public Equipo() {
+        listaJugadores = new ArrayList<>();
     }
 
     /**
