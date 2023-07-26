@@ -4,61 +4,19 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author ixcd2
  */
 public class Campeonato {
-    private Calendario calendario;
-    private Partido partido; //muchos
-    private Equipo equipo;  //muchos
-    
-    public Campeonato(Partido partido, Equipo equipo) {
-        this.partido=partido;
-        this.equipo=equipo;
-    }
+    private List<Partido> listaPartidos; //muchos
+    private List<Equipo> listaEquipos;  //muchos
 
-    /**
-     * @return the calendario
-     */
-    public Calendario getCalendario() {
-        return calendario;
+    public Campeonato() {
+        listaPartidos = new ArrayList<>();
+        listaEquipos = new ArrayList<>();
     }
-
-    /**
-     * @param calendario the calendario to set
-     */
-    public void setCalendario(Calendario calendario) {
-        this.calendario = calendario;
-    }
-
-    /**
-     * @return the partido
-     */
-    public Partido getPartido() {
-        return partido;
-    }
-
-    /**
-     * @param partido the partido to set
-     */
-    public void setPartido(Partido partido) {
-        this.partido = partido;
-    }
-
-    /**
-     * @return the equipo
-     */
-    public Equipo getEquipo() {
-        return equipo;
-    }
-
-    /**
-     * @param equipo the equipo to set
-     */
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
-    }
-    
-    
 }

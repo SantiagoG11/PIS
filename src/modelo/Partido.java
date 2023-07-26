@@ -9,29 +9,25 @@ package modelo;
  * @author ixcd2
  */
 public class Partido {
-
-    private Estadistica estadistica;
+    
+    private EnumEstadio estadio;
+    private EnumEstadoPartidos estado;
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
+    private Arbitro arbitroPrincipal;
+    private Arbitro arbitroLinea1;
+    private Arbitro arbitroLinea2;
 
-    public Partido(Equipo equipoLocal, Equipo equipoVisitante) {
-        estadistica = new Estadistica();
+    public Partido(EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2) {
+        this.estado = estado;
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
+        this.arbitroPrincipal = arbitroPrincipal;
+        this.arbitroLinea1 = arbitroLinea1;
+        this.arbitroLinea2 = arbitroLinea2;
     }
     
     /**
      * @return the estadistica
      */
-    public Estadistica getEstadistica() {
-        return estadistica;
-    }
-
-    /**
-     * @param estadistica the estadistica to set
-     */
-    public void setEstadistica(Estadistica estadistica) {
-        this.estadistica = estadistica;
-    }
-
 }
