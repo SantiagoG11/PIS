@@ -9,12 +9,12 @@ package Modelo;
  * @author santi
  */
 public class Entrenador extends Persona{
-
-
+    
     public Entrenador(String cedula, String nombres, String apellidos, int edad, String nacionalidad) {
         super(cedula, nombres, apellidos, edad, nacionalidad);
 
     }
-
+    
+    
     
 }
