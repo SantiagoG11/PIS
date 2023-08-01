@@ -4,11 +4,9 @@
  */
 package pisprogramacion;
 
-import vista.FrmPrincipal;
-
 /**
  *
- * @author ixcd2
+ * @author Santiagod
  */
 public class PISprogramacion {
 
@@ -16,8 +14,7 @@ public class PISprogramacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new FrmPrincipal().setVisible(true);
-        System.out.println("hola mundillo");
+        System.out.println("Hola que hace");
     }
     
 }
