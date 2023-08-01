@@ -14,20 +14,12 @@ import java.util.List;
  * @author ixcd2
  */
 public class Equipo {
-    private String nombre;
-    private String ciudad;
-    private Campeonato campeonato;
+    //afregar partidoss
     private Entrenador entrenador;
     private List<Jugador> listaJugadores;
-    private List<Campeonato> listaCompeonato;
 
-    public Equipo(String nombre, String ciudad, Campeonato campeonato, Entrenador entrenador) {
-        this.nombre = nombre;
-        this.ciudad = ciudad;
-        this.campeonato = campeonato;
-        this.entrenador = entrenador;
+    public Equipo() {
         listaJugadores = new ArrayList<>();
-        listaCompeonato = new ArrayList<>();
     }
 
     /**
