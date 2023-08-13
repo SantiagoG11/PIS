@@ -41,8 +41,8 @@ public class sexo1 extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("ROG Fonts", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel2.setText("I n g r e s a");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 530, 110, 30));
+        jLabel2.setText("I n g r e s a  R");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 120, 30));
 
         jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +82,7 @@ public class sexo1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        new FrmTercero().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -115,6 +115,7 @@ public class sexo1 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new sexo1().setVisible(true);
             }
