@@ -41,8 +41,8 @@ public class FrmPrincipal extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("ROG Fonts", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel2.setText("I n g r e s a  R");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 530, 120, 30));
+        jLabel2.setText("I n g r e s a r");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 530, 100, 30));
 
         jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
