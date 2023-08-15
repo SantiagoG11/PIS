@@ -18,10 +18,13 @@ public class Partido {
     private Albitro arbitroLinea1;
     private Albitro arbitroLinea2;
     private Campeonato campeonato;
+    private String fecha;
     
 
-    public Partido(EnumEstadio estadio) {
+    public Partido(EnumEstadio estadio, String fecha) {
         this.estadio = estadio;
+        this.fecha = fecha;
+
     }
 
     /**
@@ -134,6 +137,20 @@ public class Partido {
      */
     public void setCampeonato(Campeonato campeonato) {
         this.campeonato = campeonato;
+    }
+
+    /**
+     * @return the fecha
+     */
+    public String getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     
