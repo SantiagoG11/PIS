@@ -14,13 +14,13 @@ public class Partido {
     private EnumEstadoPartidos estado;
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
-    private Arbitro arbitroPrincipal;
-    private Arbitro arbitroLinea1;
-    private Arbitro arbitroLinea2;
+    private Albitro arbitroPrincipal;
+    private Albitro arbitroLinea1;
+    private Albitro arbitroLinea2;
     private String nombre;
     private Campeonato campeonato;
 
-    public Partido(EnumEstadio estadio, EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, String nombre, Campeonato campeonato) {
+    public Partido(EnumEstadio estadio, EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Albitro arbitroPrincipal, Albitro arbitroLinea1, Albitro arbitroLinea2, String nombre, Campeonato campeonato) {
         this.estadio = estadio;
         this.estado = estado;   
         this.equipoLocal = equipoLocal;
@@ -93,42 +93,42 @@ public class Partido {
     /**
      * @return the arbitroPrincipal
      */
-    public Arbitro getArbitroPrincipal() {
+    public Albitro getArbitroPrincipal() {
         return arbitroPrincipal;
     }
 
     /**
      * @param arbitroPrincipal the arbitroPrincipal to set
      */
-    public void setArbitroPrincipal(Arbitro arbitroPrincipal) {
+    public void setArbitroPrincipal(Albitro arbitroPrincipal) {
         this.arbitroPrincipal = arbitroPrincipal;
     }
 
     /**
      * @return the arbitroLinea1
      */
-    public Arbitro getArbitroLinea1() {
+    public Albitro getArbitroLinea1() {
         return arbitroLinea1;
     }
 
     /**
      * @param arbitroLinea1 the arbitroLinea1 to set
      */
-    public void setArbitroLinea1(Arbitro arbitroLinea1) {
+    public void setArbitroLinea1(Albitro arbitroLinea1) {
         this.arbitroLinea1 = arbitroLinea1;
     }
 
     /**
      * @return the arbitroLinea2
      */
-    public Arbitro getArbitroLinea2() {
+    public Albitro getArbitroLinea2() {
         return arbitroLinea2;
     }
 
     /**
      * @param arbitroLinea2 the arbitroLinea2 to set
      */
-    public void setArbitroLinea2(Arbitro arbitroLinea2) {
+    public void setArbitroLinea2(Albitro arbitroLinea2) {
         this.arbitroLinea2 = arbitroLinea2;
     }
 

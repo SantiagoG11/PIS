@@ -7,6 +7,8 @@ package vista;
 import AccesoDatos.UsuarioImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
@@ -24,6 +26,7 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
         initComponents();
         cerrar();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -212,6 +215,12 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+<<<<<<< HEAD
+        
+        UsuarioImplementacion dao = new UsuarioImplementacion();
+        
+=======
+>>>>>>> 889aea973308f8a62ff42f796662e5627749bfa5
         String cuentaIngresada = "Isaac";
         String claveIngresada = "1234";
 
@@ -226,6 +235,21 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
         }
+<<<<<<< HEAD
+        
+        List<Usuario> listaUsuarios = dao.listarTodos();
+        
+        for (Usuario usuario : listaUsuarios) {
+            if (txt_nombreCuenta.getText().equals(usuario.getNombres()) && txt_contrasenia.getText().equals(usuario.getPassword())) {
+                new FrmPrincipal1().setVisible(true);
+            }else {
+            JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        
+        }
+        
+=======
+>>>>>>> 889aea973308f8a62ff42f796662e5627749bfa5
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked

@@ -5,7 +5,7 @@
 package vista;
 
 import AccesoDatos.EntrenadorImplementacion;
-import modelo.Entrenador;
+import modelo.Albitro;
 
 /**
  *
@@ -47,7 +47,7 @@ public class FrmGuardarAlbitro extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         btCalcular = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(587, 428));
@@ -221,9 +221,8 @@ public class FrmGuardarAlbitro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
-        Entrenador entrenador = new Entrenador(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
-        EntrenadorImplementacion entreImplement = new EntrenadorImplementacion();
-        entreImplement.guardar(entrenador);
+        Albitro albitro = new Albitro(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
+        
     }//GEN-LAST:event_btCalcularActionPerformed
 
     private void txtNombresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombresActionPerformed

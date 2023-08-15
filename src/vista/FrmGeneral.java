@@ -46,6 +46,7 @@ public class FrmGeneral extends javax.swing.JFrame {
 
         }
         
+        
         // Crear un Layout para el contenedor de los paneles de partido
     BoxLayout contenedorLayout = new BoxLayout(pl, BoxLayout.Y_AXIS);
     pl.setLayout(contenedorLayout);
