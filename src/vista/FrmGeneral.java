@@ -7,6 +7,7 @@ package vista;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import modelo.Partido;
 
 /**
  *
@@ -14,8 +15,9 @@ import javax.swing.JFrame;
  */
 public class FrmGeneral extends javax.swing.JFrame {
 
-    private int partidoActual = 0;
+    static private int partidoActual = 0;
     private PartidoPanel[] partidos;
+    static public Partido partido;
     
     /**
      * Creates new form FrmGeneral
@@ -74,6 +76,10 @@ public class FrmGeneral extends javax.swing.JFrame {
             partidoActual++;
             mostrarPartido(partidoActual);
         }
+    }
+    
+    public Partido getPartido(int indice){
+        return partido = new Partido(partidos[indice]);
     }
     /**
      * This method is called from within the constructor to initialize the form.
