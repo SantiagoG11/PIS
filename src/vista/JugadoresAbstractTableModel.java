@@ -74,19 +74,18 @@ public class JugadoresAbstractTableModel extends AbstractTableModel{
             case 0:
                 return jugador.getNombres();
             case 1:
-                return jugador.getProducto().getDescripcion();
-            
+                return jugador.getApellidos();
             case 2:
-                return jugador.getProducto().getPrecio();
+                return jugador.getCedula();
             
             case 3:
-                return jugador.getProducto().getStock();
+                return jugador.getNacionalidad();
             case 4:
-                return jugador.getCantidad();
+                return jugador.getEdad();
             case 5:
-                return jugador.getPrecioTotal();
+                return jugador.getDorsal();
             case 6:
-                return jugador.getPrecioTotal();    
+                return jugador.getPosicion();    
         }
         return null;
     }
