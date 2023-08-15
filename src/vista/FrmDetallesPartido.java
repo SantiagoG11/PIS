@@ -308,6 +308,7 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField12ActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */

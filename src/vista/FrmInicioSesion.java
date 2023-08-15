@@ -189,37 +189,38 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    public void cerrar(){
+
+    public void cerrar() {
         try {
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             addWindowListener(
-               new WindowAdapter() {
-                  public void windowClosing(WindowEvent e){
-                      confirmarSalida();
-                  }
-               }
+                    new WindowAdapter() {
+                public void windowClosing(WindowEvent e) {
+                    confirmarSalida();
+                }
+            }
             );
             this.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    
-    
-    public void confirmarSalida(){
+
+    public void confirmarSalida() {
         int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
             System.exit(0);
         }
     }
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+<<<<<<< HEAD
         
         UsuarioImplementacion dao = new UsuarioImplementacion();
         
+=======
+>>>>>>> 889aea973308f8a62ff42f796662e5627749bfa5
         String cuentaIngresada = "Isaac";
         String claveIngresada = "1234";
 
@@ -234,6 +235,7 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
         }
+<<<<<<< HEAD
         
         List<Usuario> listaUsuarios = dao.listarTodos();
         
@@ -246,6 +248,8 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
         
         }
         
+=======
+>>>>>>> 889aea973308f8a62ff42f796662e5627749bfa5
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
