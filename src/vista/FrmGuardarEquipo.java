@@ -31,11 +31,11 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         txtCiudad = new javax.swing.JTextField();
-        txtEntrenador = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         btCalcular = new javax.swing.JButton();
@@ -66,15 +66,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 32, 3, 25);
         jPanel2.add(jLabel2, gridBagConstraints);
 
-        jLabel3.setText("Entrenador");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 32, 3, 25);
-        jPanel2.add(jLabel3, gridBagConstraints);
-
         txtNombre.setMinimumSize(new java.awt.Dimension(45, 26));
         txtNombre.setPreferredSize(new java.awt.Dimension(68, 22));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -97,18 +88,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 14);
         jPanel2.add(txtCiudad, gridBagConstraints);
 
-        txtEntrenador.setMinimumSize(new java.awt.Dimension(45, 26));
-        txtEntrenador.setPreferredSize(new java.awt.Dimension(68, 22));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.weightx = 0.2;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 14);
-        jPanel2.add(txtEntrenador, gridBagConstraints);
-
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("EQUIPO");
@@ -118,6 +97,28 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         jPanel2.add(jLabel7, gridBagConstraints);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
+        jPanel2.add(jScrollPane1, gridBagConstraints);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -204,14 +205,14 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     private javax.swing.JButton btCalcular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtCiudad;
-    private javax.swing.JTextField txtEntrenador;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
