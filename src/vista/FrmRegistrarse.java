@@ -261,7 +261,7 @@ public final class FrmRegistrarse extends javax.swing.JFrame {
     
     
     private void btt_registrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btt_registrarseActionPerformed
-        // TODO add your handling code here:
+        new FrmInicioSesion().setVisible(true);
     }//GEN-LAST:event_btt_registrarseActionPerformed
 
     /**
