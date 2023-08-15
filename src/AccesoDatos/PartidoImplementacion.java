@@ -6,9 +6,16 @@ package AccesoDatos;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import modelo.EnumEstadio;
+import modelo.EnumEstadoPartidos;
+import modelo.Equipo;
 import modelo.Partido;
+import modelo.Arbitro;
+
 
 /**
  *
@@ -25,9 +32,15 @@ public class PartidoImplementacion implements DAOPartido{
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO usuario (nombres, apellidos, cedula, nacionalidad, edad, correo, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            consulta.setString(1, String.valueOf(t.getEstadio()));
-            
+            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, estado, equipo_local, equipo_visitante, albitro_principal, albitro_linea1, albitro_linea2, nombre_capeonato, nobre_equipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            consulta.setString(1, String.valueOf(t.getEstadio()));  
+            consulta.setString(0, t.getEquipoLocal().getNombre());
+            consulta.setString(0, t.getEquipoVisitante().getNombre());
+            consulta.setString(0, t.getArbitroPrincipal().getApellidos());
+            consulta.setString(0, t.getArbitroLinea1().getApellidos());
+            consulta.setString(0, t.getArbitroLinea2().getApellidos());
+            consulta.setString(0, t.getCampeonato().getNombre());
+            consulta.setString(0, t.getNombre());
             
             consulta.executeUpdate();
         } catch (SQLException e) {
@@ -49,7 +62,22 @@ public class PartidoImplementacion implements DAOPartido{
 
     @Override
     public List<Partido> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Partido> lista = new ArrayList<>();
+        PreparedStatement consulta = null;
+        Connection conexion = null;
+        try {
+            conexion = instanciaMsql.conectar();
+            consulta = conexion.prepareStatement("select *from partido");
+            ResultSet rs = consulta.executeQuery();
+            while (rs.next()) {
+                //Partido partido = new Partido(EnumEstadio.valueOf(rs.getNString(1)), EnumEstadoPartidos.FINALIZADO, new Equipo(rs.getNString(3), null, null), new Equipo(rs.getNString(4), null, null), new Equipo(rs.getNString(5), null, null), new, rs.getNString(7), rs.getNString(8), rs.getNString(9));
+                //lista.add(partido); 
+            }
+            
+        } catch (Exception e) {
+        }
+        
+        return lista;
     }
 
     @Override
