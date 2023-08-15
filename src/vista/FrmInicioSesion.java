@@ -214,30 +214,20 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        UsuarioImplementacion dao = new UsuarioImplementacion();
-        
-        if (txt_nombreCuenta.getText().equals("isaac")) {
-                new FrmGeneral().setVisible(true);
-                this.setVisible(false);
-                
-            }else{
-                JOptionPane.showMessageDialog(null, "Usuario incorrecto");
-            }
-        
-        
-        for (Usuario usuario : dao.listarTodos()) {
-            //usuario.getNombres().equals(txt_nombreCuenta.getText()) && usuario.getPassword().equals(txt_contrasenia.getText())
-            if (txt_nombreCuenta.getText().equals("isaac")) {
-                new FrmGeneral().setVisible(true);
-                this.setVisible(false);
-                
-            }else{
-                JOptionPane.showMessageDialog(null, "Usuario incorrecto");
-            }
-        }
-        
+       String cuentaIngresada = "Isaac";
+    String claveIngresada = "1234";
+    
+    String cuenta = txt_nombreCuenta.getText();
+    String clave = txt_contrasenia.getText();
+    
+    System.out.println("Cuenta ingresada: " + cuenta);
+    System.out.println("Clave ingresada: " + clave);
+    
+    if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
+        new FrmPrincipalAdministrador().setVisible(true);
+    } else {
+        JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
