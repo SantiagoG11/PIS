@@ -10,29 +10,33 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author Santiagod
+ * @author Usuario iTC
  */
 public class FrmGeneral extends javax.swing.JFrame {
-    
-  private int partidoActual = 0;
-    private PartidoPanel[] partidos;
 
+    private int partidoActual = 0;
+    private PartidoPanel[] partidos;
+    
+    /**
+     * Creates new form FrmGeneral
+     */
     public FrmGeneral() {
         initComponents();
-        agregarPartidos();
+          agregarPartidos();
+          this.setLocationRelativeTo(null);
         mostrarPartido(partidoActual); // Mostrar el primer partido al iniciar
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     private void agregarPartidos() {
 // Crear algunas imágenes de ejemplo (reemplaza con tus propias imágenes)
-        ImageIcon imagenEquipo1 = new ImageIcon("C:\\Users\\brasi\\Desktop\\real.png");
-        ImageIcon imagenEquipo2 = new ImageIcon("C:\\Users\\brasi\\Desktop\\bar.png");
-        ImageIcon imagenEquipo3 = new ImageIcon("C:\\Users\\brasi\\Desktop\\pava.png");
-        ImageIcon imagenEquipo4 = new ImageIcon("C:\\Users\\brasi\\Desktop\\guala.jpg");
+        ImageIcon imagenEquipo1 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\1..jpg");
+        ImageIcon imagenEquipo2 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\2..jpg");
+        ImageIcon imagenEquipo3 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\3..jpg");
+        ImageIcon imagenEquipo4 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\4..jpg");
 
         // Crear un arreglo de paneles de partido
-        partidos = new PartidoPanel[2]; // Cambia 5 por el número de partidos que deseas mostrar
+        partidos = new PartidoPanel[5]; // Cambia 5 por el número de partidos que deseas mostrar
 
         for (int i = 0; i < partidos.length; i++) {
             partidos[0] = new PartidoPanel(this,imagenEquipo1, imagenEquipo2, "3-1", "En juego", "Fecha: 2023-07-20");
@@ -41,8 +45,8 @@ public class FrmGeneral extends javax.swing.JFrame {
         }
         
         // Crear un Layout para el contenedor de los paneles de partido
-    BoxLayout contenedorLayout = new BoxLayout(jPanel3, BoxLayout.Y_AXIS);
-    jPanel3.setLayout(contenedorLayout);
+    BoxLayout contenedorLayout = new BoxLayout(pl, BoxLayout.Y_AXIS);
+    pl.setLayout(contenedorLayout);
 //
 //    // Crear varios paneles de partido y agregarlos al contenedor
 //    for (int i = 0; i < 5; i++) { // Cambia 5 por el número de partidos que deseas mostrar
@@ -52,10 +56,10 @@ public class FrmGeneral extends javax.swing.JFrame {
     }
 
     private void mostrarPartido(int indice) {
-        jPanel3.removeAll();
-        jPanel3.add(partidos[indice]);
-        jPanel3.revalidate();
-        jPanel3.repaint();
+        pl.removeAll();
+        pl.add(partidos[indice]);
+        pl.revalidate();
+        pl.repaint();
     }    
     
     public void mostrarPartidoAnterior() {
@@ -71,8 +75,6 @@ public class FrmGeneral extends javax.swing.JFrame {
             mostrarPartido(partidoActual);
         }
     }
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,82 +84,68 @@ public class FrmGeneral extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        pl = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel26.setBackground(new java.awt.Color(255, 102, 102));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("General");
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("GENERAL");
+        jPanel26.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 110, 20));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        pl.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout plLayout = new javax.swing.GroupLayout(pl);
+        pl.setLayout(plLayout);
+        plLayout.setHorizontalGroup(
+            plLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1150, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(12, Short.MAX_VALUE))
+        plLayout.setVerticalGroup(
+            plLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 380, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1060, 50));
+        jPanel26.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1150, 380));
 
-        jPanel3.setPreferredSize(new java.awt.Dimension(634, 140));
-        jPanel3.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                jPanel3ComponentAdded(evt);
+        jButton1.setText("DETALLES DEL PARTIDO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1060, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 260, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1060, 260));
+        jPanel26.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1061, Short.MAX_VALUE))
+            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel3ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jPanel3ComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPanel3ComponentAdded
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       new FrmDetallesPartido().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
- 
+    /**
+     * @param args the command line arguments
+     */
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -181,6 +169,9 @@ public class FrmGeneral extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -191,9 +182,9 @@ public class FrmGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel pl;
     // End of variables declaration//GEN-END:variables
 }
