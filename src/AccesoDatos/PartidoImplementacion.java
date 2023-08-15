@@ -14,7 +14,7 @@ import modelo.EnumEstadio;
 import modelo.EnumEstadoPartidos;
 import modelo.Equipo;
 import modelo.Partido;
-import modelo.Arbitro;
+import modelo.Albitro;
 
 
 /**
@@ -70,7 +70,7 @@ public class PartidoImplementacion implements DAOPartido{
             consulta = conexion.prepareStatement("select *from partido");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
-                //Partido partido = new Partido(EnumEstadio.valueOf(rs.getNString(1)), EnumEstadoPartidos.FINALIZADO, new Equipo(rs.getNString(3), null, null), new Equipo(rs.getNString(4), null, null), new Equipo(rs.getNString(5), null, null), new Arbitro(null, null, rs.getNString(6), 0, null), new Arbitro(null, null, rs.getNString(6), 0, null), new Arbitro(null, null, rs.getNString(6), 0, null), rs.getNString(9));
+                //Partido partido = new Partido(EnumEstadio.valueOf(rs.getNString(1)), EnumEstadoPartidos.FINALIZADO, new Equipo(rs.getNString(3), null, null), new Equipo(rs.getNString(4), null, null), new Equipo(rs.getNString(5), null, null), new Albitro(null, null, rs.getNString(6), 0, null), new Albitro(null, null, rs.getNString(6), 0, null), new Albitro(null, null, rs.getNString(6), 0, null), rs.getNString(9));
                 //lista.add(partido); 
             }
             

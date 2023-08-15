@@ -7,6 +7,8 @@ package vista;
 import AccesoDatos.UsuarioImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Usuario;
@@ -24,6 +26,7 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
         initComponents();
         cerrar();
         this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -214,20 +217,35 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String cuentaIngresada = "Isaac";
-    String claveIngresada = "1234";
-    
-    String cuenta = txt_nombreCuenta.getText();
-    String clave = txt_contrasenia.getText();
-    
-    System.out.println("Cuenta ingresada: " + cuenta);
-    System.out.println("Clave ingresada: " + clave);
-    
-    if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
-        new FrmPrincipalAdministrador().setVisible(true);
-    } else {
-        JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+        
+        UsuarioImplementacion dao = new UsuarioImplementacion();
+        
+        String cuentaIngresada = "Isaac";
+        String claveIngresada = "1234";
+
+        String cuenta = txt_nombreCuenta.getText();
+        String clave = txt_contrasenia.getText();
+
+        System.out.println("Cuenta ingresada: " + cuenta);
+        System.out.println("Clave ingresada: " + clave);
+
+        if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
+            new FrmPrincipalAdministrador().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        List<Usuario> listaUsuarios = dao.listarTodos();
+        
+        for (Usuario usuario : listaUsuarios) {
+            if (txt_nombreCuenta.getText().equals(usuario.getNombres()) && txt_contrasenia.getText().equals(usuario.getPassword())) {
+                new FrmPrincipal1().setVisible(true);
+            }else {
+            JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
