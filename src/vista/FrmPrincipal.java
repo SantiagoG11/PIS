@@ -61,7 +61,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("ROG Fonts", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 102, 102));
         jLabel2.setText("Ingresar");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 480, 90, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 90, 30));
 
         jLabel1.setBackground(new java.awt.Color(255, 0, 102));
         jLabel1.setForeground(new java.awt.Color(255, 153, 153));
