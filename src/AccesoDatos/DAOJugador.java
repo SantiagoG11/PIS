@@ -4,7 +4,7 @@
  */
 package AccesoDatos;
 
-import Modelo.Jugador;
+import modelo.Jugador;
 
 /**
  *

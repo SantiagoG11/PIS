@@ -5,7 +5,7 @@
 package Vista;
 
 import AccesoDatos.JugadorImplementacion;
-import Modelo.Jugador;
+import modelo.Jugador;
 
 /**
  *

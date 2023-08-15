@@ -4,8 +4,6 @@
  */
 package modelo;
 
-import Modelo.Jugador;
-
 /**
  *
  * @author santi

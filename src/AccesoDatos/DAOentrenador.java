@@ -4,7 +4,7 @@
  */
 package AccesoDatos;
 
-import Modelo.Entrenador;
+import modelo.Entrenador;
 
 /**
  *

@@ -4,7 +4,7 @@
  */
 package modelo;
 
-import Modelo.Persona;
+import modelo.Persona;
 
 /**
  *

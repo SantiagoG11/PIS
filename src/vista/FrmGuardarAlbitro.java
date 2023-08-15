@@ -5,7 +5,7 @@
 package vista;
 
 import AccesoDatos.EntrenadorImplementacion;
-import Modelo.Entrenador;
+import modelo.Entrenador;
 
 /**
  *

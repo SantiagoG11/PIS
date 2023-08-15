@@ -4,8 +4,6 @@
  */
 package modelo;
 
-import Modelo.Entrenador;
-import Modelo.Jugador;
 import java.util.ArrayList;
 import java.util.List;
 
