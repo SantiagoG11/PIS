@@ -6,28 +6,35 @@ package AccesoDatos;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
-import modelo.Partido;
+import modelo.Usuario;
 
 /**
  *
  * @author ixcd2
  */
-public class PartidoImplementacion implements DAOPartido{
-
-    Conexion instanciaMsql = Conexion.getInstance();
+public class UsuarioImplementacion implements DAOUsuario{
     
+    Conexion instanciaMsql = Conexion.getInstance();
+
     @Override
-    public boolean guardar(Partido t) {
+    public boolean guardar(Usuario t) {
         PreparedStatement consulta = null;
         Connection conexion = null;
         
         try {
             conexion = instanciaMsql.conectar();
             consulta = conexion.prepareStatement("INSERT INTO usuario (nombres, apellidos, cedula, nacionalidad, edad, correo, password) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            consulta.setString(1, String.valueOf(t.getEstadio()));
-            
+            consulta.setString(1, t.getNombres());
+            consulta.setString(2, t.getApellidos());
+            consulta.setString(3, t.getCedula());
+            consulta.setString(4, t.getNacionalidad());
+            consulta.setString(5, String.valueOf(t.getEdad()));
+            consulta.setString(6, t.getCorreo());
+            consulta.setString(7, t.getPassword());
             
             consulta.executeUpdate();
         } catch (SQLException e) {
@@ -43,17 +50,32 @@ public class PartidoImplementacion implements DAOPartido{
     }
 
     @Override
-    public boolean modificar(Partido t) {
+    public boolean modificar(Usuario t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public List<Partido> listarTodos() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Usuario> listarTodos() {
+        List<Usuario> lista = new ArrayList<>();
+        PreparedStatement consulta = null;
+        Connection conexion = null;
+        try {
+            conexion = instanciaMsql.conectar();
+            consulta = conexion.prepareStatement("select *from entrenador");
+            ResultSet rs = consulta.executeQuery();
+            while (rs.next()) {
+                Usuario usuario = new Usuario(rs.getNString(1), rs.getNString(2), rs.getNString(3), rs.getNString(4), rs.getNString(5), Integer.parseInt(rs.getString(6)), rs.getNString(7));
+                lista.add(usuario); 
+            }
+            
+        } catch (Exception e) {
+        }
+        
+        return lista;
     }
 
     @Override
-    public List<Partido> buscar(String apellido) {
+    public List<Usuario> buscar(String apellido) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     

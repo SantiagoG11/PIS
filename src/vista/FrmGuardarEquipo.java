@@ -127,6 +127,11 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jPanel5.setLayout(new java.awt.GridBagLayout());
 
         btCalcular.setText("Guardar");
+        btCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCalcularActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -151,6 +156,10 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btCalcularActionPerformed
                                  
 
     /**
