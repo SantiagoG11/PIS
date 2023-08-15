@@ -56,7 +56,6 @@ public class JugadoresAbstractTableModel extends AbstractTableModel{
         this.titleColumns = titleColumns;
     }
     
-    
     @Override
     public int getRowCount() {
         return getLista().size();
@@ -77,7 +76,6 @@ public class JugadoresAbstractTableModel extends AbstractTableModel{
                 return jugador.getApellidos();
             case 2:
                 return jugador.getCedula();
-            
             case 3:
                 return jugador.getNacionalidad();
             case 4:
@@ -93,31 +91,8 @@ public class JugadoresAbstractTableModel extends AbstractTableModel{
     public String getColumnName(int columns){
         return getTitleColumns()[columns];
     }
-
-    @Override
-    public boolean isCellEditable(int rowIndex, int columnIndex) {
-        switch(columnIndex){
-            case 4: 
-//                lista.get(rowIndex).getCantidad();
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public void setValueAt(Object o, int rowIndex, int columnIndex) {
-        switch (columnIndex) {
-            case 4:
-                ItemProducto iProducto = getLista().get(rowIndex);
-                if (Integer.parseInt(o.toString()) < iProducto.getProducto().getStock()) 
-                    lista.get(rowIndex).setCantidad(Integer.parseInt(o.toString()));
-                else
-                    JOptionPane.showMessageDialog(null, "No hay suficiente Stock");
-        }
-        fireTableCellUpdated(rowIndex, columnIndex);
-    }
     
-    public ItemProducto getProducto(int fila){
+    public Jugador getJugador(int fila){
         return lista.get(fila);
     }
 }
