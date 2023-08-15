@@ -2,4 +2,8 @@
 /nbproject/private/
 *.properties
 *.properties
+<<<<<<< HEAD
 *.xml
+=======
+*.properties
+>>>>>>> 3f1f047cf50cdec0732761af70ef472679654ba6

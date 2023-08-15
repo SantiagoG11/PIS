@@ -18,14 +18,13 @@ public class Equipo {
     private List<Jugador> listaJugadores;
     private Campeonato campeonato1;
     private Campeonato campeonato2;
+    private String escudo;
 
-    public Equipo(String nombre, String ciudad, Entrenador entrenador, Campeonato campeonato1, Campeonato campeonato2) {
+    public Equipo(String nombre, String ciudad, String escudo) {
         this.nombre = nombre;
         this.ciudad = ciudad;
-        this.entrenador = entrenador;
+        this.escudo = escudo;
         listaJugadores = new ArrayList<>();
-        this.campeonato1 = campeonato1;
-        this.campeonato2 = campeonato2;
     }
 
     /**
