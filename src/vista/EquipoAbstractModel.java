@@ -7,7 +7,6 @@ package vista;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import modelo.Equipo;
-import modelo.Jugador;
 
 /**
  *
