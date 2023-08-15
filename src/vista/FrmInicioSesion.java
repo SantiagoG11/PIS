@@ -186,48 +186,46 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    public void cerrar(){
+
+    public void cerrar() {
         try {
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             addWindowListener(
-               new WindowAdapter() {
-                  public void windowClosing(WindowEvent e){
-                      confirmarSalida();
-                  }
-               }
+                    new WindowAdapter() {
+                public void windowClosing(WindowEvent e) {
+                    confirmarSalida();
+                }
+            }
             );
             this.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    
-    
-    public void confirmarSalida(){
+
+    public void confirmarSalida() {
         int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
             System.exit(0);
         }
     }
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String cuentaIngresada = "Isaac";
-    String claveIngresada = "1234";
-    
-    String cuenta = txt_nombreCuenta.getText();
-    String clave = txt_contrasenia.getText();
-    
-    System.out.println("Cuenta ingresada: " + cuenta);
-    System.out.println("Clave ingresada: " + clave);
-    
-    if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
-        new FrmPrincipalAdministrador().setVisible(true);
-    } else {
-        JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+        String cuentaIngresada = "Isaac";
+        String claveIngresada = "1234";
+
+        String cuenta = txt_nombreCuenta.getText();
+        String clave = txt_contrasenia.getText();
+
+        System.out.println("Cuenta ingresada: " + cuenta);
+        System.out.println("Clave ingresada: " + clave);
+
+        if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
+            new FrmPrincipalAdministrador().setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
