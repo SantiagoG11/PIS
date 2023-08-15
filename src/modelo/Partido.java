@@ -17,15 +17,22 @@ public class Partido {
     private Arbitro arbitroPrincipal;
     private Arbitro arbitroLinea1;
     private Arbitro arbitroLinea2;
+    private String nombre;
+    private Campeonato campeonato;
 
-    public Partido(EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2) {
-        this.estado = estado;
+    public Partido(EnumEstadio estadio, EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, String nombre, Campeonato campeonato) {
+        this.estadio = estadio;
+        this.estado = estado;   
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
         this.arbitroPrincipal = arbitroPrincipal;
         this.arbitroLinea1 = arbitroLinea1;
         this.arbitroLinea2 = arbitroLinea2;
+        this.nombre = nombre;
+        this.campeonato = campeonato;
     }
+
+    
 
     /**
      * @return the estadio
@@ -123,6 +130,34 @@ public class Partido {
      */
     public void setArbitroLinea2(Arbitro arbitroLinea2) {
         this.arbitroLinea2 = arbitroLinea2;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @return the campeonato
+     */
+    public Campeonato getCampeonato() {
+        return campeonato;
+    }
+
+    /**
+     * @param campeonato the campeonato to set
+     */
+    public void setCampeonato(Campeonato campeonato) {
+        this.campeonato = campeonato;
     }
     
     
