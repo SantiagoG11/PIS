@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Vista;
+package vista;
 
 import AccesoDatos.EntrenadorImplementacion;
 import Modelo.Entrenador;
@@ -11,12 +11,12 @@ import Modelo.Entrenador;
  *
  * @author santi
  */
-public class Frm_Entrenador extends javax.swing.JFrame {
+public class FrmGuardarAlbitro extends javax.swing.JFrame {
 
     /**
      * Creates new form DirectorTecnico
      */
-    public Frm_Entrenador() {
+    public FrmGuardarAlbitro() {
         initComponents();
     }
 
@@ -42,8 +42,6 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         txtApellidos = new javax.swing.JTextField();
         txtEdad = new javax.swing.JTextField();
         txtNacionalidad = new javax.swing.JTextField();
-        btBuscar = new javax.swing.JButton();
-        btModificar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -63,7 +61,7 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 32, 3, 25);
         jPanel2.add(jLabel1, gridBagConstraints);
 
         jLabel2.setText("Nombres");
@@ -72,7 +70,7 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 32, 3, 25);
         jPanel2.add(jLabel2, gridBagConstraints);
 
         jLabel3.setText("Apellidos");
@@ -81,7 +79,7 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 32, 3, 25);
         jPanel2.add(jLabel3, gridBagConstraints);
 
         jLabel5.setText("Edad");
@@ -90,7 +88,7 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 31, 3, 25);
         jPanel2.add(jLabel5, gridBagConstraints);
 
         jLabel6.setText("Nacionalidad");
@@ -99,7 +97,7 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 32, 3, 25);
         jPanel2.add(jLabel6, gridBagConstraints);
 
         txtCedula.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -113,7 +111,8 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.weightx = 0.2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 14);
         jPanel2.add(txtCedula, gridBagConstraints);
 
         txtNombres.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -129,7 +128,8 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.weightx = 0.2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 14);
         jPanel2.add(txtNombres, gridBagConstraints);
 
         txtApellidos.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -140,7 +140,8 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.weightx = 0.2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 14);
         jPanel2.add(txtApellidos, gridBagConstraints);
 
         txtEdad.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -151,7 +152,8 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.weightx = 0.2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 14);
         jPanel2.add(txtEdad, gridBagConstraints);
 
         txtNacionalidad.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -162,29 +164,13 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.weightx = 0.2;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 14);
         jPanel2.add(txtNacionalidad, gridBagConstraints);
-
-        btBuscar.setText("Buscar");
-        btBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btBuscarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
-        jPanel2.add(btBuscar, gridBagConstraints);
-
-        btModificar.setText("Modificar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        jPanel2.add(btModificar, gridBagConstraints);
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 0));
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel7.setText("ENTRENADOR");
+        jLabel7.setText("Albitro");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -234,10 +220,6 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCedulaActionPerformed
 
-    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
-
-    }//GEN-LAST:event_btBuscarActionPerformed
-
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
         Entrenador entrenador = new Entrenador(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
         EntrenadorImplementacion entreImplement = new EntrenadorImplementacion();
@@ -265,14 +247,18 @@ public class Frm_Entrenador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frm_Entrenador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGuardarAlbitro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frm_Entrenador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGuardarAlbitro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frm_Entrenador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGuardarAlbitro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frm_Entrenador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGuardarAlbitro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -281,15 +267,13 @@ public class Frm_Entrenador extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frm_Entrenador().setVisible(true);
+                new FrmGuardarAlbitro().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btBuscar;
     private javax.swing.JButton btCalcular;
-    private javax.swing.JButton btModificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

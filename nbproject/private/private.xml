@@ -3,19 +3,25 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/Principal.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/asdas.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/Sign.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/sexo1.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/tercero1.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/segundo1.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/lll.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/SingUp.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/tercero.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/DAOentrenador.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/EquipoImplementacion.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/pisprogramacion/PISprogramacion.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/FrmEquipo.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/FrmRegistrarse.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/DAOEquipo.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/EntrenadorImplementacion.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/DAOJugador.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/Conexion.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/JugadorImplementacion.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/FrmJugador.java</file>
             <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/QzGT.gif</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/segundo.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/Nuevo1.java</file>
-            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/SignUp.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/FrmInicioSesion.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/Frm_Entrenador.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/DAOPartido.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/DAO.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/vista/FrmPrincipal.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/AccesoDatos/PartidoImplementacion.java</file>
+            <file>file:/C:/Users/ixcd2/Documents/NetBeansProjects/PISprogramacion/src/modelo/Campeonato.java</file>
         </group>
     </open-files>
 </project-private>

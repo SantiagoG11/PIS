@@ -11,12 +11,12 @@ import Modelo.Jugador;
  *
  * @author santi
  */
-public class FrmJugador extends javax.swing.JFrame {
+public class FrmGuardarJugador extends javax.swing.JFrame {
 
     JugadorImplementacion dao;
 //    JugadorAbstractTableModel modelo;
     
-    public FrmJugador() {
+    public FrmGuardarJugador() {
         initComponents();
         dao = new JugadorImplementacion();
     }
@@ -45,8 +45,6 @@ public class FrmJugador extends javax.swing.JFrame {
         txtDorsal = new javax.swing.JTextField();
         txtEdad = new javax.swing.JTextField();
         txtNacionalidad = new javax.swing.JTextField();
-        btBuscar = new javax.swing.JButton();
-        btModificar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtPosicion = new javax.swing.JTextField();
@@ -68,7 +66,7 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 36, 3, 61);
         jPanel2.add(jLabel1, gridBagConstraints);
 
         jLabel2.setText("Nombres");
@@ -77,7 +75,7 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 36, 3, 61);
         jPanel2.add(jLabel2, gridBagConstraints);
 
         jLabel3.setText("Apellidos");
@@ -86,7 +84,7 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 36, 3, 61);
         jPanel2.add(jLabel3, gridBagConstraints);
 
         jLabel4.setText("Dorsal");
@@ -95,7 +93,7 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 36, 3, 61);
         jPanel2.add(jLabel4, gridBagConstraints);
 
         jLabel5.setText("Edad");
@@ -104,7 +102,7 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 36, 3, 61);
         jPanel2.add(jLabel5, gridBagConstraints);
 
         jLabel6.setText("Nacionalidad");
@@ -113,7 +111,7 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 25);
+        gridBagConstraints.insets = new java.awt.Insets(0, 36, 3, 61);
         jPanel2.add(jLabel6, gridBagConstraints);
 
         txtCedula.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -126,8 +124,9 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 3, 13);
         jPanel2.add(txtCedula, gridBagConstraints);
 
         txtNombres.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -137,8 +136,9 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 3, 13);
         jPanel2.add(txtNombres, gridBagConstraints);
 
         txtApellidos.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -148,8 +148,9 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 3, 13);
         jPanel2.add(txtApellidos, gridBagConstraints);
 
         txtDorsal.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -159,8 +160,9 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 3, 13);
         jPanel2.add(txtDorsal, gridBagConstraints);
 
         txtEdad.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -170,8 +172,9 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 3, 13);
         jPanel2.add(txtEdad, gridBagConstraints);
 
         txtNacionalidad.setMinimumSize(new java.awt.Dimension(45, 26));
@@ -181,26 +184,10 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
+        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 3, 13);
         jPanel2.add(txtNacionalidad, gridBagConstraints);
-
-        btBuscar.setText("Buscar");
-        btBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btBuscarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 0);
-        jPanel2.add(btBuscar, gridBagConstraints);
-
-        btModificar.setText("Modificar");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        jPanel2.add(btModificar, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setText("JUGADOR");
@@ -216,12 +203,16 @@ public class FrmJugador extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(0, 36, 0, 36);
         jPanel2.add(jLabel8, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 4;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 0, 13);
         jPanel2.add(txtPosicion, gridBagConstraints);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -252,11 +243,11 @@ public class FrmJugador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 478, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
         );
 
         pack();
@@ -265,10 +256,6 @@ public class FrmJugador extends javax.swing.JFrame {
     private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCedulaActionPerformed
-
-    private void btBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBuscarActionPerformed
-       
-    }//GEN-LAST:event_btBuscarActionPerformed
 
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
         Jugador jugador = new Jugador();
@@ -299,29 +286,29 @@ public class FrmJugador extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGuardarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGuardarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGuardarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FrmGuardarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmJugador().setVisible(true);
+                new FrmGuardarJugador().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btBuscar;
     private javax.swing.JButton btCalcular;
-    private javax.swing.JButton btModificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
