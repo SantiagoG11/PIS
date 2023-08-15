@@ -16,18 +16,44 @@ import java.util.List;
 public class Equipo {
     private String nombre;
     private String ciudad;
-    private Campeonato campeonato;
     private Entrenador entrenador;
     private List<Jugador> listaJugadores;
-    private List<Campeonato> listaCompeonato;
+    private Campeonato campeonato1;
+    private Campeonato campeonato2;
 
-    public Equipo(String nombre, String ciudad, Campeonato campeonato, Entrenador entrenador) {
+    public Equipo(String nombre, String ciudad, Entrenador entrenador) {
         this.nombre = nombre;
         this.ciudad = ciudad;
-        this.campeonato = campeonato;
         this.entrenador = entrenador;
         listaJugadores = new ArrayList<>();
-        listaCompeonato = new ArrayList<>();
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    /**
+     * @return the ciudad
+     */
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    /**
+     * @param ciudad the ciudad to set
+     */
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     /**
@@ -57,5 +83,34 @@ public class Equipo {
     public void setListaJugadores(List<Jugador> listaJugadores) {
         this.listaJugadores = listaJugadores;
     }
-    
+
+    /**
+     * @return the campeonato1
+     */
+    public Campeonato getCampeonato1() {
+        return campeonato1;
+    }
+
+    /**
+     * @param campeonato1 the campeonato1 to set
+     */
+    public void setCampeonato1(Campeonato campeonato1) {
+        this.campeonato1 = campeonato1;
+    }
+
+    /**
+     * @return the campeonato2
+     */
+    public Campeonato getCampeonato2() {
+        return campeonato2;
+    }
+
+    /**
+     * @param campeonato2 the campeonato2 to set
+     */
+    public void setCampeonato2(Campeonato campeonato2) {
+        this.campeonato2 = campeonato2;
+    }
+
+
 }
