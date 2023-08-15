@@ -214,19 +214,20 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       String cuentaIngresada = "Isaac";
+    String cuentaIngresada = "Isaac";
     String claveIngresada = "1234";
     
     String cuenta = txt_nombreCuenta.getText();
     String clave = txt_contrasenia.getText();
     
-    System.out.println("Cuenta ingresada: " + cuenta);
-    System.out.println("Clave ingresada: " + clave);
-    
     if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
         new FrmPrincipalAdministrador().setVisible(true);
-    } else {
+    } else if (cuenta.equals("otroUsuario") && clave.equals("otraClave")) {
+        new FrmPrincipal1().setVisible(true);
+    } else if (!cuenta.isEmpty() && !clave.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
+    } else {
+        JOptionPane.showMessageDialog(this, "Por favor ingrese la cuenta y la clave", "Error", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_jButton1ActionPerformed
 
