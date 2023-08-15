@@ -4,6 +4,11 @@
  */
 package vista;
 
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author santi
@@ -35,8 +40,8 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtCiudad = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        previewIcono = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         btCalcular = new javax.swing.JButton();
@@ -99,27 +104,22 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 0, 5, 0);
         jPanel2.add(jLabel7, gridBagConstraints);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jButton1.setText("buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.weighty = 0.1;
-        jPanel2.add(jScrollPane1, gridBagConstraints);
+        jPanel2.add(jButton1, gridBagConstraints);
+
+        previewIcono.setPreferredSize(new java.awt.Dimension(80, 80));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        jPanel2.add(previewIcono, gridBagConstraints);
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -149,11 +149,11 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 361, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
         );
 
         pack();
@@ -162,6 +162,39 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btCalcularActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser fileChooser = new JFileChooser();
+    
+    // Muestra el cuadro de diálogo de abrir archivo
+    int result = fileChooser.showOpenDialog(this);
+    
+    // Si el usuario selecciona un archivo y hace clic en "Abrir"
+    if (result == JFileChooser.APPROVE_OPTION) {
+        // Obtiene la ruta seleccionada del archivo
+        File selectedFile = fileChooser.getSelectedFile();
+        String filePath = selectedFile.getAbsolutePath();
+        
+        // Muestra la ruta del archivo en una etiqueta o en otro componente
+        //previewIcono.setText("Ruta del archivo: " + filePath);
+        
+         // Ruta de la imagen en el proyecto
+        String imagePath = filePath; // Cambia esto a la ruta correcta
+        System.out.println(imagePath);
+    
+    // Carga la imagen desde el archivo
+        ImageIcon imageIcon = new ImageIcon(imagePath);
+    
+    // Escala la imagen para ajustar el tamaño del JLabel
+        Image image = imageIcon.getImage();
+        Image scaledImage = image.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
+    
+    // Asigna la imagen escalada al JLabel
+        ImageIcon scaledIcon = new ImageIcon(scaledImage);
+        previewIcono.setIcon(scaledIcon);
+    }
+    }//GEN-LAST:event_jButton1ActionPerformed
                                  
 
     /**
@@ -204,6 +237,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCalcular;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
@@ -211,8 +245,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel previewIcono;
     private javax.swing.JTextField txtCiudad;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
