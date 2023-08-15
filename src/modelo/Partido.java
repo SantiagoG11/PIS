@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -26,8 +26,104 @@ public class Partido {
         this.arbitroLinea1 = arbitroLinea1;
         this.arbitroLinea2 = arbitroLinea2;
     }
-    
+
     /**
-     * @return the estadistica
+     * @return the estadio
      */
+    public EnumEstadio getEstadio() {
+        return estadio;
+    }
+
+    /**
+     * @param estadio the estadio to set
+     */
+    public void setEstadio(EnumEstadio estadio) {
+        this.estadio = estadio;
+    }
+
+    /**
+     * @return the estado
+     */
+    public EnumEstadoPartidos getEstado() {
+        return estado;
+    }
+
+    /**
+     * @param estado the estado to set
+     */
+    public void setEstado(EnumEstadoPartidos estado) {
+        this.estado = estado;
+    }
+
+    /**
+     * @return the equipoLocal
+     */
+    public Equipo getEquipoLocal() {
+        return equipoLocal;
+    }
+
+    /**
+     * @param equipoLocal the equipoLocal to set
+     */
+    public void setEquipoLocal(Equipo equipoLocal) {
+        this.equipoLocal = equipoLocal;
+    }
+
+    /**
+     * @return the equipoVisitante
+     */
+    public Equipo getEquipoVisitante() {
+        return equipoVisitante;
+    }
+
+    /**
+     * @param equipoVisitante the equipoVisitante to set
+     */
+    public void setEquipoVisitante(Equipo equipoVisitante) {
+        this.equipoVisitante = equipoVisitante;
+    }
+
+    /**
+     * @return the arbitroPrincipal
+     */
+    public Arbitro getArbitroPrincipal() {
+        return arbitroPrincipal;
+    }
+
+    /**
+     * @param arbitroPrincipal the arbitroPrincipal to set
+     */
+    public void setArbitroPrincipal(Arbitro arbitroPrincipal) {
+        this.arbitroPrincipal = arbitroPrincipal;
+    }
+
+    /**
+     * @return the arbitroLinea1
+     */
+    public Arbitro getArbitroLinea1() {
+        return arbitroLinea1;
+    }
+
+    /**
+     * @param arbitroLinea1 the arbitroLinea1 to set
+     */
+    public void setArbitroLinea1(Arbitro arbitroLinea1) {
+        this.arbitroLinea1 = arbitroLinea1;
+    }
+
+    /**
+     * @return the arbitroLinea2
+     */
+    public Arbitro getArbitroLinea2() {
+        return arbitroLinea2;
+    }
+
+    /**
+     * @param arbitroLinea2 the arbitroLinea2 to set
+     */
+    public void setArbitroLinea2(Arbitro arbitroLinea2) {
+        this.arbitroLinea2 = arbitroLinea2;
+    }
+    
+    
 }

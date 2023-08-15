@@ -79,6 +79,37 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         titulo.setText("BIENVENIDO A F-natics");
         jPanel1.add(titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("ROG Fonts", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel2.setText("I n g r e s a r");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 530, 100, 30));
+
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 500, 100, 90));
+
+        jLabel1.setBackground(new java.awt.Color(255, 0, 102));
+        jLabel1.setForeground(new java.awt.Color(255, 153, 153));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/QzGT.gif"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(400, 400));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 500, 100, 90));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mi proyecto (2) (1).png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 100, 110));
+
+        jLabel4.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel4.setText("WELCOME TO F-natics");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 230, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
