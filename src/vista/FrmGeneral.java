@@ -46,6 +46,8 @@ public class FrmGeneral extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
@@ -92,10 +94,16 @@ public class FrmGeneral extends javax.swing.JFrame {
         pl.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, -1));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flechaiz.png"))); // NOI18N
-        pl.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 140, 40, -1));
+        pl.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 40, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flechad.png"))); // NOI18N
         pl.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 40, -1));
+
+        jLabel6.setText("Nombre equipo");
+        pl.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+
+        jLabel7.setText("Nombre Equipo");
+        pl.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
 
         jPanel26.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 660, 330));
 
@@ -176,6 +184,8 @@ public class FrmGeneral extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel pl;
