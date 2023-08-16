@@ -14,9 +14,9 @@ public class Partido {
     private EnumEstadoPartidos estado;
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
-    private Albitro arbitroPrincipal;
-    private Albitro arbitroLinea1;
-    private Albitro arbitroLinea2;
+    private Arbitro arbitroPrincipal;
+    private Arbitro arbitroLinea1;
+    private Arbitro arbitroLinea2;
     private String fecha;
     private E_Partido e_partido;
     
@@ -86,42 +86,42 @@ public class Partido {
     /**
      * @return the arbitroPrincipal
      */
-    public Albitro getArbitroPrincipal() {
+    public Arbitro getArbitroPrincipal() {
         return arbitroPrincipal;
     }
 
     /**
      * @param arbitroPrincipal the arbitroPrincipal to set
      */
-    public void setArbitroPrincipal(Albitro arbitroPrincipal) {
+    public void setArbitroPrincipal(Arbitro arbitroPrincipal) {
         this.arbitroPrincipal = arbitroPrincipal;
     }
 
     /**
      * @return the arbitroLinea1
      */
-    public Albitro getArbitroLinea1() {
+    public Arbitro getArbitroLinea1() {
         return arbitroLinea1;
     }
 
     /**
      * @param arbitroLinea1 the arbitroLinea1 to set
      */
-    public void setArbitroLinea1(Albitro arbitroLinea1) {
+    public void setArbitroLinea1(Arbitro arbitroLinea1) {
         this.arbitroLinea1 = arbitroLinea1;
     }
 
     /**
      * @return the arbitroLinea2
      */
-    public Albitro getArbitroLinea2() {
+    public Arbitro getArbitroLinea2() {
         return arbitroLinea2;
     }
 
     /**
      * @param arbitroLinea2 the arbitroLinea2 to set
      */
-    public void setArbitroLinea2(Albitro arbitroLinea2) {
+    public void setArbitroLinea2(Arbitro arbitroLinea2) {
         this.arbitroLinea2 = arbitroLinea2;
     }
 

@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Albitro;
+import modelo.Arbitro;
 import modelo.E_Partido;
 
 /**
@@ -20,7 +20,7 @@ import modelo.E_Partido;
 public class ArbitroImplementacion implements DAO{
 Conexion instanciaMsql = Conexion.getInstance();
     
-    public boolean guardar(Albitro arbitro) {
+    public boolean guardar(Arbitro arbitro) {
        PreparedStatement consulta = null;
         Connection conexion = null;
         
@@ -51,8 +51,8 @@ Conexion instanciaMsql = Conexion.getInstance();
     }
 
     @Override
-    public List<Albitro> listarTodos() {
-        List<Albitro> lista = new ArrayList<>();
+    public List<Arbitro> listarTodos() {
+        List<Arbitro> lista = new ArrayList<>();
         PreparedStatement consulta = null;
         Connection conexion = null;
         try {

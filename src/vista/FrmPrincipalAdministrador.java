@@ -281,7 +281,7 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        new FrmGuardarAlbitro().setVisible(true);
+        new FrmGuardarArbitro().setVisible(true);
          
     }//GEN-LAST:event_jButton5ActionPerformed
 

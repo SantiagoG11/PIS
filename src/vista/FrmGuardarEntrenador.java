@@ -5,7 +5,7 @@
 package vista;
 
 import AccesoDatos.EntrenadorImplementacion;
-import modelo.Albitro;
+import modelo.Arbitro;
 import modelo.Entrenador;
 
 /**
@@ -180,7 +180,7 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombresActionPerformed
 
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
-        Albitro albitro = new Albitro(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
+        Arbitro albitro = new Arbitro(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
 
     }//GEN-LAST:event_btCalcularActionPerformed
 
