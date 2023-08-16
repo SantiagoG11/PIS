@@ -15,8 +15,6 @@ import modelo.Partido;
  */
 public class FrmGeneral extends javax.swing.JFrame {
 
-    static private int partidoActual = 0;
-    private PartidoPanel[] partidos;
     static public Partido partido;
     
     /**
@@ -24,64 +22,10 @@ public class FrmGeneral extends javax.swing.JFrame {
      */
     public FrmGeneral() {
         initComponents();
-          agregarPartidos();
           this.setLocationRelativeTo(null);
-        mostrarPartido(partidoActual); // Mostrar el primer partido al iniciar
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
-    private void agregarPartidos() {
-// Crear algunas imágenes de ejemplo (reemplaza con tus propias imágenes)
-        ImageIcon imagenEquipo1 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\1..jpg");
-        ImageIcon imagenEquipo2 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\2..jpg");
-        ImageIcon imagenEquipo3 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\3..jpg");
-        ImageIcon imagenEquipo4 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\4..jpg");
-
-        // Crear un arreglo de paneles de partido
-        partidos = new PartidoPanel[5]; // Cambia 5 por el número de partidos que deseas mostrar
-
-        for (int i = 0; i < partidos.length; i++) {
-            partidos[0] = new PartidoPanel(this,imagenEquipo1, imagenEquipo2, "3-1", "En juego", "Fecha: 2023-07-20");
-            partidos[1] = new PartidoPanel(this,imagenEquipo3, imagenEquipo4, "2-1", "Finalizado", "Fecha: 2023-08-20");
-
-        }
-        
-        
-        // Crear un Layout para el contenedor de los paneles de partido
-    BoxLayout contenedorLayout = new BoxLayout(pl, BoxLayout.Y_AXIS);
-    pl.setLayout(contenedorLayout);
-//
-//    // Crear varios paneles de partido y agregarlos al contenedor
-//    for (int i = 0; i < 5; i++) { // Cambia 5 por el número de partidos que deseas mostrar
-//        PartidoPanel partidoPanel = new PartidoPanel(imagenEquipo1, imagenEquipo2, "3-1", "En juego", "Fecha: 2023-07-20");
-//        jPanel3.add(partidoPanel);
-//    }
-    }
-
-    private void mostrarPartido(int indice) {
-        pl.removeAll();
-        pl.add(partidos[indice]);
-        pl.revalidate();
-        pl.repaint();
-    }    
-    
-    public void mostrarPartidoAnterior() {
-        if (partidoActual > 0) {
-            partidoActual--;
-            mostrarPartido(partidoActual);
-        }
-    }
-
-    public void mostrarPartidoSiguiente() {
-        if (partidoActual < partidos.length - 1) {
-            partidoActual++;
-            mostrarPartido(partidoActual);
-        }
-    }
-    
-    public Partido getPartido(int indice){
-        return partido = new Partido(partidos[indice]);
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
