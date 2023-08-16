@@ -15,7 +15,6 @@ public class E_Partido {
     private int tirosEsquina;
     private int golesVisitante;
     private int golesLocal;
-    private Partido partido;
 
     /**
      * @return the tarjetasRojas
@@ -99,19 +98,5 @@ public class E_Partido {
      */
     public void setGolesLocal(int golesLocal) {
         this.golesLocal = golesLocal;
-    }
-
-    /**
-     * @return the partido
-     */
-    public Partido getPartido() {
-        return partido;
-    }
-
-    /**
-     * @param partido the partido to set
-     */
-    public void setPartido(Partido partido) {
-        this.partido = partido;
     }
 }
