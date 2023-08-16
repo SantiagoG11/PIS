@@ -40,8 +40,6 @@ public class PartidoImplementacion implements DAOPartido{
             consulta.setString(0, t.getArbitroLinea1().getApellidos());
             consulta.setString(0, t.getArbitroLinea2().getApellidos());
             consulta.setString(0, t.getCampeonato().getNombre());
-            consulta.setString(0, t.getNombre());
-            
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

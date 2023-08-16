@@ -140,7 +140,7 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
         subtitulo.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
         subtitulo.setForeground(new java.awt.Color(255, 102, 102));
         subtitulo.setText("F-natics");
-        jPanel1.add(subtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
+        jPanel1.add(subtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mi proyecto (2) (1).png"))); // NOI18N
         jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 100, 90));
