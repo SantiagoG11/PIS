@@ -99,7 +99,6 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
                 .addGap(13, 61, Short.MAX_VALUE)
                 .addGroup(jpnControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
                     .addGroup(jpnControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnControlLayout.createSequentialGroup()
                             .addComponent(jButton2)
@@ -113,6 +112,10 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnControlLayout.createSequentialGroup()
                             .addComponent(jLabel14)
                             .addGap(86, 86, 86)))))
+            .addGroup(jpnControlLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jpnControlLayout.setVerticalGroup(
             jpnControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +143,7 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
         subtitulo.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
         subtitulo.setForeground(new java.awt.Color(255, 102, 102));
         subtitulo.setText("F-natics");
-        jPanel1.add(subtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
+        jPanel1.add(subtitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, -1, -1));
 
         logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mi proyecto (2) (1).png"))); // NOI18N
         jPanel1.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 100, 90));
@@ -204,7 +207,7 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
+        this.dispose();
         new FrmInicioSesion().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
