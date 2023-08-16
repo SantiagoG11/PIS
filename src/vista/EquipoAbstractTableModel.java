@@ -12,11 +12,11 @@ import modelo.Equipo;
  *
  * @author Usuario iTC
  */
-public class EquipoAbstractModel extends AbstractTableModel{
+public class EquipoAbstractTableModel extends AbstractTableModel{
     private String[] titleColumns;
     private List<Equipo> listaEquipos;
 
-public EquipoAbstractModel(List<Equipo> listaEquipos){
+public EquipoAbstractTableModel(List<Equipo> listaEquipos){
         super();
         this.listaEquipos = listaEquipos;
         this.titleColumns = new String[]{"Nombre", "Ciudad", "Entrenador"};

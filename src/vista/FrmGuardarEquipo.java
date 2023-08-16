@@ -4,16 +4,20 @@
  */
 package vista;
 
+import AccesoDatos.EquipoImplementacion;
 import java.awt.Image;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import modelo.Equipo;
 
 /**
  *
  * @author santi
  */
 public class FrmGuardarEquipo extends javax.swing.JFrame {
+    
+    String imagePath;
     
     public FrmGuardarEquipo() {
         initComponents();
@@ -42,7 +46,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         previewIcono = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        btGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -127,13 +131,13 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         previewIcono.setText("jLabel4");
         jPanel2.add(previewIcono, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 150, 150));
 
-        jButton2.setText("GUARDAR EQUIPO");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btGuardar.setText("GUARDAR EQUIPO");
+        btGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+        jPanel2.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -167,7 +171,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
             // Muestra la ruta del archivo en una etiqueta o en otro componente
             //previewIcono.setText("Ruta del archivo: " + filePath);
             // Ruta de la imagen en el proyecto
-            String imagePath = filePath; // Cambia esto a la ruta correcta
+            imagePath = filePath; // Cambia esto a la ruta correcta
             System.out.println(imagePath);
 
             // Carga la imagen desde el archivo
@@ -183,9 +187,11 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
+        Equipo equipo = new Equipo(txtNombre.getText(), txtCiudad.getText(), imagePath);
+        EquipoImplementacion equipoImplementacion = new EquipoImplementacion();
+        equipoImplementacion.guardar(equipo);
+    }//GEN-LAST:event_btGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -226,8 +232,8 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btGuardar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

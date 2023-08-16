@@ -11,19 +11,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Arbitro;
-import modelo.E_Partido;
 
 /**
  *
  * @author Usuario iTC
  */
-public class ArbitroImplementacion implements DAO{
-Conexion instanciaMsql = Conexion.getInstance();
-    
+public class ArbitroImplementacion implements DAO {
+
+    Conexion instanciaMsql = Conexion.getInstance();
+
     public boolean guardar(Arbitro arbitro) {
-       PreparedStatement consulta = null;
+        PreparedStatement consulta = null;
         Connection conexion = null;
-        
+
         try {
             conexion = instanciaMsql.conectar();
             consulta = conexion.prepareStatement("INSERT INTO e_partido (nombres, apellidos, cedula, nacionalidad, edad) VALUES (?, ?, ?, ?, ?)");
@@ -36,7 +36,7 @@ Conexion instanciaMsql = Conexion.getInstance();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        
+
         return false;
     }
 
@@ -63,10 +63,10 @@ Conexion instanciaMsql = Conexion.getInstance();
                 //Partido partido = new Partido(EnumEstadio.valueOf(rs.getNString(1)), EnumEstadoPartidos.FINALIZADO, new Equipo(rs.getNString(3), null, null), new Equipo(rs.getNString(4), null, null), new Equipo(rs.getNString(5), null, null), new Albitro(null, null, rs.getNString(6), 0, null), new Albitro(null, null, rs.getNString(6), 0, null), new Albitro(null, null, rs.getNString(6), 0, null), rs.getNString(9));
                 //lista.add(partido); 
             }
-            
+
         } catch (Exception e) {
         }
-        
+
         return lista;
     }
 
@@ -79,5 +79,5 @@ Conexion instanciaMsql = Conexion.getInstance();
     public boolean guardar(Object t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }
