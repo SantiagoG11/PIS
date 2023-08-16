@@ -14,50 +14,39 @@ import modelo.Equipo;
  * @author Santiagod
  */
 public class E_EquipoAbstractTableModel extends AbstractTableModel {
-    private String[] titleColumns;
-    private List<E_Equipo> lista;
+     private String[] titleColumns;
+    private List<E_Equipo> listaEquipos;
     private String[] columnas = {"Equipo", "Victorias", "Derrotas", "Empates"};
 
-public E_EquipoAbstractTableModel(List<E_Equipo> listaEquipos){
-        this.lista = lista;
-            this.titleColumns = new String[]{"Equipo", "Victorias", "Derrotas", "Empates"};
+    public E_EquipoAbstractTableModel(List<E_Equipo> listaEquipos){
+        this.listaEquipos = listaEquipos; // Corrección: cambia "this.lista = lista;" a "this.lista = listaEquipos;"
+        this.titleColumns = new String[]{"Equipo", "Victorias", "Derrotas", "Empates"};
     }
+
     public void actualizar(List<E_Equipo> lista) {
-        this.lista = lista;
+        this.listaEquipos = listaEquipos;
         fireTableDataChanged();
     }
-    
-    /**
-     * @return the lista
-     */
+
     public List<E_Equipo> getLista() {
-        return lista;
+        return listaEquipos;
     }
 
-    /**
-     * @param lista the lista to set
-     */
     public void setLista(List<E_Equipo> lista) {
-        this.lista = lista;
+        this.listaEquipos = lista;
     }
 
-    /**
-     * @return the titleColumns
-     */
     public String[] getTitleColumns() {
         return titleColumns;
     }
 
-    /**
-     * @param titleColumns the titleColumns to set
-     */
     public void setTitleColumns(String[] titleColumns) {
         this.titleColumns = titleColumns;
     }
-    
+
     @Override
     public int getRowCount() {
-        return getLista().size();
+        return listaEquipos.size();
     }
 
     @Override
@@ -76,16 +65,17 @@ public E_EquipoAbstractTableModel(List<E_Equipo> listaEquipos){
             case 2:
                 return eequipo.getPartidosPerdidos();
             case 3:
-                return eequipo.getPartidosEmpatados();   
+                return eequipo.getPartidosEmpatados();
         }
         return null;
     }
+
     @Override
     public String getColumnName(int columns){
         return getTitleColumns()[columns];
     }
-    
-    public E_Equipo getJugador(int fila){
-        return lista.get(fila);
+
+    public E_Equipo getEquipo(int fila){ // Corrección: cambia "getJugador" a "getEquipo"
+        return listaEquipos.get(fila);
     }
 }
