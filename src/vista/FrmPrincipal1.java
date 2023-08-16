@@ -216,7 +216,7 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-    new FrmClasificaciones().setVisible(true);
+    
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     /**

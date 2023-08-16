@@ -17,7 +17,6 @@ public class Partido {
     private Albitro arbitroPrincipal;
     private Albitro arbitroLinea1;
     private Albitro arbitroLinea2;
-    private Campeonato campeonato;
     private String fecha;
     private E_Partido e_partido;
     
@@ -124,20 +123,6 @@ public class Partido {
      */
     public void setArbitroLinea2(Albitro arbitroLinea2) {
         this.arbitroLinea2 = arbitroLinea2;
-    }
-
-    /**
-     * @return the campeonato
-     */
-    public Campeonato getCampeonato() {
-        return campeonato;
-    }
-
-    /**
-     * @param campeonato the campeonato to set
-     */
-    public void setCampeonato(Campeonato campeonato) {
-        this.campeonato = campeonato;
     }
 
     /**

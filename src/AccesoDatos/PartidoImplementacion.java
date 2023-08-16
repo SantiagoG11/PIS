@@ -10,11 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import modelo.EnumEstadio;
-import modelo.EnumEstadoPartidos;
-import modelo.Equipo;
 import modelo.Partido;
-import modelo.Albitro;
 
 
 /**
@@ -32,14 +28,13 @@ public class PartidoImplementacion implements DAOPartido{
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, albitro_principal, albitro_linea1, albitro_linea2, nombre_capeonato, nobre_equipo, estado) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, albitro_principal, albitro_linea1, albitro_linea2, estado) VALUES (?, ?, ?, ?, ?, ?, ?)");
             consulta.setString(1, String.valueOf(t.getEstadio()));  
             consulta.setString(0, t.getEquipoLocal().getNombre());
             consulta.setString(0, t.getEquipoVisitante().getNombre());
             consulta.setString(0, t.getArbitroPrincipal().getApellidos());
             consulta.setString(0, t.getArbitroLinea1().getApellidos());
             consulta.setString(0, t.getArbitroLinea2().getApellidos());
-            consulta.setString(0, t.getCampeonato().getNombre());
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

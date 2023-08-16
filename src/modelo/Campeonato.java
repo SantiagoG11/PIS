@@ -14,11 +14,9 @@ import java.util.List;
 public class Campeonato {
     private String nombre;
     private List<Partido> listaPartidos; //muchos
-    private List<Equipo> listaEquipos;  //muchos
 
     public Campeonato() {
         listaPartidos = new ArrayList<>();
-        listaEquipos = new ArrayList<>();
     }
 
     /**
@@ -47,20 +45,5 @@ public class Campeonato {
      */
     public void setListaPartidos(List<Partido> listaPartidos) {
         this.listaPartidos = listaPartidos;
-    }
-
-    /**
-     * @return the listaEquipos
-     */
-    public List<Equipo> getListaEquipos() {
-        return listaEquipos;
-    }
-
-    /**
-     * @param listaEquipos the listaEquipos to set
-     */
-    public void setListaEquipos(List<Equipo> listaEquipos) {
-        this.listaEquipos = listaEquipos;
-    }
-    
+    }    
 }
