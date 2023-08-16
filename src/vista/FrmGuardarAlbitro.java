@@ -18,6 +18,7 @@ public class FrmGuardarAlbitro extends javax.swing.JFrame {
      */
     public FrmGuardarAlbitro() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

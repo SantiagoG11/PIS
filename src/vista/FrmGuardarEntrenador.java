@@ -18,6 +18,7 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
      */
     public FrmGuardarEntrenador() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

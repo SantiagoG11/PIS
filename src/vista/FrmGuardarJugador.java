@@ -18,6 +18,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
     
     public FrmGuardarJugador() {
         initComponents();
+        this.setLocationRelativeTo(null);
         dao = new JugadorImplementacion();
     }
 

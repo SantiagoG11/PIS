@@ -20,6 +20,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
      */
     public FrmGuardarEquipo() {
         initComponents();
+        this.setLocationRelativeTo(null);
         
     }
 

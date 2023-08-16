@@ -15,6 +15,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
      */
     public FrmCampeonato() {
         initComponents();
+         this.setLocationRelativeTo(null);
     }
 
     /**
