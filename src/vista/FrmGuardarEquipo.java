@@ -40,7 +40,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         txtCiudad = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        btCalcular = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -80,15 +79,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
             }
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 190, 180));
-
-        btCalcular.setFont(new java.awt.Font("Serif", 1, 12)); // NOI18N
-        btCalcular.setText("GUARDAR");
-        btCalcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCalcularActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 580, 150, 70));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -143,15 +133,11 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btCalcularActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -226,7 +212,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCalcular;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
