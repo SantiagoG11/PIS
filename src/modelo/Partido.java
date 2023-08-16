@@ -19,7 +19,7 @@ public class Partido {
     private Albitro arbitroLinea2;
     private Campeonato campeonato;
     private String fecha;
-    
+    private E_Partido e_partido;
     
 
     public Partido(EnumEstadio estadio, String fecha) {
@@ -152,6 +152,20 @@ public class Partido {
      */
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    /**
+     * @return the e_partido
+     */
+    public E_Partido getE_partido() {
+        return e_partido;
+    }
+
+    /**
+     * @param e_partido the e_partido to set
+     */
+    public void setE_partido(E_Partido e_partido) {
+        this.e_partido = e_partido;
     }
 
     
