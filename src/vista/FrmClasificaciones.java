@@ -4,18 +4,24 @@
  */
 package vista;
 
+import AccesoDatos.E_EquipoImplementacion;
+
 /**
  *
  * @author Santiagod
  */
 public class FrmClasificaciones extends javax.swing.JFrame {
-    ProductoImplementacion dao;
+    E_EquipoImplementacion dao;
     E_EquipoAbstractTableModel modelo;
     /**
      * Creates new form FrmClasiifaciones
      */
     public FrmClasificaciones() {
         initComponents();
+        dao = new E_EquipoImplementacion();     
+        modelo = new E_EquipoAbstractTableModel(dao.listarTodos());
+        tabla.setModel(modelo);
+        tabla.updateUI();
     }
 
     /**
@@ -54,13 +60,14 @@ public class FrmClasificaciones extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(82, 82, 82))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(237, 237, 237)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
