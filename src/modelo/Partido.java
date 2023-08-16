@@ -20,6 +20,7 @@ public class Partido {
     private Campeonato campeonato;
     private String fecha;
     
+    
 
     public Partido(EnumEstadio estadio, String fecha) {
         this.estadio = estadio;
