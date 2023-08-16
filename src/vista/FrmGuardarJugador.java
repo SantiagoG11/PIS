@@ -41,7 +41,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
-        txtNombres1 = new javax.swing.JTextField();
+        txtNombres = new javax.swing.JTextField();
         txtApellidos = new javax.swing.JTextField();
         txtDorsal = new javax.swing.JTextField();
         txtEdad = new javax.swing.JTextField();
@@ -101,8 +101,8 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
             }
         });
 
-        txtNombres1.setMinimumSize(new java.awt.Dimension(45, 26));
-        txtNombres1.setPreferredSize(new java.awt.Dimension(68, 22));
+        txtNombres.setMinimumSize(new java.awt.Dimension(45, 26));
+        txtNombres.setPreferredSize(new java.awt.Dimension(68, 22));
 
         txtApellidos.setMinimumSize(new java.awt.Dimension(45, 26));
         txtApellidos.setPreferredSize(new java.awt.Dimension(68, 22));
@@ -200,7 +200,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                                 .addGap(82, 82, 82)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombres1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(246, 246, 246)
                         .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -223,7 +223,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                     .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombres1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -249,7 +249,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                         .addComponent(jLabel8)))
                 .addGap(18, 18, 18)
                 .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -273,7 +273,8 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        Jugador jugador = new Jugador(dorsal, posicion, cedula, nombres, apellidos, WIDTH, nacionalidad);
+        Jugador jugador = new Jugador(txtDorsal.getText(), txtPosicion.getText(), txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
+        dao.guardar(jugador);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
@@ -334,7 +335,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
     private javax.swing.JTextField txtDorsal;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtNacionalidad;
-    private javax.swing.JTextField txtNombres1;
+    private javax.swing.JTextField txtNombres;
     private javax.swing.JTextField txtPosicion;
     // End of variables declaration//GEN-END:variables
 }
