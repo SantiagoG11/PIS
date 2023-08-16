@@ -31,7 +31,6 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -42,7 +41,6 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         txtCedula = new javax.swing.JTextField();
-        txtNombres = new javax.swing.JTextField();
         txtNombres1 = new javax.swing.JTextField();
         txtApellidos = new javax.swing.JTextField();
         txtDorsal = new javax.swing.JTextField();
@@ -102,9 +100,6 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                 txtCedulaActionPerformed(evt);
             }
         });
-
-        txtNombres.setMinimumSize(new java.awt.Dimension(45, 26));
-        txtNombres.setPreferredSize(new java.awt.Dimension(68, 22));
 
         txtNombres1.setMinimumSize(new java.awt.Dimension(45, 26));
         txtNombres1.setPreferredSize(new java.awt.Dimension(68, 22));
@@ -204,28 +199,23 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                                     .addComponent(jLabel1))
                                 .addGap(82, 82, 82)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtNombres1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(246, 246, 246)
-                        .addComponent(jLabel11))
+                        .addComponent(btCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(246, 246, 246)
-                        .addComponent(btCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel11)))
                 .addContainerGap(82, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jLabel11)
-                .addGap(28, 28, 28)
+                .addGap(34, 34, 34)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(3, 3, 3)
@@ -259,7 +249,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                         .addComponent(jLabel8)))
                 .addGap(18, 18, 18)
                 .addComponent(btCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
@@ -283,7 +273,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
-        Albitro albitro = new Albitro(txtCedula.getText(), txtNombres.getText(), txtNombres1.getText(), Integer.parseInt(txtDorsal.getText()), txtEdad.getText());
+        Albitro albitro = new Albitro(txtCedula.getText(), txtNombres1.getText(), txtNombres1.getText(), Integer.parseInt(txtDorsal.getText()), txtEdad.getText());
     }//GEN-LAST:event_btCalcularActionPerformed
 
     /**
@@ -344,7 +334,6 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
     private javax.swing.JTextField txtDorsal;
     private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtNacionalidad;
-    private javax.swing.JTextField txtNombres;
     private javax.swing.JTextField txtNombres1;
     private javax.swing.JTextField txtPosicion;
     // End of variables declaration//GEN-END:variables

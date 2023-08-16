@@ -47,7 +47,6 @@ public class FrmGeneral extends javax.swing.JFrame {
 
         jLabel10.setBackground(new java.awt.Color(0, 0, 0));
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("GENERAL");
         jPanel26.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 110, 20));
 
@@ -57,14 +56,14 @@ public class FrmGeneral extends javax.swing.JFrame {
         pl.setLayout(plLayout);
         plLayout.setHorizontalGroup(
             plLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1150, Short.MAX_VALUE)
+            .addGap(0, 660, Short.MAX_VALUE)
         );
         plLayout.setVerticalGroup(
             plLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 380, Short.MAX_VALUE)
         );
 
-        jPanel26.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1150, 380));
+        jPanel26.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 660, 380));
 
         jButton1.setText("DETALLES DEL PARTIDO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,13 +71,13 @@ public class FrmGeneral extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel26.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
+        jPanel26.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 50, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

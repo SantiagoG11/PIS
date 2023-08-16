@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import modelo.E_Partido;
 import modelo.Partido;
 
 /**
@@ -20,20 +21,21 @@ public class E_PartidoImplementacion implements DAO{
     Conexion instanciaMsql = Conexion.getInstance();
     
     
-    public boolean guardar(E_PartidoImplementacion epartido, Partido partido) {
+    public boolean guardar(E_Partido epartido, Partido partido) {
         PreparedStatement consulta = null;
         Connection conexion = null;
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO e_partido (goles_locales, equipo_local, equipo_visitante, albitro_principal, albitro_linea1, albitro_linea2, nombre_equipo_local, ) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            consulta.setString(1, String.valueOf(t.getEstadio()));  
-            consulta.setString(0, t.getEquipoLocal().getNombre());
-            consulta.setString(0, t.getEquipoVisitante().getNombre());
-            consulta.setString(0, t.getArbitroPrincipal().getApellidos());
-            consulta.setString(0, t.getArbitroLinea1().getApellidos());
-            consulta.setString(6, partido.getEquipoLocal().getNombre());
-            consulta.setString(7, partido.getEquipoVisitante().getNombre());
+            consulta = conexion.prepareStatement("INSERT INTO e_partido (goles_locales, goles_visitante, tiros_puerta, saques_esquina, tarjetas_amarillas, tarjetas_rojas, nombre_equipo_local, nombre_equipo_visitante) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            consulta.setInt(1, epartido.getGolesLocal());  
+            consulta.setInt(2, epartido.getGolesVisitante());
+            consulta.setInt(3, epartido.getTirosArco());
+            consulta.setInt(4, epartido.getTirosEsquina());
+            consulta.setInt(5, epartido.getTarjetaasAmarillas());
+            consulta.setInt(6, epartido.getTarjetasRojas());
+            consulta.setString(7, partido.getEquipoLocal().getNombre());
+            consulta.setString(8, partido.getEquipoVisitante().getNombre());
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -53,13 +55,13 @@ public class E_PartidoImplementacion implements DAO{
     }
 
     @Override
-    public List<Partido> listarTodos() {
-        List<Partido> lista = new ArrayList<>();
+    public List<E_Partido> listarTodos() {
+        List<E_Partido> lista = new ArrayList<>();
         PreparedStatement consulta = null;
         Connection conexion = null;
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("select *from partido");
+            consulta = conexion.prepareStatement("select *from e_partido");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
                 //Partido partido = new Partido(EnumEstadio.valueOf(rs.getNString(1)), EnumEstadoPartidos.FINALIZADO, new Equipo(rs.getNString(3), null, null), new Equipo(rs.getNString(4), null, null), new Equipo(rs.getNString(5), null, null), new Albitro(null, null, rs.getNString(6), 0, null), new Albitro(null, null, rs.getNString(6), 0, null), new Albitro(null, null, rs.getNString(6), 0, null), rs.getNString(9));
