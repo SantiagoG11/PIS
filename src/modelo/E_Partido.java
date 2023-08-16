@@ -114,5 +114,4 @@ public class E_Partido {
     public void setPartido(Partido partido) {
         this.partido = partido;
     }
-    
 }
