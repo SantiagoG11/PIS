@@ -17,6 +17,7 @@ public class PISprogramacion {
      */
     public static void main(String[] args) {
         new FrmPrincipal().setVisible(true);
+        System.out.println("Hola");
     }
     
 }
