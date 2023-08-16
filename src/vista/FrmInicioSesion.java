@@ -215,6 +215,7 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
         UsuarioImplementacion dao = new UsuarioImplementacion();
         
         String cuentaIngresada = "Isaac";
