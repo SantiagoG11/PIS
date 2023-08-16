@@ -14,14 +14,10 @@ import javax.swing.JFileChooser;
  * @author santi
  */
 public class FrmGuardarEquipo extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Equipo
-     */
+    
     public FrmGuardarEquipo() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
     }
 
     /**
@@ -45,6 +41,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        previewIcono = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -78,7 +75,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, 190, 180));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 90, 40));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
         jPanel3.setForeground(new java.awt.Color(0, 0, 0));
@@ -123,6 +120,10 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jLabel3.setText("cargar imagen");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, -1, -1));
 
+        previewIcono.setForeground(new java.awt.Color(153, 153, 153));
+        previewIcono.setText("jLabel4");
+        jPanel2.add(previewIcono, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 150, 150));
+
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -133,7 +134,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 593, Short.MAX_VALUE)
         );
 
         pack();
@@ -142,36 +143,34 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
-    
-    // Muestra el cuadro de diálogo de abrir archivo
-    int result = fileChooser.showOpenDialog(this);
-    
-    // Si el usuario selecciona un archivo y hace clic en "Abrir"
-    if (result == JFileChooser.APPROVE_OPTION) {
-        // Obtiene la ruta seleccionada del archivo
-        File selectedFile = fileChooser.getSelectedFile();
-        String filePath = selectedFile.getAbsolutePath();
-        
-        // Muestra la ruta del archivo en una etiqueta o en otro componente
-        //previewIcono.setText("Ruta del archivo: " + filePath);
-        
-         // Ruta de la imagen en el proyecto
-        String imagePath = filePath; // Cambia esto a la ruta correcta
-        System.out.println(imagePath);
-    
-    // Carga la imagen desde el archivo
-        ImageIcon imageIcon = new ImageIcon(imagePath);
-    
-    // Escala la imagen para ajustar el tamaño del JLabel
-        Image image = imageIcon.getImage();
-        Image scaledImage = image.getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
-    
-    // Asigna la imagen escalada al JLabel
-        ImageIcon scaledIcon = new ImageIcon(scaledImage);
-        previewIcono.setIcon(scaledIcon);
-    }
+
+        // Muestra el cuadro de diálogo de abrir archivo
+        int result = fileChooser.showOpenDialog(this);
+
+        // Si el usuario selecciona un archivo y hace clic en "Abrir"
+        if (result == JFileChooser.APPROVE_OPTION) {
+            // Obtiene la ruta seleccionada del archivo
+            File selectedFile = fileChooser.getSelectedFile();
+            String filePath = selectedFile.getAbsolutePath();
+
+            // Muestra la ruta del archivo en una etiqueta o en otro componente
+            //previewIcono.setText("Ruta del archivo: " + filePath);
+            // Ruta de la imagen en el proyecto
+            String imagePath = filePath; // Cambia esto a la ruta correcta
+            System.out.println(imagePath);
+
+            // Carga la imagen desde el archivo
+            ImageIcon imageIcon = new ImageIcon(imagePath);
+
+            // Escala la imagen para ajustar el tamaño del JLabel
+            Image image = imageIcon.getImage();
+            Image scaledImage = image.getScaledInstance(previewIcono.getWidth(), previewIcono.getHeight(), Image.SCALE_SMOOTH);
+
+            // Asigna la imagen escalada al JLabel
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
+            previewIcono.setIcon(scaledIcon);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
-                                 
 
     /**
      * @param args the command line arguments
@@ -222,6 +221,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel previewIcono;
     private javax.swing.JTextField txtCiudad;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
