@@ -51,7 +51,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        btCalcular = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         txtPosicion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -152,12 +152,12 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 102, 102));
         jLabel11.setText("JUGADOR");
 
-        btCalcular.setFont(new java.awt.Font("SimSun-ExtB", 1, 12)); // NOI18N
-        btCalcular.setText("GUARDAR");
-        btCalcular.setPreferredSize(new java.awt.Dimension(180, 20));
-        btCalcular.addActionListener(new java.awt.event.ActionListener() {
+        btnGuardar.setFont(new java.awt.Font("SimSun-ExtB", 1, 12)); // NOI18N
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.setPreferredSize(new java.awt.Dimension(180, 20));
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCalcularActionPerformed(evt);
+                btnGuardarActionPerformed(evt);
             }
         });
 
@@ -203,7 +203,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                                     .addComponent(txtNombres1, javax.swing.GroupLayout.PREFERRED_SIZE, 361, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(246, 246, 246)
-                        .addComponent(btCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(246, 246, 246)
                         .addComponent(jLabel11)))
@@ -248,7 +248,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                         .addGap(39, 39, 39)
                         .addComponent(jLabel8)))
                 .addGap(18, 18, 18)
-                .addComponent(btCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -272,9 +272,9 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCedulaActionPerformed
 
-    private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
-        Albitro albitro = new Albitro(txtCedula.getText(), txtNombres1.getText(), txtNombres1.getText(), Integer.parseInt(txtDorsal.getText()), txtEdad.getText());
-    }//GEN-LAST:event_btCalcularActionPerformed
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        Jugador jugador = new Jugador(dorsal, posicion, cedula, nombres, apellidos, WIDTH, nacionalidad);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,7 +315,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCalcular;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -115,7 +115,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
-                              <Component id="btCalcular" min="-2" pref="128" max="-2" attributes="0"/>
+                              <Component id="btnGuardar" min="-2" pref="128" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
@@ -174,7 +174,7 @@
                           </Group>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btCalcular" min="-2" pref="54" max="-2" attributes="0"/>
+                      <Component id="btnGuardar" min="-2" pref="54" max="-2" attributes="0"/>
                       <EmptySpace pref="12" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -401,7 +401,7 @@
                 <Property name="text" type="java.lang.String" value="JUGADOR"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btCalcular">
+            <Component class="javax.swing.JButton" name="btnGuardar">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="SimSun-ExtB" size="12" style="1"/>
@@ -412,7 +412,7 @@
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btCalcularActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGuardarActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtPosicion">
