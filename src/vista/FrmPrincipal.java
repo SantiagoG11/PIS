@@ -117,6 +117,7 @@ public final class FrmPrincipal extends javax.swing.JFrame {
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
             System.exit(0);
+            //cambio para github
         }
     }
             
