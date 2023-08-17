@@ -5,31 +5,21 @@
 package vista;
 
 import AccesoDatos.EntrenadorImplementacion;
-import AccesoDatos.EquipoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Entrenador;
-import modelo.Equipo;
 
 /**
  *
  * @author santi
  */
 public class FrmGuardarEntrenador extends javax.swing.JFrame {
-
-    EquipoImplementacion dao;
-    EquipoAbstractTableModel modelo;
-    static Equipo equipo;
     
     public FrmGuardarEntrenador() {
         initComponents();
         this.setLocationRelativeTo(null);
-        dao = new EquipoImplementacion();
-        modelo = new EquipoAbstractTableModel(dao.listarTodos());
-        tablaEquipo.setModel(modelo);
-        tablaEquipo.updateUI();
         cerrar();
     }
 
@@ -58,9 +48,6 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
         txtNacionalidad = new javax.swing.JTextField();
         btCalcular = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablaEquipo = new javax.swing.JTable();
-        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -91,7 +78,7 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
@@ -160,35 +147,12 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
                 btCalcularActionPerformed(evt);
             }
         });
-        jPanel2.add(btCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 550, 128, 54));
+        jPanel2.add(btCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 320, 128, 54));
 
         jLabel8.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 102, 102));
         jLabel8.setText("ENTRENADOR");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, -1, -1));
-
-        tablaEquipo.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tablaEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablaEquipoMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tablaEquipo);
-
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 220));
-
-        jLabel7.setText("Lista de Equipos");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,7 +166,7 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -246,17 +210,10 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombresActionPerformed
 
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
-        Entrenador entrenador = new Entrenador(equipo, txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
+        Entrenador entrenador = new Entrenador(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
         EntrenadorImplementacion ei = new EntrenadorImplementacion();
         ei.guardar(entrenador);
     }//GEN-LAST:event_btCalcularActionPerformed
-
-    private void tablaEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipoMouseClicked
-        int fila = tablaEquipo.getSelectedRow();
-        dao = new EquipoImplementacion();
-        modelo = new EquipoAbstractTableModel(dao.listarTodos());
-        equipo = modelo.getListaEquipos().get(fila);
-    }//GEN-LAST:event_tablaEquipoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -308,13 +265,10 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaEquipo;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtEdad;
