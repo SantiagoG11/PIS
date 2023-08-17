@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Equipo;
 
 /**
  *
@@ -28,12 +27,12 @@ public class EntrenadorImplementacion implements DAOentrenador{
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO entrenador (cedula, nombres, apellidos, edad, nacionalidad) VALUES (?, ?, ?, ?, ?)");
-            consulta.setString(1, t.getCedula());
-            consulta.setString(2, t.getNombres());
-            consulta.setString(3, t.getApellidos());
-            consulta.setInt(4, t.getEdad());
-            consulta.setString(5, t.getNacionalidad());
+            consulta = conexion.prepareStatement("INSERT INTO entrenador (nombres, apellidos, cedula, nacionalidad, edad) VALUES (?, ?, ?, ?, ?)");
+            consulta.setString(1, t.getNombres());
+            consulta.setString(2, t.getApellidos());
+            consulta.setString(3, t.getCedula());
+            consulta.setString(4, t.getNacionalidad());
+            consulta.setInt(5, t.getEdad());
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -57,7 +56,7 @@ public class EntrenadorImplementacion implements DAOentrenador{
             consulta = conexion.prepareStatement("select *from entrenador");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
-                Entrenador entrenador = new Entrenador((Equipo)rs.getObject(1), rs.getString(2), rs.getString(3), rs.getString(4), Integer.parseInt(rs.getString(5)), rs.getString(6));
+                Entrenador entrenador = new Entrenador(rs.getString(1), rs.getString(2), rs.getString(3), Integer.parseInt(rs.getString(4)), rs.getString(5));
                 lista.add(entrenador); 
             }
             

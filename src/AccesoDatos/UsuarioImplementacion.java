@@ -38,7 +38,7 @@ public class UsuarioImplementacion implements DAOUsuario{
             consulta.executeUpdate();
             return true;
         } catch (SQLException e) {
-            System.out.println("uimplement"+e.getMessage());
+            System.out.println(e.getMessage());
         }
         
         return false;
@@ -64,7 +64,7 @@ public class UsuarioImplementacion implements DAOUsuario{
             consulta = conexion.prepareStatement("select *from usuario");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
-                Usuario usuario = new Usuario(rs.getNString(1), rs.getNString(2), rs.getNString(3), rs.getNString(4), rs.getNString(5), Integer.parseInt(rs.getString(6)), rs.getNString(7));
+                Usuario usuario = new Usuario(rs.getNString(1), rs.getNString(2), rs.getNString(3), rs.getNString(4), Integer.parseInt(rs.getNString(5)), rs.getString(6), rs.getNString(7));
                 lista.add(usuario); 
             }
             

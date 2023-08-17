@@ -308,7 +308,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCedulaActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        Jugador jugador = new Jugador(txtDorsal.getText(), txtPosicion.getText(), txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
+        Jugador jugador = new Jugador(txtNombres.getText(), txtApellidos.getText(), txtCedula.getText(), txtNacionalidad.getText(), Integer.parseInt(txtEdad.getText()), txtDorsal.getText(), txtPosicion.getText());
         dao.guardar(jugador);
     }//GEN-LAST:event_btnGuardarActionPerformed
 

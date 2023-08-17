@@ -13,12 +13,8 @@ public class Jugador extends Persona{
     private String dorsal;
     private String posicion;
 
-    public Jugador() {
-        super(null, null, null, 0, null);
-    }
-
-    public Jugador(String dorsal, String posicion, String cedula, String nombres, String apellidos, int edad, String nacionalidad) {
-        super(cedula, nombres, apellidos, edad, nacionalidad);
+        public Jugador(String nombres, String apellidos, String cedula, String nacionalidad, int edad, String dorsal, String posicion) {
+        super(nombres, apellidos,cedula, nacionalidad, edad);
         this.dorsal = dorsal;
         this.posicion = posicion;
     }
