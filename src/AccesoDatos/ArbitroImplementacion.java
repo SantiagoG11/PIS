@@ -26,7 +26,7 @@ public class ArbitroImplementacion implements DAO {
 
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO e_partido (nombres, apellidos, cedula, nacionalidad, edad) VALUES (?, ?, ?, ?, ?)");
+            consulta = conexion.prepareStatement("INSERT INTO arbitro (nombres, apellidos, cedula, nacionalidad, edad) VALUES (?, ?, ?, ?, ?)");
             consulta.setString(1, arbitro.getNombres());
             consulta.setString(2, arbitro.getApellidos());
             consulta.setString(3, arbitro.getCedula());

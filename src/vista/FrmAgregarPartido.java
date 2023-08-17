@@ -6,7 +6,6 @@ package vista;
 
 import AccesoDatos.ArbitroImplementacion;
 import AccesoDatos.EquipoImplementacion;
-import modelo.Arbitro;
 import modelo.Equipo;
 
 /**
@@ -25,6 +24,14 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
     public FrmAgregarPartido(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        dao = new EquipoImplementacion();
+        modelo = new EquipoAbstractTableModel(dao.listarTodos());
+        tablaEquipo.setModel(modelo);
+        tablaEquipo.updateUI();
+        daoA = new ArbitroImplementacion();
+        modeloA = new ArbitroAbstractTableModel(dao.listarTodos());
+        tablaArbitro.setModel(modelo);
+        tablaArbitro.updateUI();
     }
 
     /**
