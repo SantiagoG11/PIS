@@ -4,15 +4,24 @@
  */
 package vista;
 
+import AccesoDatos.ArbitroImplementacion;
+import AccesoDatos.EquipoImplementacion;
+import modelo.Arbitro;
+import modelo.Equipo;
+
 /**
  *
  * @author santi
  */
 public class FrmAgregarPartido extends javax.swing.JDialog {
 
-    /**
-     * Creates new form FrmAgregarPartido1
-     */
+    EquipoImplementacion dao;
+    EquipoAbstractTableModel modelo;
+    static Equipo equipo;
+    ArbitroImplementacion daoA;
+    ArbitroAbstractTableModel modeloA;
+    static Arbitro arbitro;
+    
     public FrmAgregarPartido(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
