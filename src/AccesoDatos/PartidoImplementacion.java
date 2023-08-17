@@ -30,11 +30,11 @@ public class PartidoImplementacion implements DAOPartido{
             conexion = instanciaMsql.conectar();
             consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, albitro_principal, albitro_linea1, albitro_linea2, estado) VALUES (?, ?, ?, ?, ?, ?, ?)");
             consulta.setString(1, String.valueOf(t.getEstadio()));  
-            consulta.setString(0, t.getEquipoLocal().getNombre());
-            consulta.setString(0, t.getEquipoVisitante().getNombre());
-            consulta.setString(0, t.getArbitroPrincipal().getApellidos());
-            consulta.setString(0, t.getArbitroLinea1().getApellidos());
-            consulta.setString(0, t.getArbitroLinea2().getApellidos());
+            consulta.setString(2, t.getEquipoLocal().getNombre());
+            consulta.setString(4, t.getEquipoVisitante().getNombre());
+            consulta.setString(5, t.getArbitroPrincipal().getApellidos());
+            consulta.setString(6, t.getArbitroLinea1().getApellidos());
+            consulta.setString(7, t.getArbitroLinea2().getApellidos());
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
