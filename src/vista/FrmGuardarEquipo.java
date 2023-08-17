@@ -52,6 +52,8 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         previewIcono = new javax.swing.JLabel();
         btGuardar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(587, 428));
@@ -71,11 +73,11 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
 
         txtNombre.setMinimumSize(new java.awt.Dimension(45, 26));
         txtNombre.setPreferredSize(new java.awt.Dimension(68, 22));
-        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 441, -1));
+        jPanel2.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 310, -1));
 
         txtCiudad.setMinimumSize(new java.awt.Dimension(45, 26));
         txtCiudad.setPreferredSize(new java.awt.Dimension(68, 22));
-        jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 441, -1));
+        jPanel2.add(txtCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 310, -1));
 
         jButton1.setText("LOGO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,12 +101,10 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(284, 284, 284)
-                .addComponent(jLabel10)
-                .addContainerGap(273, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(255, 255, 255))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,12 +116,12 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, -1));
 
         jLabel8.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 102, 102));
         jLabel8.setText("EQUIPO");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 70, 20));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 100, 20));
 
         jLabel3.setBackground(new java.awt.Color(51, 51, 51));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -131,7 +131,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
 
         previewIcono.setForeground(new java.awt.Color(153, 153, 153));
         previewIcono.setText("jLabel4");
-        jPanel2.add(previewIcono, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 150, 150));
+        jPanel2.add(previewIcono, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 150, 150));
 
         btGuardar.setText("GUARDAR EQUIPO");
         btGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -141,13 +141,24 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         });
         jPanel2.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
 
+        jButton2.setText("AgregarJugador");
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 140, -1));
+
+        jButton4.setText("AgregarEntrenadorYCampeonato");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 220, -1));
+
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 631, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,6 +237,10 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         equipoImplementacion.guardar(equipo);
     }//GEN-LAST:event_btGuardarActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -267,6 +282,8 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btGuardar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
