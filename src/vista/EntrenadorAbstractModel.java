@@ -20,7 +20,7 @@ public class EntrenadorAbstractModel extends AbstractTableModel {
     public EntrenadorAbstractModel(List<Entrenador> lista){
         super();
         this.lista = lista;
-        this.titleColumns = new String[]{"Cedula", "Nombres", "Apellidos", "Cedula", "Nacionalidad"};
+        this.titleColumns = new String[]{"Nombres", "Apellidos", "Cedula", "Nacionalidad", "Edad"};
     }
     
     public void actualizar(List<Entrenador> lista) {
@@ -50,6 +50,8 @@ public class EntrenadorAbstractModel extends AbstractTableModel {
                 return entrenador.getCedula();
             case 3:
                 return entrenador.getNacionalidad();
+            case 4:
+                return entrenador.getEdad();
         }
         return null;
     }

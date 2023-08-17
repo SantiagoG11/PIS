@@ -58,7 +58,7 @@ public class CampeonatoImplementacion implements DAO{
            ResultSet rs = consulta.executeQuery();
            while(rs.next()){
                Campeonato campeonato = new Campeonato();
-               campeonato.setNombre(rs.getString(1));
+               campeonato.setNombre(rs.getString(2));
                lista.add(campeonato);
            }
         } catch (Exception e) {

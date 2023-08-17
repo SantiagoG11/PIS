@@ -12,11 +12,13 @@ public class Usuario extends Persona{
     private String correo;
     private String password;
 
-    public Usuario(String correo, String password, String cedula, String nombres, String apellidos, int edad, String nacionalidad) {
-        super(cedula, nombres, apellidos, edad, nacionalidad);
+    public Usuario(String nombres, String apellidos, String cedula, String nacionalidad, int edad, String correo, String password) {
+        super(nombres, apellidos, cedula, nacionalidad, edad);
         this.correo = correo;
         this.password = password;
     }
+
+    
 
     /**
      * @return the correo

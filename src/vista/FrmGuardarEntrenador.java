@@ -210,7 +210,7 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombresActionPerformed
 
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
-        Entrenador entrenador = new Entrenador(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
+        Entrenador entrenador = new Entrenador(txtNombres.getText(), txtApellidos.getText(), txtCedula.getText(), txtNacionalidad.getText(), Integer.parseInt(txtEdad.getText()));
         EntrenadorImplementacion ei = new EntrenadorImplementacion();
         ei.guardar(entrenador);
     }//GEN-LAST:event_btCalcularActionPerformed

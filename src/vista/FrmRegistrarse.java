@@ -40,25 +40,24 @@ public final class FrmRegistrarse extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        txt_nombresUsuario = new javax.swing.JTextField();
+        txtNombres = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txt_emailUsuario = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         btt_registrarse = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        txt_cedulaUsuario = new javax.swing.JTextField();
-        txt_apellidosUsuario = new javax.swing.JTextField();
+        txtCedula = new javax.swing.JTextField();
+        txtApellidos = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txt_nacionalidadUsuario = new javax.swing.JTextField();
+        txtNacionalidad = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        txt_edadUsuario = new javax.swing.JTextField();
+        txtEdad = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        txt_contraseniaUsuario = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
         logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(630, 600));
         setResizable(false);
         setSize(new java.awt.Dimension(630, 600));
 
@@ -125,20 +124,20 @@ public final class FrmRegistrarse extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt_nombresUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txt_emailUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCorreo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(txt_apellidosUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
-                                .addComponent(txt_cedulaUsuario, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txt_nacionalidadUsuario, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(txtApellidos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 252, Short.MAX_VALUE)
+                                .addComponent(txtCedula, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtNacionalidad, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel3Layout.createSequentialGroup()
                                     .addGap(12, 12, 12)
                                     .addComponent(jLabel13))
-                                .addComponent(txt_contraseniaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(txt_edadUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGap(12, 12, 12)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,31 +163,31 @@ public final class FrmRegistrarse extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_nombresUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNombres, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_apellidosUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_cedulaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_edadUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_nacionalidadUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_emailUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_contraseniaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btt_registrarse, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -269,10 +268,10 @@ public final class FrmRegistrarse extends javax.swing.JFrame {
         
         Usuario usuario = null;
         
-        if(txt_apellidosUsuario.getText().equals("") || txt_cedulaUsuario.getText().equals("") || txt_contraseniaUsuario.getText().equals("") || txt_edadUsuario.getText().equals("") || txt_emailUsuario.getText().equals("") || txt_nacionalidadUsuario.getText().equals("") || txt_nombresUsuario.getText().equals("")){
+        if(txtApellidos.getText().equals("") || txtCedula.getText().equals("") || txtPassword.getText().equals("") || txtEdad.getText().equals("") || txtCorreo.getText().equals("") || txtNacionalidad.getText().equals("") || txtNombres.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Faltan datos, por favor revise todos los campos");
         }else{
-            usuario = new Usuario(txt_emailUsuario.getText(), txt_contraseniaUsuario.getText(), txt_cedulaUsuario.getText(), txt_nombresUsuario.getText(), txt_apellidosUsuario.getText(), Integer.parseInt(txt_edadUsuario.getText()), txt_nacionalidadUsuario.getText());
+            usuario = new Usuario(txtNombres.getText(), txtApellidos.getText(), txtCedula.getText(), txtNacionalidad.getText(), Integer.parseInt(txtEdad.getText()), txtCorreo.getText(), txtPassword.getText());
         }
         
         
@@ -337,12 +336,12 @@ public final class FrmRegistrarse extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logo;
     private javax.swing.JLabel subtitulo;
-    private javax.swing.JTextField txt_apellidosUsuario;
-    private javax.swing.JTextField txt_cedulaUsuario;
-    private javax.swing.JTextField txt_contraseniaUsuario;
-    private javax.swing.JTextField txt_edadUsuario;
-    private javax.swing.JTextField txt_emailUsuario;
-    private javax.swing.JTextField txt_nacionalidadUsuario;
-    private javax.swing.JTextField txt_nombresUsuario;
+    private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtEdad;
+    private javax.swing.JTextField txtNacionalidad;
+    private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtPassword;
     // End of variables declaration//GEN-END:variables
 }

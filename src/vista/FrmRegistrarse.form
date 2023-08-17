@@ -129,24 +129,24 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="19" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="txt_nombresUsuario" alignment="1" min="-2" pref="252" max="-2" attributes="0"/>
+                              <Component id="txtNombres" alignment="1" min="-2" pref="252" max="-2" attributes="0"/>
                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="txt_emailUsuario" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
+                                      <Component id="txtCorreo" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txt_apellidosUsuario" alignment="0" pref="252" max="32767" attributes="0"/>
-                                          <Component id="txt_cedulaUsuario" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txt_nacionalidadUsuario" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtApellidos" alignment="0" pref="252" max="32767" attributes="0"/>
+                                          <Component id="txtCedula" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txtNacionalidad" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="txt_contraseniaUsuario" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
+                                          <Component id="txtPassword" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="txt_edadUsuario" min="-2" pref="252" max="-2" attributes="0"/>
+                                  <Component id="txtEdad" min="-2" pref="252" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -182,31 +182,31 @@
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_nombresUsuario" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="txtNombres" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_apellidosUsuario" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="txtApellidos" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" pref="14" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_cedulaUsuario" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="txtCedula" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_edadUsuario" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="txtEdad" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_nacionalidadUsuario" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="txtNacionalidad" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel10" min="-2" pref="20" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_emailUsuario" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="txtCorreo" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txt_contraseniaUsuario" min="-2" pref="32" max="-2" attributes="0"/>
+                          <Component id="txtPassword" min="-2" pref="32" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btt_registrarse" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -215,7 +215,7 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JTextField" name="txt_nombresUsuario">
+                <Component class="javax.swing.JTextField" name="txtNombres">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
@@ -228,7 +228,7 @@
                     <Property name="text" type="java.lang.String" value="NOMBRES"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_emailUsuario">
+                <Component class="javax.swing.JTextField" name="txtCorreo">
                 </Component>
                 <Component class="javax.swing.JButton" name="btt_registrarse">
                   <Properties>
@@ -261,9 +261,9 @@
                     <Property name="text" type="java.lang.String" value="APELLIDOS"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_cedulaUsuario">
+                <Component class="javax.swing.JTextField" name="txtCedula">
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_apellidosUsuario">
+                <Component class="javax.swing.JTextField" name="txtApellidos">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
                   <Properties>
@@ -287,7 +287,7 @@
                     <Property name="text" type="java.lang.String" value="E-MAIL"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_nacionalidadUsuario">
+                <Component class="javax.swing.JTextField" name="txtNacionalidad">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
@@ -311,7 +311,7 @@
                     <Property name="text" type="java.lang.String" value="EDAD"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_edadUsuario">
+                <Component class="javax.swing.JTextField" name="txtEdad">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
@@ -324,7 +324,7 @@
                     <Property name="text" type="java.lang.String" value="CONTRASE&#xd1;A"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txt_contraseniaUsuario">
+                <Component class="javax.swing.JTextField" name="txtPassword">
                 </Component>
               </SubComponents>
             </Container>

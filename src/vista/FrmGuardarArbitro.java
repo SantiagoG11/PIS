@@ -260,7 +260,7 @@ public class FrmGuardarArbitro extends javax.swing.JFrame {
             
     
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
-        Arbitro arbitro = new Arbitro(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
+        Arbitro arbitro = new Arbitro(txtNombres.getText(), txtApellidos.getText(), txtCedula.getText(), txtNacionalidad.getText(),  Integer.parseInt(txtEdad.getText()));
         ArbitroImplementacion ai = new ArbitroImplementacion();
         ai.guardar(arbitro);
     }//GEN-LAST:event_btCalcularActionPerformed

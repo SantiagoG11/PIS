@@ -12,8 +12,8 @@ public class Entrenador extends Persona{
     
     private Equipo equipo;
 
-    public Entrenador(String cedula, String nombres, String apellidos, int edad, String nacionalidad) {
-        super(cedula, nombres, apellidos, edad, nacionalidad);
+    public Entrenador(String nombres, String apellidos, String cedula, String nacionalidad, int edad) {
+        super(nombres, apellidos, cedula, nacionalidad, edad);
     }
 
     /**
