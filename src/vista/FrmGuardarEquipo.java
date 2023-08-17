@@ -53,8 +53,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         previewIcono = new javax.swing.JLabel();
         btGuardar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(587, 428));
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -116,7 +114,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
@@ -171,6 +169,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                   }
                }
             );
+            
             this.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();

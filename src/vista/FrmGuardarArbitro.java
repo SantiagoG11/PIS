@@ -234,7 +234,8 @@ public class FrmGuardarArbitro extends javax.swing.JFrame {
         try {
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             addWindowListener(
-               new WindowAdapter() {
+               new WindowAdapter() { 
+                   
                   public void windowClosing(WindowEvent e){
                       confirmarSalida();
                   }
