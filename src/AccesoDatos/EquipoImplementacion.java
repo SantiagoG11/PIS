@@ -32,7 +32,7 @@ public class EquipoImplementacion implements DAOEquipo{
             consulta.setString(1, t.getNombre());
             consulta.setString(2, t.getCiudad());
             consulta.setString(3, t.getEntrenador().getNombres());
-            consulta.setString(4, String.valueOf(t.getCampeonato1().getNombre()));
+            consulta.setString(4, t.getCampeonato1().getNombre());
             consulta.setString(5, t.getCampeonato2().getNombre());
             
             consulta.executeUpdate();

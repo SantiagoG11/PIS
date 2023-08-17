@@ -45,6 +45,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        btGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,7 +104,10 @@ public class FrmCampeonato extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 102, 102));
         jLabel9.setText("F-natics");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+
+        btGuardar.setText("GUARDAR");
+        jPanel1.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,6 +188,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btGuardar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

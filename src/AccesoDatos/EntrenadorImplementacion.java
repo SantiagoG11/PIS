@@ -32,7 +32,7 @@ public class EntrenadorImplementacion implements DAOentrenador{
             consulta.setString(1, t.getCedula());
             consulta.setString(2, t.getNombres());
             consulta.setString(3, t.getApellidos());
-            consulta.setString(4, String.valueOf(t.getEdad()));
+            consulta.setInt(4, t.getEdad());
             consulta.setString(5, t.getNacionalidad());
             
             consulta.executeUpdate();

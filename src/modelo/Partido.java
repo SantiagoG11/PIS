@@ -19,13 +19,20 @@ public class Partido {
     private Arbitro arbitroLinea2;
     private String fecha;
     private E_Partido e_partido;
+
+    public Partido(EnumEstadio estadio, EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, String fecha) {
+        this.estadio = estadio;
+        this.estado = estado;
+        this.equipoLocal = equipoLocal;
+        this.equipoVisitante = equipoVisitante;
+        this.arbitroPrincipal = arbitroPrincipal;
+        this.arbitroLinea1 = arbitroLinea1;
+        this.arbitroLinea2 = arbitroLinea2;
+        this.fecha = fecha;
+    }
     
 
-    public Partido(EnumEstadio estadio, String fecha) {
-        this.estadio = estadio;
-        this.fecha = fecha;
-
-    }
+    
 
     /**
      * @return the estadio
