@@ -4,8 +4,10 @@
  */
 package vista;
 
+import AccesoDatos.PartidoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Partido;
@@ -17,12 +19,17 @@ import modelo.Partido;
 public class FrmGeneral extends javax.swing.JFrame {
 
     static public Partido partido;
+    public List<Partido> listaPartidos;
+    public int indice = 0;
 
     public FrmGeneral() {
         initComponents();
         cerrar();  
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        PartidoImplementacion dao = new PartidoImplementacion();
+        listaPartidos=dao.listarTodos();
+        mostrarPartido(listaPartidos);
     }
 
     /**
@@ -38,15 +45,15 @@ public class FrmGeneral extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         pl = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        logoE2 = new javax.swing.JLabel();
+        logoE1 = new javax.swing.JLabel();
+        estadioP = new javax.swing.JLabel();
+        fechaP = new javax.swing.JLabel();
+        EstadoP = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        nombreE1 = new javax.swing.JLabel();
+        nombreE2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
@@ -75,22 +82,22 @@ public class FrmGeneral extends javax.swing.JFrame {
         pl.setBackground(new java.awt.Color(204, 204, 204));
         pl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Imagen equipo 1");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 180, 150));
+        logoE2.setText("Imagen equipo 1");
+        logoE2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pl.add(logoE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 180, 150));
 
-        jLabel3.setText("Imagen equipo 2");
-        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pl.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 180, 150));
+        logoE1.setText("Imagen equipo 2");
+        logoE1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pl.add(logoE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 180, 150));
 
-        jLabel2.setText("Estadio");
-        pl.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, -1));
+        estadioP.setText("Estadio");
+        pl.add(estadioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, -1));
 
-        jLabel4.setText("Fecha");
-        pl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 80, -1));
+        fechaP.setText("Fecha");
+        pl.add(fechaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 80, -1));
 
-        jLabel5.setText("Estado del partido");
-        pl.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, -1));
+        EstadoP.setText("Estado del partido");
+        pl.add(EstadoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, -1));
 
         jButton4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jButton4.setText(">");
@@ -100,11 +107,11 @@ public class FrmGeneral extends javax.swing.JFrame {
         jButton2.setText("<");
         pl.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 50, 30));
 
-        jLabel6.setText("Nombre equipo");
-        pl.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+        nombreE1.setText("Nombre equipo");
+        pl.add(nombreE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
 
-        jLabel7.setText("Nombre Equipo");
-        pl.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
+        nombreE2.setText("Nombre Equipo");
+        pl.add(nombreE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
 
         jPanel26.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 660, 330));
 
@@ -130,6 +137,14 @@ public class FrmGeneral extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void mostrarPartido(List <Partido> listap){
+        
+        estadioP.setText(String.valueOf(listap.get(indice).getEstadio()));     //listap.get(indice).getEstadio();
+        
+    }
+    
+    
     
     public void cerrar(){
         try {
@@ -205,20 +220,20 @@ public class FrmGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel EstadoP;
+    private javax.swing.JLabel estadioP;
+    private javax.swing.JLabel fechaP;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JLabel logoE1;
+    private javax.swing.JLabel logoE2;
+    private javax.swing.JLabel nombreE1;
+    private javax.swing.JLabel nombreE2;
     private javax.swing.JPanel pl;
     // End of variables declaration//GEN-END:variables
 }

@@ -161,7 +161,7 @@ public class FrmAgregarCampeonatoEntrenador extends javax.swing.JFrame {
     }//GEN-LAST:event_tablaCampeonatoMouseClicked
 
     private void tablaEntrenadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEntrenadorMouseClicked
-        int fila = tablaCampeonato.getSelectedRow();
+        int fila = tablaEntrenador.getSelectedRow();
         dao2 = new EntrenadorImplementacion();
         modelo2 = new EntrenadorAbstractModel(dao.listarTodos());
         entrenador = modelo2.getLista().get(fila);

@@ -101,7 +101,7 @@
             <Property name="useNullLayout" type="boolean" value="false"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="logoE2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Imagen equipo 1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -116,7 +116,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel3">
+            <Component class="javax.swing.JLabel" name="logoE1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Imagen equipo 2"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -131,7 +131,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="estadioP">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estadio"/>
               </Properties>
@@ -141,7 +141,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="fechaP">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Fecha"/>
               </Properties>
@@ -151,7 +151,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
+            <Component class="javax.swing.JLabel" name="EstadoP">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Estado del partido"/>
               </Properties>
@@ -187,7 +187,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="nombreE1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nombre equipo"/>
               </Properties>
@@ -197,7 +197,7 @@
                 </Constraint>
               </Constraints>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
+            <Component class="javax.swing.JLabel" name="nombreE2">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nombre Equipo"/>
               </Properties>
