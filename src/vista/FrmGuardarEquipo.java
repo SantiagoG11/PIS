@@ -53,7 +53,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         previewIcono = new javax.swing.JLabel();
         btGuardar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
@@ -102,12 +101,10 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(284, 284, 284)
-                .addComponent(jLabel10)
-                .addContainerGap(273, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(255, 255, 255))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +116,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, -1));
 
         jLabel8.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 102, 102));
@@ -145,13 +142,15 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jPanel2.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
 
         jButton2.setText("AgregarJugador");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 140, -1));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 140, -1));
 
-        jButton3.setText("AgregarCampeonato");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 400, -1, -1));
-
-        jButton4.setText("AgregarEntrenador");
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 490, 140, -1));
+        jButton4.setText("AgregarEntrenadorYCampeonato");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 220, -1));
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -159,7 +158,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 630, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,6 +237,10 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         equipoImplementacion.guardar(equipo);
     }//GEN-LAST:event_btGuardarActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,7 +283,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     private javax.swing.JButton btGuardar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
