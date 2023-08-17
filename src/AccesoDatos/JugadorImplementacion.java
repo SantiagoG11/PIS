@@ -55,10 +55,10 @@ public class JugadorImplementacion implements DAOJugador{
         Connection conexion = null;
         try {
            conexion = instanciaMsql.conectar();
-           consulta = conexion.prepareStatement("select * from jugador");
+           consulta = conexion.prepareStatement("select *from jugador");
            ResultSet rs = consulta.executeQuery();
            while(rs.next()){
-               Jugador jugador = new Jugador(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), Integer.parseInt(rs.getString(5)), rs.getString(6), rs.getString(7));
+               Jugador jugador = new Jugador(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), Integer.parseInt(rs.getString(6)), rs.getString(7), rs.getString(8));
                lista.add(jugador);
            }
         } catch (Exception e) {

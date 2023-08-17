@@ -12,7 +12,9 @@ import modelo.Persona;
  */
 public class Arbitro extends Persona{
     
-    public Arbitro(String cedula, String nombres, String apellidos, int edad, String nacionalidad) {
+    public Arbitro(String nombres, String apellidos, String cedula, String nacionalidad, int edad) {
         super(nombres, apellidos, cedula, nacionalidad, edad);
-    }   
+    }
+    
+    
 }

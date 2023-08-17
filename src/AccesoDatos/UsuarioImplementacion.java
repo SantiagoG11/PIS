@@ -64,7 +64,7 @@ public class UsuarioImplementacion implements DAOUsuario{
             consulta = conexion.prepareStatement("select *from usuario");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
-                Usuario usuario = new Usuario(rs.getNString(1), rs.getNString(2), rs.getNString(3), rs.getNString(4), Integer.parseInt(rs.getNString(5)), rs.getString(6), rs.getNString(7));
+                Usuario usuario = new Usuario(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), Integer.parseInt(rs.getString(6)), rs.getString(7), rs.getString(8));
                 lista.add(usuario); 
             }
             

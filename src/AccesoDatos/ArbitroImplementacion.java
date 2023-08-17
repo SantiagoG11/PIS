@@ -16,10 +16,10 @@ import modelo.Arbitro;
  *
  * @author Usuario iTC
  */
-public class ArbitroImplementacion implements DAO<Arbitro>{
+public class ArbitroImplementacion implements DAO<Arbitro> {
 
     Conexion instanciaMsql = Conexion.getInstance();
-    
+
     @Override
     public boolean guardar(Arbitro arbitro) {
         PreparedStatement consulta = null;
@@ -55,15 +55,13 @@ public class ArbitroImplementacion implements DAO<Arbitro>{
             consulta = conexion.prepareStatement("select *from arbitro");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
-               Arbitro arbitro = new Arbitro(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5));
-                System.out.println(rs.getString(4));
-               lista.add(arbitro);
+                Arbitro arbitro = new Arbitro(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6));
+                lista.add(arbitro);
             }
 
         } catch (Exception e) {
             System.out.println("Error por " + e.getMessage());
         }
-
         return lista;
     }
 
