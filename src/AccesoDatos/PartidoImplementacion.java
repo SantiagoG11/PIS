@@ -32,14 +32,15 @@ public class PartidoImplementacion implements DAOPartido{
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, albitro_principal, albitro_linea1, albitro_linea2, estado) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, arbitro_principal, arbitro_linea1, arbitro_linea2, estado , fecha) VALUES (?, ?, ?, ?, ?, ?, ?)");
             consulta.setString(0, String.valueOf(t.getEstadio()));  
             consulta.setString(1, t.getEquipoLocal().getNombre());
             consulta.setString(2, t.getEquipoVisitante().getNombre());
             consulta.setString(3, t.getArbitroPrincipal().getApellidos());
             consulta.setString(4, t.getArbitroLinea1().getApellidos());
             consulta.setString(5, t.getArbitroLinea2().getApellidos());
-            consulta.setString(7, String.valueOf(t.getEstado()));
+            consulta.setString(6, String.valueOf(t.getEstado()));
+            consulta.setString(7, t.getFecha());
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -69,14 +70,14 @@ public class PartidoImplementacion implements DAOPartido{
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
                 Partido partido = new Partido(
-        EnumEstadio.valueOf(rs.getString("estadio")),
-        EnumEstadoPartidos.valueOf(rs.getString("estado")), // Cambiar por la columna correcta
-            new Equipo(rs.getString("equipo_local"), null, null),
-            new Equipo(rs.getString("equipo_visitante"), null, null),
-            new Arbitro(null, null, rs.getString("arbitro_principal"), 0, null), // Cambiar por la columna correcta
-            new Arbitro(null, null, rs.getString("arbitro_linea1"), 0, null),
-            new Arbitro(null, null, rs.getString("arbitro_linea2"), 0, null),
-       rs.getString("fecha")
+        EnumEstadio.valueOf(rs.getString(1)),
+        EnumEstadoPartidos.valueOf(rs.getString(8)), // Cambiar por la columna correcta
+            new Equipo(rs.getString(2), null, null),
+            new Equipo(rs.getString(3), null, null),
+            new Arbitro(null, rs.getString(4), null, null, 0), // Cambiar por la columna correcta
+            new Arbitro(null, rs.getString(5), null, null, 0),
+            new Arbitro(null, rs.getString(6), null, null, 0),
+       rs.getString(9)
             );
             lista.add(partido); 
             }
