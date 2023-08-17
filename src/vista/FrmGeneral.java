@@ -77,8 +77,9 @@ public class FrmGeneral extends javax.swing.JFrame {
 
         jLabel1.setText("Imagen equipo 1");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 180, 150));
+        pl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 180, 150));
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/QzGT.gif"))); // NOI18N
         jLabel3.setText("Imagen equipo 2");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pl.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 180, 150));
