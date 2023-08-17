@@ -14,11 +14,11 @@ import modelo.Jugador;
  *
  * @author Usuario iTC
  */
-public class CompetenciaAbstractModel extends AbstractTableModel{
+public class CampeonatoAbstractModel extends AbstractTableModel{
     private String[] titleColumns;
     private List<Campeonato> lista;
 
-    public CompetenciaAbstractModel(List<Campeonato> lista){
+    public CampeonatoAbstractModel(List<Campeonato> lista){
         super();
         this.lista = lista;
         this.titleColumns = new String[]{"Nombre"};

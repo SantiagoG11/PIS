@@ -234,7 +234,8 @@ public class FrmGuardarArbitro extends javax.swing.JFrame {
         try {
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             addWindowListener(
-               new WindowAdapter() {
+               new WindowAdapter() { 
+                   
                   public void windowClosing(WindowEvent e){
                       confirmarSalida();
                   }
@@ -252,7 +253,7 @@ public class FrmGuardarArbitro extends javax.swing.JFrame {
         int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
-            System.exit(0);
+            this.setVisible(false);
         }
     }
             

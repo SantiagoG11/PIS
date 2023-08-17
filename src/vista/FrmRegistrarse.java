@@ -266,7 +266,16 @@ public final class FrmRegistrarse extends javax.swing.JFrame {
 
         // TODO add your handling code here:
         UsuarioImplementacion dao = new UsuarioImplementacion();
-        Usuario usuario = new Usuario(txt_emailUsuario.getText(), txt_contraseniaUsuario.getText(), txt_cedulaUsuario.getText(), txt_nombresUsuario.getText(), txt_apellidosUsuario.getText(), Integer.parseInt(txt_edadUsuario.getText()), txt_nacionalidadUsuario.getText());
+        
+        Usuario usuario = null;
+        
+        if(txt_apellidosUsuario.getText().equals("") || txt_cedulaUsuario.getText().equals("") || txt_contraseniaUsuario.getText().equals("") || txt_edadUsuario.getText().equals("") || txt_emailUsuario.getText().equals("") || txt_nacionalidadUsuario.getText().equals("") || txt_nombresUsuario.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Faltan datos, por favor revise todos los campos");
+        }else{
+            usuario = new Usuario(txt_emailUsuario.getText(), txt_contraseniaUsuario.getText(), txt_cedulaUsuario.getText(), txt_nombresUsuario.getText(), txt_apellidosUsuario.getText(), Integer.parseInt(txt_edadUsuario.getText()), txt_nacionalidadUsuario.getText());
+        }
+        
+        
         //boolean bandera = true;
 //        dao.guardar(usuario);
         if (dao.guardar(usuario)==true) {

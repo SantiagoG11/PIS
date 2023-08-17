@@ -149,7 +149,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel11.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
@@ -282,6 +282,7 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
                       confirmarSalida();
                   }
                }
+                    
             );
             this.setVisible(true);
         } catch (Exception e) {
@@ -295,7 +296,8 @@ public class FrmGuardarJugador extends javax.swing.JFrame {
         int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
-            System.exit(0);
+            this.setVisible(false);
+            
         }
     }
             

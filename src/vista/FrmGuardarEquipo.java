@@ -53,8 +53,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         previewIcono = new javax.swing.JLabel();
         btGuardar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(587, 428));
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -88,7 +86,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 90, -1));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mi proyecto (2) (1).png"))); // NOI18N
 
@@ -116,7 +113,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
@@ -142,7 +139,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                 btGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+        jPanel2.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -171,6 +168,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                   }
                }
             );
+            
             this.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -183,7 +181,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
-            System.exit(0);
+            this.setVisible(false);
         }
     }
             
