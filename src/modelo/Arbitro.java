@@ -16,4 +16,6 @@ public class Arbitro extends Persona{
         super(cedula, nombres, apellidos, edad, nacionalidad);
     }
     
+    
+    
 }
