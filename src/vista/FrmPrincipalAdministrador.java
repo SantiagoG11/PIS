@@ -51,9 +51,6 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         btnGeneral = new javax.swing.JMenu();
         btnPartidos = new javax.swing.JMenuItem();
-        btnClasificaciones = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        btnEstadisticas = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -141,11 +138,10 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
                         .addComponent(subtitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jpnControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnControlLayout.createSequentialGroup()
-                                .addGap(13, 13, 13)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55)
+                                .addGap(63, 63, 63)
                                 .addComponent(jButton2)
-                                .addGap(14, 14, 14))
+                                .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnControlLayout.createSequentialGroup()
                                 .addComponent(logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45))))
@@ -216,21 +212,6 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
 
         jMenuBar1.add(btnGeneral);
 
-        btnClasificaciones.setText("Clasificaciones");
-
-        jMenu1.setText("Equipos");
-        jMenu1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu1ActionPerformed(evt);
-            }
-        });
-        btnClasificaciones.add(jMenu1);
-
-        jMenuBar1.add(btnClasificaciones);
-
-        btnEstadisticas.setText("Estadisticas");
-        jMenuBar1.add(btnEstadisticas);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -292,16 +273,14 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         new FrmInicioSesion().setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
 
         new FrmAcercaDe().setVisible(true);
     }//GEN-LAST:event_jLabel14MouseClicked
-
-    private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        
-    }//GEN-LAST:event_jMenu1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 
@@ -365,8 +344,6 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu btnClasificaciones;
-    private javax.swing.JMenu btnEstadisticas;
     private javax.swing.JMenu btnGeneral;
     private javax.swing.JMenuItem btnPartidos;
     private javax.swing.JButton jButton1;
@@ -377,7 +354,6 @@ public class FrmPrincipalAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jpnControl;

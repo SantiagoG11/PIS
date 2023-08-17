@@ -53,8 +53,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         previewIcono = new javax.swing.JLabel();
         btGuardar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(587, 428));
         jPanel1.setLayout(new java.awt.BorderLayout());
@@ -170,6 +168,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                   }
                }
             );
+            
             this.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
@@ -182,7 +181,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
-            System.exit(0);
+            this.setVisible(false);
         }
     }
             
