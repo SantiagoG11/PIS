@@ -4,17 +4,26 @@
  */
 package vista;
 
+import AccesoDatos.EquipoImplementacion;
+import modelo.Equipo;
+
 /**
  *
  * @author Usuario iTC
  */
 public class FrmAgregarPartido extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmAgregarPartido
-     */
+    EquipoImplementacion dao;
+    EquipoAbstractTableModel modelo;
+    static Equipo equipo;
+    
     public FrmAgregarPartido() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        dao = new EquipoImplementacion();
+        modelo = new EquipoAbstractTableModel(dao.listarTodos());
+        tablaEquipo.setModel(modelo);
+        tablaEquipo.updateUI();
     }
 
     /**
@@ -30,7 +39,7 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaEquipo = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         txtFecha = new javax.swing.JTextField();
         cbEstadio = new javax.swing.JComboBox<>();
@@ -42,7 +51,7 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
         btArbitroLinea2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaArbitro = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -56,7 +65,7 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
 
         jLabel4.setText("AGREGAR PARTIDOS");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaEquipo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -67,7 +76,7 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaEquipo);
 
         jLabel5.setText("EQUIPOS ");
 
@@ -92,7 +101,7 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
 
         jLabel6.setText("ARBITROS");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaArbitro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -103,7 +112,7 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tablaArbitro);
 
         jLabel1.setText("Fecha:");
 
@@ -251,8 +260,8 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tablaArbitro;
+    private javax.swing.JTable tablaEquipo;
     private javax.swing.JTextField txtFecha;
     // End of variables declaration//GEN-END:variables
 }
