@@ -4,6 +4,7 @@
  */
 package pisprogramacion;
 
+import AccesoDatos.JugadorImplementacion;
 import vista.FrmPrincipal;
 
 /**
@@ -16,7 +17,8 @@ public class PISprogramacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new FrmPrincipal().setVisible(true);
+        JugadorImplementacion j1 = new JugadorImplementacion();
+        System.out.println(j1.listarTodos());
     }
     
 }

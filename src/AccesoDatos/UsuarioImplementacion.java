@@ -32,7 +32,7 @@ public class UsuarioImplementacion implements DAOUsuario{
             consulta.setString(2, t.getApellidos());
             consulta.setString(3, t.getCedula());
             consulta.setString(4, t.getNacionalidad());
-            consulta.setString(5, String.valueOf(t.getEdad()));
+            consulta.setInt(5, t.getEdad());
             consulta.setString(6, t.getCorreo());
             consulta.setString(7, t.getPassword());
             
