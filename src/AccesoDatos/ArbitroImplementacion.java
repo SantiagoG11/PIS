@@ -16,10 +16,11 @@ import modelo.Arbitro;
  *
  * @author Usuario iTC
  */
-public class ArbitroImplementacion implements DAO {
+public class ArbitroImplementacion implements DAO<Arbitro>{
 
     Conexion instanciaMsql = Conexion.getInstance();
-
+    
+    @Override
     public boolean guardar(Arbitro arbitro) {
         PreparedStatement consulta = null;
         Connection conexion = null;
@@ -42,11 +43,6 @@ public class ArbitroImplementacion implements DAO {
 
     @Override
     public boolean eliminar(String cedula) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public boolean modificar(Object t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -76,7 +72,7 @@ public class ArbitroImplementacion implements DAO {
     }
 
     @Override
-    public boolean guardar(Object t) {
+    public boolean modificar(Arbitro t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 

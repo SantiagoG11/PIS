@@ -34,7 +34,6 @@ public class EntrenadorImplementacion implements DAOentrenador{
             consulta.setString(3, t.getApellidos());
             consulta.setInt(4, t.getEdad());
             consulta.setString(5, t.getNacionalidad());
-            
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

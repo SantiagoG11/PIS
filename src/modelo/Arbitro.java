@@ -14,8 +14,5 @@ public class Arbitro extends Persona{
     
     public Arbitro(String cedula, String nombres, String apellidos, int edad, String nacionalidad) {
         super(cedula, nombres, apellidos, edad, nacionalidad);
-    }
-    
-    
-    
+    }   
 }

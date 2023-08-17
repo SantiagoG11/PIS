@@ -4,6 +4,7 @@
  */
 package vista;
 
+import AccesoDatos.EntrenadorImplementacion;
 import AccesoDatos.EquipoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -246,7 +247,8 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
 
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
         Entrenador entrenador = new Entrenador(equipo, txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
-        dao.guardar(equipo);
+        EntrenadorImplementacion ei = new EntrenadorImplementacion();
+        ei.guardar(entrenador);
     }//GEN-LAST:event_btCalcularActionPerformed
 
     private void tablaEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipoMouseClicked

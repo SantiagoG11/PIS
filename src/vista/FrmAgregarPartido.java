@@ -6,6 +6,11 @@ package vista;
 
 import AccesoDatos.ArbitroImplementacion;
 import AccesoDatos.EquipoImplementacion;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import modelo.Arbitro;
 import modelo.Equipo;
 
 /**
@@ -29,11 +34,37 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         tablaEquipo.setModel(modelo);
         tablaEquipo.updateUI();
         daoA = new ArbitroImplementacion();
-        modeloA = new ArbitroAbstractTableModel(dao.listarTodos());
+        modeloA = new ArbitroAbstractTableModel(daoA.listarTodos());
         tablaArbitro.setModel(modelo);
         tablaArbitro.updateUI();
+        cerrar();
     }
-
+    
+    public void cerrar(){
+        try {
+            this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            addWindowListener(
+               new WindowAdapter() {
+                  public void windowClosing(WindowEvent e){
+                      confirmarSalida();
+                  }
+               }
+            );
+            this.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    public void confirmarSalida(){
+        int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
+        if (valor == JOptionPane.YES_OPTION) {
+            //se puede ingresar un mensaje de agradecimiento
+            System.exit(0);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,6 +109,11 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3"
             }
         ));
+        tablaEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaEquipoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tablaEquipo);
 
         jLabel5.setText("EQUIPOS ");
@@ -229,6 +265,13 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
     private void btArbitroPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btArbitroPrincActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btArbitroPrincActionPerformed
+
+    private void tablaEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipoMouseClicked
+        int fila = tablaEquipo.getSelectedRow();
+        dao = new EquipoImplementacion();
+        modelo = new EquipoAbstractTableModel(dao.listarTodos());
+        equipo = modelo.getListaEquipos().get(fila);
+    }//GEN-LAST:event_tablaEquipoMouseClicked
 
     /**
      * @param args the command line arguments

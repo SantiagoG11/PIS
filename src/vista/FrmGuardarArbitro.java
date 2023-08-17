@@ -4,6 +4,7 @@
  */
 package vista;
 
+import AccesoDatos.ArbitroImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
@@ -19,7 +20,6 @@ import modelo.Arbitro;
 public class FrmGuardarArbitro extends javax.swing.JFrame {
 
     /**
-     * Creates new form DirectorTecnico
      */
     public FrmGuardarArbitro() {
         initComponents();
@@ -260,7 +260,8 @@ public class FrmGuardarArbitro extends javax.swing.JFrame {
     
     private void btCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCalcularActionPerformed
         Arbitro arbitro = new Arbitro(txtCedula.getText(), txtNombres.getText(), txtApellidos.getText(), Integer.parseInt(txtEdad.getText()), txtNacionalidad.getText());
-        
+        ArbitroImplementacion ai = new ArbitroImplementacion();
+        ai.guardar(arbitro);
     }//GEN-LAST:event_btCalcularActionPerformed
 
     private void txtCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaActionPerformed

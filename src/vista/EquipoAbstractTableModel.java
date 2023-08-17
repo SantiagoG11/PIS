@@ -47,7 +47,7 @@ public EquipoAbstractTableModel(List<Equipo> listaEquipos){
             case 1:
                 return equipo.getCiudad();
             case 2:
-                return equipo.getEntrenador(); 
+                return equipo.getEntrenador().getNombres(); 
         }
         return null;
     }
