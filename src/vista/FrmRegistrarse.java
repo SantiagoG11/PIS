@@ -267,9 +267,9 @@ public final class FrmRegistrarse extends javax.swing.JFrame {
         // TODO add your handling code here:
         UsuarioImplementacion dao = new UsuarioImplementacion();
         Usuario usuario = new Usuario(txt_emailUsuario.getText(), txt_contraseniaUsuario.getText(), txt_cedulaUsuario.getText(), txt_nombresUsuario.getText(), txt_apellidosUsuario.getText(), Integer.parseInt(txt_edadUsuario.getText()), txt_nacionalidadUsuario.getText());
-        boolean bandera = true;
-        bandera = dao.guardar(usuario);
-        if (bandera == true) {
+        //boolean bandera = true;
+//        dao.guardar(usuario);
+        if (dao.guardar(usuario)==true) {
             new FrmInicioSesion().setVisible(true);
             this.setVisible(false);
         }else{

@@ -4,84 +4,19 @@
  */
 package vista;
 
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import modelo.Partido;
-
 /**
  *
- * @author Usuario iTC
+ * @author ixcd2
  */
 public class FrmGeneral extends javax.swing.JFrame {
 
-    static private int partidoActual = 0;
-    private PartidoPanel[] partidos;
-    static public Partido partido;
-    
     /**
      * Creates new form FrmGeneral
      */
     public FrmGeneral() {
         initComponents();
-          agregarPartidos();
-          this.setLocationRelativeTo(null);
-        mostrarPartido(partidoActual); // Mostrar el primer partido al iniciar
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
-    private void agregarPartidos() {
-// Crear algunas imágenes de ejemplo (reemplaza con tus propias imágenes)
-        ImageIcon imagenEquipo1 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\1..jpg");
-        ImageIcon imagenEquipo2 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\2..jpg");
-        ImageIcon imagenEquipo3 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\3..jpg");
-        ImageIcon imagenEquipo4 = new ImageIcon("C:\\Users\\Usuario iTC\\Downloads\\4..jpg");
-
-        // Crear un arreglo de paneles de partido
-        partidos = new PartidoPanel[5]; // Cambia 5 por el número de partidos que deseas mostrar
-
-        for (int i = 0; i < partidos.length; i++) {
-            partidos[0] = new PartidoPanel(this,imagenEquipo1, imagenEquipo2, "3-1", "En juego", "Fecha: 2023-07-20");
-            partidos[1] = new PartidoPanel(this,imagenEquipo3, imagenEquipo4, "2-1", "Finalizado", "Fecha: 2023-08-20");
-
-        }
-        
-        
-        // Crear un Layout para el contenedor de los paneles de partido
-    BoxLayout contenedorLayout = new BoxLayout(pl, BoxLayout.Y_AXIS);
-    pl.setLayout(contenedorLayout);
-//
-//    // Crear varios paneles de partido y agregarlos al contenedor
-//    for (int i = 0; i < 5; i++) { // Cambia 5 por el número de partidos que deseas mostrar
-//        PartidoPanel partidoPanel = new PartidoPanel(imagenEquipo1, imagenEquipo2, "3-1", "En juego", "Fecha: 2023-07-20");
-//        jPanel3.add(partidoPanel);
-//    }
-    }
-
-    private void mostrarPartido(int indice) {
-        pl.removeAll();
-        pl.add(partidos[indice]);
-        pl.revalidate();
-        pl.repaint();
-    }    
-    
-    public void mostrarPartidoAnterior() {
-        if (partidoActual > 0) {
-            partidoActual--;
-            mostrarPartido(partidoActual);
-        }
-    }
-
-    public void mostrarPartidoSiguiente() {
-        if (partidoActual < partidos.length - 1) {
-            partidoActual++;
-            mostrarPartido(partidoActual);
-        }
-    }
-    
-    public Partido getPartido(int indice){
-        return partido = new Partido(partidos[indice]);
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -91,68 +26,62 @@ public class FrmGeneral extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel26 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        pl = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        popupMenu1 = new java.awt.PopupMenu();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jPanel1 = new javax.swing.JPanel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+
+        popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel26.setBackground(new java.awt.Color(255, 102, 102));
-        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("GENERAL");
-        jPanel26.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 110, 20));
-
-        pl.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout plLayout = new javax.swing.GroupLayout(pl);
-        pl.setLayout(plLayout);
-        plLayout.setHorizontalGroup(
-            plLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1150, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 630, Short.MAX_VALUE)
         );
-        plLayout.setVerticalGroup(
-            plLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 579, Short.MAX_VALUE)
         );
 
-        jPanel26.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 1150, 380));
+        jMenu1.setText("Administrador");
 
-        jButton1.setText("DETALLES DEL PARTIDO");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel26.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
+        jMenuItem1.setText("jMenuItem1");
+        jMenu1.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("General");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Administrador");
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       new FrmDetallesPartido().setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -176,9 +105,6 @@ public class FrmGeneral extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -189,9 +115,13 @@ public class FrmGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel pl;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
 }

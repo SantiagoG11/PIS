@@ -215,11 +215,10 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-<<<<<<< HEAD
 
-        
-=======
->>>>>>> 3f1f047cf50cdec0732761af70ef472679654ba6
+
+
+
         UsuarioImplementacion dao = new UsuarioImplementacion();
         
         String cuentaIngresada = "Isaac";
@@ -233,28 +232,24 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
 
         if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
             new FrmPrincipalAdministrador().setVisible(true);
+            this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> 3f1f047cf50cdec0732761af70ef472679654ba6
         
         List<Usuario> listaUsuarios = dao.listarTodos();
         
         for (Usuario usuario : listaUsuarios) {
             if (txt_nombreCuenta.getText().equals(usuario.getNombres()) && txt_contrasenia.getText().equals(usuario.getPassword())) {
                 new FrmPrincipal1().setVisible(true);
+                this.setVisible(false);
             }else {
             JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
             }
         
         }
-<<<<<<< HEAD
-      
-=======
->>>>>>> 3f1f047cf50cdec0732761af70ef472679654ba6
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
