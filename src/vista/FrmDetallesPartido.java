@@ -8,16 +8,20 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.Partido;
 
 /**
  *
  * @author Santiagod
  */
 public class FrmDetallesPartido extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FrmDetallesPartido
-     */
+    
+    private Partido partidoD;
+    
+    public void cargarPartido(Partido partido){
+        this.partidoD = partido;
+    }
+    
     public FrmDetallesPartido() {
         initComponents();
         cerrar();
