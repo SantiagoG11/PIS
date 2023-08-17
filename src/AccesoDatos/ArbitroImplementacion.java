@@ -56,8 +56,8 @@ public class ArbitroImplementacion implements DAO<Arbitro>{
             consulta = conexion.prepareStatement("select *from arbitro");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
-                //Partido partido = new Partido(EnumEstadio.valueOf(rs.getNString(1)), EnumEstadoPartidos.FINALIZADO, new Equipo(rs.getNString(3), null, null), new Equipo(rs.getNString(4), null, null), new Equipo(rs.getNString(5), null, null), new Albitro(null, null, rs.getNString(6), 0, null), new Albitro(null, null, rs.getNString(6), 0, null), new Albitro(null, null, rs.getNString(6), 0, null), rs.getNString(9));
-                //lista.add(partido); 
+               Arbitro arbitro = new Arbitro(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5));
+               lista.add(arbitro);
             }
 
         } catch (Exception e) {
