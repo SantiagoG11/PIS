@@ -27,7 +27,7 @@ public class JugadorImplementacion implements DAOJugador{
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO jugador (nombres, apellidos, cedula, nacionalidad, edad, dorsal, posicion) VALUES ('?', '?', '?', '?', ?, '?', '?')");
+            consulta = conexion.prepareStatement("INSERT INTO jugador (nombres, apellidos, cedula, nacionalidad, edad, dorsal, posicion) VALUES (?, ?, ?, ?, ?, ?, ?)");
             consulta.setString(1, jugador.getCedula());
             consulta.setString(2, jugador.getNombres());
             consulta.setString(3, jugador.getApellidos());
