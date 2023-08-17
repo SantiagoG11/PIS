@@ -7,30 +7,30 @@ package vista;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import modelo.Equipo;
-import modelo.Jugador;
+import modelo.Partido;
 
 /**
  *
  * @author Usuario iTC
  */
-public class EquipoAbstractModel extends AbstractTableModel{
+public class PartidoAbstractModel extends AbstractTableModel{
     private String[] titleColumns;
-    private List<Equipo> listaEquipos;
+    private List<Partido> listaPartidos;
 
-public EquipoAbstractModel(List<Equipo> listaEquipos){
+public PartidoAbstractModel(List<Partido> listaPartidos){
         super();
-        this.listaEquipos = listaEquipos;
-        this.titleColumns = new String[]{"Nombre", "Ciudad", "Entrenador"};
+        this.listaPartidos = listaPartidos;
+        this.titleColumns = new String[]{"Fecha", "Estadio", "Estado"};
     }
     
- public void actualizar(List<Equipo> listaEquipos) {
-     this.setListaEquipos(listaEquipos);
+ public void actualizar(List<Partido> listaPartidos) {
+     this.setListaPartidos(listaPartidos);
         fireTableDataChanged();
-    }
+    }   
     
-    @Override
+   @Override
     public int getRowCount() {
-        return getListaEquipos().size();
+        return getListaPartidos().size();
 
     }
 
@@ -41,14 +41,14 @@ public EquipoAbstractModel(List<Equipo> listaEquipos){
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Equipo equipo = getListaEquipos().get(rowIndex);
+        Partido partido = getListaPartidos().get(rowIndex);
         switch(columnIndex){
             case 0:
-                return equipo.getNombre();
+                return partido.getFecha();
             case 1:
-                return equipo.getCiudad();
+                return partido.getEstadio();
             case 2:
-                return equipo.getEntrenador(); 
+                return partido.getEstado(); 
         }
         return null;
     }
@@ -68,17 +68,17 @@ public EquipoAbstractModel(List<Equipo> listaEquipos){
     }
 
     /**
-     * @return the listaEquipos
+     * @return the listaPartidos
      */
-    public List<Equipo> getListaEquipos() {
-        return listaEquipos;
+    public List<Partido> getListaPartidos() {
+        return listaPartidos;
     }
 
     /**
-     * @param listaEquipos the listaEquipos to set
+     * @param listaPartidos the listaPartidos to set
      */
-    public void setListaEquipos(List<Equipo> listaEquipos) {
-        this.listaEquipos = listaEquipos;
+    public void setListaPartidos(List<Partido> listaPartidos) {
+        this.listaPartidos = listaPartidos;
     }
     
 }

@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import modelo.Equipo;
 
 /**
  *
@@ -57,7 +58,7 @@ public class EntrenadorImplementacion implements DAOentrenador{
             consulta = conexion.prepareStatement("select *from entrenador");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
-                Entrenador entrenador = new Entrenador(rs.getString(1), rs.getString(2), rs.getString(3), Integer.parseInt(rs.getString(4)), rs.getString(5));
+                Entrenador entrenador = new Entrenador((Equipo)rs.getObject(1), rs.getString(2), rs.getString(3), rs.getString(4), Integer.parseInt(rs.getString(5)), rs.getString(6));
                 lista.add(entrenador); 
             }
             

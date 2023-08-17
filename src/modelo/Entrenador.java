@@ -11,9 +11,10 @@ package modelo;
 public class Entrenador extends Persona{
     
     private Equipo equipo;
-    
-    public Entrenador(String cedula, String nombres, String apellidos, int edad, String nacionalidad) {
+
+    public Entrenador(Equipo equipo, String cedula, String nombres, String apellidos, int edad, String nacionalidad) {
         super(cedula, nombres, apellidos, edad, nacionalidad);
+        this.equipo = equipo;
     }
 
     /**

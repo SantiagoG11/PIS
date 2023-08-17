@@ -4,17 +4,26 @@
  */
 package vista;
 
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import modelo.Partido;
+
 /**
  *
- * @author ixcd2
+ * @author Usuario iTC
  */
 public class FrmGeneral extends javax.swing.JFrame {
 
+    static public Partido partido;
+    
     /**
      * Creates new form FrmGeneral
      */
     public FrmGeneral() {
         initComponents();
+          this.setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -26,62 +35,109 @@ public class FrmGeneral extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        popupMenu1 = new java.awt.PopupMenu();
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        jPanel1 = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-
-        popupMenu1.setLabel("popupMenu1");
+        jPanel26 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        pl = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 630, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 579, Short.MAX_VALUE)
-        );
+        jPanel26.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jMenu1.setText("Administrador");
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 51, 51));
+        jButton1.setText("DETALLES DEL PARTIDO");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel26.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
 
-        jMenuItem1.setText("jMenuItem1");
-        jMenu1.add(jMenuItem1);
+        jLabel10.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setText("GENERAL");
+        jPanel26.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 110, 20));
 
-        jMenuBar1.add(jMenu1);
+        pl.setBackground(new java.awt.Color(204, 204, 204));
+        pl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jMenu2.setText("General");
-        jMenuBar1.add(jMenu2);
+        jLabel1.setText("Imagen equipo 1");
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 180, 150));
 
-        jMenu3.setText("Administrador");
-        jMenuBar1.add(jMenu3);
+        jLabel3.setText("Imagen equipo 2");
+        jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pl.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 180, 150));
 
-        setJMenuBar(jMenuBar1);
+        jLabel2.setText("Estadio");
+        pl.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, -1));
+
+        jLabel4.setText("Fecha");
+        pl.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 80, -1));
+
+        jLabel5.setText("Estado del partido");
+        pl.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, -1));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flechaiz.png"))); // NOI18N
+        pl.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 40, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flechad.png"))); // NOI18N
+        pl.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 40, -1));
+
+        jLabel6.setText("Nombre equipo");
+        pl.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
+
+        jLabel7.setText("Nombre Equipo");
+        pl.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
+
+        jPanel26.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 660, 330));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mi proyecto (2) (1).png"))); // NOI18N
+        jPanel26.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, -1, -1));
+
+        jLabel11.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel11.setText("F-natics");
+        jPanel26.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       new FrmDetallesPartido().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -105,6 +161,9 @@ public class FrmGeneral extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmGeneral.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -115,13 +174,20 @@ public class FrmGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private java.awt.PopupMenu popupMenu1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel pl;
     // End of variables declaration//GEN-END:variables
 }

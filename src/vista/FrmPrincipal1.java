@@ -99,7 +99,6 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
                 .addGap(13, 61, Short.MAX_VALUE)
                 .addGroup(jpnControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
                     .addGroup(jpnControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnControlLayout.createSequentialGroup()
                             .addComponent(jButton2)
@@ -113,6 +112,10 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnControlLayout.createSequentialGroup()
                             .addComponent(jLabel14)
                             .addGap(86, 86, 86)))))
+            .addGroup(jpnControlLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jpnControlLayout.setVerticalGroup(
             jpnControlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +207,7 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        dispose();
+        this.dispose();
         new FrmInicioSesion().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -213,7 +216,7 @@ public class FrmPrincipal1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
-        
+    
     }//GEN-LAST:event_jMenu1ActionPerformed
 
     /**

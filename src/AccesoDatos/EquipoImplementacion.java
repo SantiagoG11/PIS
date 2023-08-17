@@ -11,8 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import modelo.Campeonato;
-import modelo.Entrenador;
 import modelo.Equipo;
 
 /**
@@ -60,8 +58,8 @@ public class EquipoImplementacion implements DAOEquipo{
             consulta = conexion.prepareStatement("select *from equipo");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
-                //Equipo equipo = new Equipo(rs.getString(1), rs.getString(2), (Entrenador)rs.getObject(3),(Campeonato)rs.getObject(4), (Campeonato)rs.getObject(5));
-                lista.add(null); 
+                Equipo equipo = new Equipo(rs.getString(1), rs.getString(2), rs.getString(3));
+                lista.add(equipo); 
             }
             
         } catch (Exception e) {

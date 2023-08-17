@@ -65,7 +65,7 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 102, 102));
         jLabel4.setText("F-natics");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -216,9 +216,6 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-
-
-
         UsuarioImplementacion dao = new UsuarioImplementacion();
         
         String cuentaIngresada = "Isaac";
@@ -232,24 +229,20 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
 
         if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
             new FrmPrincipalAdministrador().setVisible(true);
-            this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
         
         List<Usuario> listaUsuarios = dao.listarTodos();
         
         for (Usuario usuario : listaUsuarios) {
             if (txt_nombreCuenta.getText().equals(usuario.getNombres()) && txt_contrasenia.getText().equals(usuario.getPassword())) {
                 new FrmPrincipal1().setVisible(true);
-                this.setVisible(false);
             }else {
             JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
             }
         
         }
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
