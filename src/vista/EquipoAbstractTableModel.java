@@ -9,28 +9,21 @@ import javax.swing.table.AbstractTableModel;
 import modelo.Equipo;
 
 /**
- *
- * @author Usuario iTC
+ * AbstractTableModel para la tabla de equipos.
  */
-public class EquipoAbstractTableModel extends AbstractTableModel{
-    private String[] titleColumns;
+public class EquipoAbstractTableModel extends AbstractTableModel {
     private List<Equipo> listaEquipos;
+    private String[] titleColumns;
 
-public EquipoAbstractTableModel(List<Equipo> listaEquipos){
+    public EquipoAbstractTableModel(List<Equipo> listaEquipos) {
         super();
         this.listaEquipos = listaEquipos;
         this.titleColumns = new String[]{"Nombre", "Ciudad", "Entrenador"};
     }
-    
- public void actualizar(List<Equipo> listaEquipos) {
-     this.setListaEquipos(listaEquipos);
-        fireTableDataChanged();
-    }
-    
+
     @Override
     public int getRowCount() {
-        return getListaEquipos().size();
-
+        return listaEquipos.size();
     }
 
     @Override
@@ -40,16 +33,40 @@ public EquipoAbstractTableModel(List<Equipo> listaEquipos){
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Equipo equipo = getListaEquipos().get(rowIndex);
-        switch(columnIndex){
+        Equipo equipo = listaEquipos.get(rowIndex);
+        switch (columnIndex) {
             case 0:
                 return equipo.getNombre();
             case 1:
                 return equipo.getCiudad();
             case 2:
-                return equipo.getEntrenador().getNombres(); 
+                return equipo.getEntrenador().getNombres();
         }
         return null;
+    }
+
+    @Override
+    public String getColumnName(int column) {
+        return titleColumns[column];
+    }
+
+    public void actualizar(List<Equipo> listaEquipos) {
+        this.listaEquipos = listaEquipos;
+        fireTableDataChanged();
+    }
+
+    /**
+     * @return the listaEquipos
+     */
+    public List<Equipo> getListaEquipos() {
+        return listaEquipos;
+    }
+
+    /**
+     * @param listaEquipos the listaEquipos to set
+     */
+    public void setListaEquipos(List<Equipo> listaEquipos) {
+        this.listaEquipos = listaEquipos;
     }
 
     /**
@@ -66,18 +83,7 @@ public EquipoAbstractTableModel(List<Equipo> listaEquipos){
         this.titleColumns = titleColumns;
     }
 
-    /**
-     * @return the listaEquipos
-     */
-    public List<Equipo> getListaEquipos() {
-        return listaEquipos;
+    public Equipo getEquipo(int fila) {
+        return listaEquipos.get(fila);
     }
-
-    /**
-     * @param listaEquipos the listaEquipos to set
-     */
-    public void setListaEquipos(List<Equipo> listaEquipos) {
-        this.listaEquipos = listaEquipos;
-    }
-    
 }
