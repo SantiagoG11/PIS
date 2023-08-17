@@ -22,6 +22,7 @@ import modelo.Equipo;
 public class FrmGuardarEquipo extends javax.swing.JFrame {
     
     String imagePath;
+    static Equipo equipo;
     
     public FrmGuardarEquipo() {
         initComponents();
@@ -52,8 +53,8 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         previewIcono = new javax.swing.JLabel();
         btGuardar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btAgregarJugador = new javax.swing.JButton();
+        btEntreCampeo = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(587, 428));
@@ -141,21 +142,21 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         });
         jPanel2.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
 
-        jButton2.setText("AgregarJugador");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btAgregarJugador.setText("Agregar Jugador");
+        btAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btAgregarJugadorActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 140, -1));
+        jPanel2.add(btAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 140, -1));
 
-        jButton4.setText("AgregarEntrenadorYCampeonato");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btEntreCampeo.setText("AgregarEntrenadorYCampeonato");
+        btEntreCampeo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btEntreCampeoActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 220, -1));
+        jPanel2.add(btEntreCampeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 220, -1));
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -242,13 +243,13 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         equipoImplementacion.guardar(equipo);
     }//GEN-LAST:event_btGuardarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btEntreCampeoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntreCampeoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btEntreCampeoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarJugadorActionPerformed
         new FrmListaJugadores().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btAgregarJugadorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,10 +290,10 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAgregarJugador;
+    private javax.swing.JButton btEntreCampeo;
     private javax.swing.JButton btGuardar;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
