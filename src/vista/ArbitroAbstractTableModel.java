@@ -13,33 +13,32 @@ import modelo.Arbitro;
  * @author Santiagod
  */
 public class ArbitroAbstractTableModel extends AbstractTableModel {
-    private String[] titleColumns;
-    private List<Arbitro> lista;
-
     public ArbitroAbstractTableModel(List<Arbitro> lista){
         super();
         this.lista = lista;
-        this.titleColumns = new String[]{"Apellido"};
+        this.titleColumns = new String[]{"Apellidos", "Nacionalidad"};
     }
     
-    @Override
-    public int getRowCount() {
-       return getLista().size();
+    private List<Arbitro> lista;
+    private String[] titleColumns;
+    
+     public void actualizar(List<Arbitro> lista) {
+        this.lista = lista;
+        fireTableDataChanged();
+    }
+    
+    /**
+     * @return the lista
+     */
+    public List<Arbitro> getLista() {
+        return lista;
     }
 
-    @Override
-    public int getColumnCount() {
-        return 1;
-    }
-
-    @Override
-    public Object getValueAt(int rowIndex, int columnIndex) {
-        Arbitro arbitro = getLista().get(rowIndex);
-        switch(columnIndex){
-            case 0:
-                return arbitro.getApellidos();    
-        }
-        return null;
+    /**
+     * @param lista the lista to set
+     */
+    public void setLista(List<Arbitro> lista) {
+        this.lista = lista;
     }
 
     /**
@@ -55,18 +54,35 @@ public class ArbitroAbstractTableModel extends AbstractTableModel {
     public void setTitleColumns(String[] titleColumns) {
         this.titleColumns = titleColumns;
     }
-
-    /**
-     * @return the lista
-     */
-    public List<Arbitro> getLista() {
-        return lista;
+    
+    
+    @Override
+    public int getRowCount() {
+        return getLista().size();
     }
 
-    /**
-     * @param lista the lista to set
-     */
-    public void setLista(List<Arbitro> lista) {
-        this.lista = lista;
+    @Override
+    public int getColumnCount() {
+        return 2;
+    }
+
+    @Override
+    public Object getValueAt(int rowIndex, int columnIndex) {
+        Arbitro arbitro = getLista().get(rowIndex);
+        switch(columnIndex){
+            case 0:
+                return arbitro.getApellidos();
+            case 1:
+                return arbitro.getNacionalidad();
+        }
+        return null;
+    }
+    @Override
+    public String getColumnName(int columns){
+        return getTitleColumns()[columns];
+    }
+    
+    public Arbitro getArbitro(int fila){
+        return lista.get(fila);
     }
 }

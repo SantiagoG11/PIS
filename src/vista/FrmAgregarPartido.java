@@ -35,7 +35,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         tablaEquipo.updateUI();
         daoA = new ArbitroImplementacion();
         modeloA = new ArbitroAbstractTableModel(daoA.listarTodos());
-        tablaArbitro.setModel(modelo);
+        tablaArbitro.setModel(modeloA);
         tablaArbitro.updateUI();
         cerrar();
     }
