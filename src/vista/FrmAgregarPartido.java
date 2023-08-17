@@ -1,34 +1,21 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package vista;
 
-import AccesoDatos.ArbitroImplementacion;
-import AccesoDatos.EquipoImplementacion;
-import modelo.Arbitro;
-import modelo.Equipo;
-
 /**
  *
- * @author Usuario iTC
+ * @author santi
  */
-public class FrmAgregarPartido extends javax.swing.JFrame {
+public class FrmAgregarPartido extends javax.swing.JDialog {
 
-    EquipoImplementacion dao;
-    EquipoAbstractTableModel modelo;
-    static Equipo equipo;
-    ArbitroImplementacion daoA;
-    ArbitroAbstractTableModel modelo;
-    static Arbitro arbitro;
-    
-    public FrmAgregarPartido() {
+    /**
+     * Creates new form FrmAgregarPartido1
+     */
+    public FrmAgregarPartido(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
-        this.setLocationRelativeTo(null);
-        dao = new EquipoImplementacion();
-        modelo = new EquipoAbstractTableModel(dao.listarTodos());
-        tablaEquipo.setModel(modelo);
-        tablaEquipo.updateUI();
     }
 
     /**
@@ -40,7 +27,6 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox2 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -59,12 +45,7 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
         tablaArbitro = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 51, 51));
-        setForeground(new java.awt.Color(51, 51, 51));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -87,16 +68,7 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
 
         cbEstadio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPLIMPICO LUZHNIK", "IGNAL IDUNA_PARK", "STADE FRANCE", "SANTIAGO BERNABEU", "CAMP NOU" }));
 
-<<<<<<< HEAD
-        jButton1.setText("GUARDAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-=======
         btGuadar.setText("GUARDAR");
->>>>>>> ff10fe3b866702be9b376c99439355a1a081d928
 
         btEquipoLocal.setText("AGREGAR EQUIPO LOCAL");
 
@@ -143,17 +115,6 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel5)))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(225, 225, 225))
@@ -162,7 +123,6 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(cbEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(209, 209, 209))))
->>>>>>> ff10fe3b866702be9b376c99439355a1a081d928
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -226,7 +186,26 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
                 .addContainerGap(84, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 520));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 590, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -234,10 +213,6 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
     private void btArbitroPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btArbitroPrincActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btArbitroPrincActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -265,11 +240,19 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FrmAgregarPartido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmAgregarPartido().setVisible(true);
+                FrmAgregarPartido dialog = new FrmAgregarPartido(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
@@ -282,7 +265,6 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
     private javax.swing.JButton btEquipoVisitante;
     private javax.swing.JButton btGuadar;
     private javax.swing.JComboBox<String> cbEstadio;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

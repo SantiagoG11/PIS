@@ -4,12 +4,14 @@
  */
 package vista;
 
+import AccesoDatos.ArbitroImplementacion;
+import AccesoDatos.EquipoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.Arbitro;
+import modelo.Equipo;
 import modelo.Partido;
 
 /**
@@ -20,9 +22,13 @@ public class FrmGeneral extends javax.swing.JFrame {
 
     static public Partido partido;
     
-    /**
-     * Creates new form FrmGeneral
-     */
+    EquipoImplementacion dao;
+    EquipoAbstractTableModel modelo;
+    static Equipo equipo;
+    ArbitroImplementacion daoA;
+    ArbitroAbstractTableModel modeloA;
+    static Arbitro arbitro;
+    
     public FrmGeneral() {
         initComponents();
         cerrar();
