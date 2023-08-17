@@ -4,17 +4,28 @@
  */
 package vista;
 
+import AccesoDatos.JugadorImplementacion;
+import modelo.Jugador;
+
+
 /**
  *
  * @author Usuario iTC
- */
+ */  
 public class FrmListaJugadores extends javax.swing.JFrame {
-
+    JugadorImplementacion dao;
+    JugadoresAbstractTableModel modelo;
+    static Jugador jugador;
     /**
      * Creates new form FrmAgregarJugador
      */
     public FrmListaJugadores() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        dao = new JugadorImplementacion();   
+        modelo = new JugadoresAbstractTableModel(dao.listarTodos());
+        tablaListaJugadores.setModel(modelo);
+        tablaListaJugadores.updateUI();
     }
 
     /**
@@ -30,7 +41,10 @@ public class FrmListaJugadores extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaListaJugadores = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        btnAgregarJugador = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,10 +83,33 @@ public class FrmListaJugadores extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, -1));
 
-        jLabel8.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel8.setText("EQUIPO");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 100, 20));
+        tablaListaJugadores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
+            }
+        ));
+        tablaListaJugadores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaListaJugadoresMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tablaListaJugadores);
+
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 530, 250));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("LISTA DE JUGADORES");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
+
+        btnAgregarJugador.setText("AGREGAR JUGADOR");
+        jPanel2.add(btnAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,6 +134,13 @@ public class FrmListaJugadores extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tablaListaJugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaListaJugadoresMouseClicked
+        int fila = tablaListaJugadores.getSelectedRow();
+        dao = new JugadorImplementacion();
+        modelo = new JugadoresAbstractTableModel(dao.listarTodos());
+        jugador = modelo.getLista().get(fila);
+    }//GEN-LAST:event_tablaListaJugadoresMouseClicked
 
     /**
      * @param args the command line arguments
@@ -135,10 +179,13 @@ public class FrmListaJugadores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarJugador;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tablaListaJugadores;
     // End of variables declaration//GEN-END:variables
 }
