@@ -4,6 +4,11 @@
  */
 package vista;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Usuario iTC
@@ -15,6 +20,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
      */
     public FrmCampeonato() {
         initComponents();
+        cerrar();
          this.setLocationRelativeTo(null);
     }
 
@@ -117,6 +123,35 @@ public class FrmCampeonato extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void cerrar(){
+        try {
+            this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            addWindowListener(
+               new WindowAdapter() {
+                  public void windowClosing(WindowEvent e){
+                      confirmarSalida();
+                  }
+               }
+            );
+            this.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    public void confirmarSalida(){
+        int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
+        if (valor == JOptionPane.YES_OPTION) {
+            //se puede ingresar un mensaje de agradecimiento
+            System.exit(0);
+        }
+    }
+            
+            
+    
     /**
      * @param args the command line arguments
      */

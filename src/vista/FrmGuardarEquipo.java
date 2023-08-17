@@ -6,9 +6,13 @@ package vista;
 
 import AccesoDatos.EquipoImplementacion;
 import java.awt.Image;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import modelo.Equipo;
 
 /**
@@ -21,6 +25,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     
     public FrmGuardarEquipo() {
         initComponents();
+        cerrar();
         this.setLocationRelativeTo(null);
     }
 
@@ -155,6 +160,36 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void cerrar(){
+        try {
+            this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            addWindowListener(
+               new WindowAdapter() {
+                  public void windowClosing(WindowEvent e){
+                      confirmarSalida();
+                  }
+               }
+            );
+            this.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    public void confirmarSalida(){
+        int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
+        if (valor == JOptionPane.YES_OPTION) {
+            //se puede ingresar un mensaje de agradecimiento
+            System.exit(0);
+        }
+    }
+            
+            
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JFileChooser fileChooser = new JFileChooser();
