@@ -88,7 +88,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 90, -1));
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel3.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mi proyecto (2) (1).png"))); // NOI18N
 
@@ -116,7 +115,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, -1));
@@ -142,7 +141,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
                 btGuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+        jPanel2.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, -1, -1));
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
