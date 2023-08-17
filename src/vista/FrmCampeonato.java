@@ -4,10 +4,14 @@
  */
 package vista;
 
+import AccesoDatos.EquipoImplementacion;
+import AccesoDatos.PartidoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.Equipo;
+import modelo.Partido;
 
 /**
  *
@@ -15,11 +19,25 @@ import javax.swing.JOptionPane;
  */
 public class FrmCampeonato extends javax.swing.JFrame {
 
+    PartidoImplementacion dao;
+    EquipoImplementacion dao2;
+    PartidoAbstractModel modelo1;
+    EquipoAbstractTableModel modelo2;
+    static Partido partido;
+    static Equipo equipo;
     /**
      * Creates new form FrmCampeonato
      */
     public FrmCampeonato() {
         initComponents();
+        dao = new PartidoImplementacion();
+        dao2 = new EquipoImplementacion();     
+        modelo1 = new PartidoAbstractModel(dao.listarTodos());
+        modelo2 = new EquipoAbstractTableModel(dao2.listarTodos());
+        tablaPartido.setModel(modelo1);
+        tablaPartido.updateUI();
+        tablaEquipos.setModel(modelo2);
+        tablaEquipos.updateUI();
         cerrar();
          this.setLocationRelativeTo(null);
     }
@@ -36,9 +54,9 @@ public class FrmCampeonato extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaPartido = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tablaEquipos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -57,7 +75,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
         jLabel1.setText("CAMPEONATO");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 30, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaPartido.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -68,11 +86,16 @@ public class FrmCampeonato extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        tablaPartido.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaPartidoMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tablaPartido);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 370, 100));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tablaEquipos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -83,7 +106,12 @@ public class FrmCampeonato extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        tablaEquipos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaEquiposMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tablaEquipos);
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 370, 100));
 
@@ -122,6 +150,20 @@ public class FrmCampeonato extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tablaPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaPartidoMouseClicked
+        int fila = tablaPartido.getSelectedRow();
+        dao = new PartidoImplementacion();
+        modelo1 = new PartidoAbstractModel(dao.listarTodos());
+        partido = modelo1.getListaPartidos().get(fila);
+    }//GEN-LAST:event_tablaPartidoMouseClicked
+
+    private void tablaEquiposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquiposMouseClicked
+        int fila = tablaEquipos.getSelectedRow();
+        dao2 = new EquipoImplementacion();
+        modelo2 = new EquipoAbstractTableModel(dao2.listarTodos());
+        equipo = modelo2.getListaEquipos().get(fila);
+    }//GEN-LAST:event_tablaEquiposMouseClicked
 
     
     public void cerrar(){
@@ -198,8 +240,8 @@ public class FrmCampeonato extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tablaEquipos;
+    private javax.swing.JTable tablaPartido;
     // End of variables declaration//GEN-END:variables
 }
