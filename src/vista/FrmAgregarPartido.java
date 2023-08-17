@@ -4,7 +4,9 @@
  */
 package vista;
 
+import AccesoDatos.ArbitroImplementacion;
 import AccesoDatos.EquipoImplementacion;
+import modelo.Arbitro;
 import modelo.Equipo;
 
 /**
@@ -16,6 +18,9 @@ public class FrmAgregarPartido extends javax.swing.JFrame {
     EquipoImplementacion dao;
     EquipoAbstractTableModel modelo;
     static Equipo equipo;
+    ArbitroImplementacion daoA;
+    ArbitroAbstractTableModel modelo;
+    static Arbitro arbitro;
     
     public FrmAgregarPartido() {
         initComponents();
