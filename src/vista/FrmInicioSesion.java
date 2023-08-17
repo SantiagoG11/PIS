@@ -229,6 +229,7 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
 
         if (cuenta.equals(cuentaIngresada) && clave.equals(claveIngresada)) {
             new FrmPrincipalAdministrador().setVisible(true);
+            this.setVisible(false);
         } else {
             JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -238,6 +239,7 @@ public final class FrmInicioSesion extends javax.swing.JFrame {
         for (Usuario usuario : listaUsuarios) {
             if (txt_nombreCuenta.getText().equals(usuario.getNombres()) && txt_contrasenia.getText().equals(usuario.getPassword())) {
                 new FrmPrincipal1().setVisible(true);
+                this.setVisible(false);
             }else {
             JOptionPane.showMessageDialog(this, "Cuenta o clave incorrecta", "Error", JOptionPane.ERROR_MESSAGE);
             }

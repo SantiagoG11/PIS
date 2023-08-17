@@ -17,8 +17,7 @@ public class PISprogramacion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JugadorImplementacion j1 = new JugadorImplementacion();
-        System.out.println(j1.listarTodos());
+        new FrmPrincipal().setVisible(true);
     }
     
 }

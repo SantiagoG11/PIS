@@ -4,6 +4,11 @@
  */
 package vista;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Santiagod
@@ -15,6 +20,7 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
      */
     public FrmDetallesPartido() {
         initComponents();
+        cerrar();
         this.setLocationRelativeTo(null);
     }
 
@@ -201,6 +207,37 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void cerrar(){
+        try {
+            this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            addWindowListener(
+               new WindowAdapter() {
+                  public void windowClosing(WindowEvent e){
+                      confirmarSalida();
+                  }
+               }
+            );
+            this.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    public void confirmarSalida(){
+        int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
+        if (valor == JOptionPane.YES_OPTION) {
+            //se puede ingresar un mensaje de agradecimiento
+            System.exit(0);
+        }
+    }
+            
+            
+    
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 //        tomar textf fields
     }//GEN-LAST:event_jButton1ActionPerformed
