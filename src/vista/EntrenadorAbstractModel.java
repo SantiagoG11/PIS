@@ -24,13 +24,13 @@ public class EntrenadorAbstractModel extends AbstractTableModel {
     }
     
     public void actualizar(List<Entrenador> lista) {
-        this.setLista(lista);
+        this.lista= lista;
         fireTableDataChanged();
     }
     
     @Override
     public int getRowCount() {
-        return getLista().size();
+        return lista.size();
     }
 
     @Override
@@ -40,7 +40,7 @@ public class EntrenadorAbstractModel extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Entrenador entrenador = getLista().get(rowIndex);
+        Entrenador entrenador = lista.get(rowIndex);
         switch(columnIndex){
             case 0:
                 return entrenador.getNombres();
@@ -52,6 +52,26 @@ public class EntrenadorAbstractModel extends AbstractTableModel {
                 return entrenador.getNacionalidad();
         }
         return null;
+    }
+
+        @Override
+    public String getColumnName(int column) {
+        return titleColumns[column];
+    }
+
+
+    /**
+     * @return the lista
+     */
+    public List<Entrenador> getLista() {
+        return lista;
+    }
+
+    /**
+     * @param lista the lista to set
+     */
+    public void setLista(List<Entrenador> lista) {
+        this.lista = lista;
     }
 
     /**
@@ -67,19 +87,8 @@ public class EntrenadorAbstractModel extends AbstractTableModel {
     public void setTitleColumns(String[] titleColumns) {
         this.titleColumns = titleColumns;
     }
-
-    /**
-     * @return the lista
-     */
-    public List<Entrenador> getLista() {
-        return lista;
-    }
-
-    /**
-     * @param lista the lista to set
-     */
-    public void setLista(List<Entrenador> lista) {
-        this.lista = lista;
+    public Entrenador getEntrenador(int fila) {
+        return lista.get(fila);
     }
     
 }

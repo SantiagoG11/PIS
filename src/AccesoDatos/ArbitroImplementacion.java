@@ -24,7 +24,6 @@ public class ArbitroImplementacion implements DAO<Arbitro>{
     public boolean guardar(Arbitro arbitro) {
         PreparedStatement consulta = null;
         Connection conexion = null;
-
         try {
             conexion = instanciaMsql.conectar();
             consulta = conexion.prepareStatement("INSERT INTO arbitro (nombres, apellidos, cedula, nacionalidad, edad) VALUES (?, ?, ?, ?, ?)");
@@ -57,10 +56,12 @@ public class ArbitroImplementacion implements DAO<Arbitro>{
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
                Arbitro arbitro = new Arbitro(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5));
+                System.out.println(rs.getString(4));
                lista.add(arbitro);
             }
 
         } catch (Exception e) {
+            System.out.println("Error por " + e.getMessage());
         }
 
         return lista;

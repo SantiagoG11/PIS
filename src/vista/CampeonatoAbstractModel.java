@@ -7,26 +7,24 @@ package vista;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import modelo.Campeonato;
-import modelo.Jugador;
-
 
 /**
- *
- * @author Usuario iTC
+ * AbstractTableModel para la tabla de campeonatos.
+ * Similar a ArbitroAbstractTableModel.
  */
-public class CampeonatoAbstractModel extends AbstractTableModel{
-    private String[] titleColumns;
+public class CampeonatoAbstractModel extends AbstractTableModel {
     private List<Campeonato> lista;
+    private String[] titleColumns;
 
-    public CampeonatoAbstractModel(List<Campeonato> lista){
+    public CampeonatoAbstractModel(List<Campeonato> lista) {
         super();
         this.lista = lista;
         this.titleColumns = new String[]{"Nombre"};
     }
-    
+
     @Override
     public int getRowCount() {
-       return getLista().size();
+        return lista.size();
     }
 
     @Override
@@ -36,12 +34,36 @@ public class CampeonatoAbstractModel extends AbstractTableModel{
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-        Campeonato campeonato = getLista().get(rowIndex);
-        switch(columnIndex){
+        Campeonato campeonato = lista.get(rowIndex);
+        switch (columnIndex) {
             case 0:
-                return campeonato.getNombre();    
+                return campeonato.getNombre();
         }
         return null;
+    }
+
+    @Override
+    public String getColumnName(int column) {
+        return titleColumns[column];
+    }
+
+    public void actualizar(List<Campeonato> lista) {
+        this.lista = lista;
+        fireTableDataChanged();
+    }
+
+    /**
+     * @return the lista
+     */
+    public List<Campeonato> getLista() {
+        return lista;
+    }
+
+    /**
+     * @param lista the lista to set
+     */
+    public void setLista(List<Campeonato> lista) {
+        this.lista = lista;
     }
 
     /**
@@ -58,17 +80,7 @@ public class CampeonatoAbstractModel extends AbstractTableModel{
         this.titleColumns = titleColumns;
     }
 
-    /**
-     * @return the lista
-     */
-    public List<Campeonato> getLista() {
-        return lista;
-    }
-
-    /**
-     * @param lista the lista to set
-     */
-    public void setLista(List<Campeonato> lista) {
-        this.lista = lista;
+    public Campeonato getCampeonato(int fila) {
+        return lista.get(fila);
     }
 }

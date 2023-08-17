@@ -61,7 +61,7 @@ public class UsuarioImplementacion implements DAOUsuario{
         Connection conexion = null;
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("select *from entrenador");
+            consulta = conexion.prepareStatement("select *from usuario");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
                 Usuario usuario = new Usuario(rs.getNString(1), rs.getNString(2), rs.getNString(3), rs.getNString(4), rs.getNString(5), Integer.parseInt(rs.getString(6)), rs.getNString(7));
@@ -78,5 +78,4 @@ public class UsuarioImplementacion implements DAOUsuario{
     public List<Usuario> buscar(String apellido) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 }
