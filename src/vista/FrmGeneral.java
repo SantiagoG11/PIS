@@ -79,7 +79,6 @@ public class FrmGeneral extends javax.swing.JFrame {
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pl.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 180, 150));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/QzGT.gif"))); // NOI18N
         jLabel3.setText("Imagen equipo 2");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pl.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 180, 150));
@@ -93,11 +92,13 @@ public class FrmGeneral extends javax.swing.JFrame {
         jLabel5.setText("Estado del partido");
         pl.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, -1));
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flechaiz.png"))); // NOI18N
-        pl.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 40, -1));
+        jButton4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jButton4.setText(">");
+        pl.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 50, 30));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/flechad.png"))); // NOI18N
-        pl.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 40, -1));
+        jButton2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
+        jButton2.setText("<");
+        pl.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 50, 30));
 
         jLabel6.setText("Nombre equipo");
         pl.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
