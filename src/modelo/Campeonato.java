@@ -15,7 +15,8 @@ public class Campeonato {
     private String nombre;
     private List<Partido> listaPartidos; //muchos
 
-    public Campeonato() {
+    public Campeonato(String nombre) {
+        this.nombre = nombre;
         listaPartidos = new ArrayList<>();
     }
 
