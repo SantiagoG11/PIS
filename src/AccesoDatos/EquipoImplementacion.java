@@ -72,6 +72,28 @@ public class EquipoImplementacion implements DAOEquipo {
 
         return lista;
     }
+    
+    
+    public String obtenerEscudoPorNombreEquipo(String nombreEquipo) {
+    String escudo = null;
+    PreparedStatement consulta = null;
+    Connection conexion = null;
+    
+    try {
+        conexion = instanciaMsql.conectar();
+        consulta = conexion.prepareStatement("SELECT * FROM equipo WHERE nombre = ?");
+        consulta.setString(1, nombreEquipo);
+        
+        ResultSet rs = consulta.executeQuery();
+        if (rs.next()) {
+            escudo = rs.getString(7);
+        }
+    } catch (Exception e) {
+            System.out.println(e.getMessage());
+    }
+    
+    return escudo;
+}
 
     @Override
     public List<Equipo> buscar(String apellido) {
