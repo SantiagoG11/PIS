@@ -22,19 +22,7 @@ import modelo.Partido;
  */
 public class FrmDetallesPartido extends javax.swing.JFrame {
     E_PartidoImplementacion dao;
-    private Partido partido;
-    private E_Partido epartido;
-    
-    public void cargarPartido(Partido partido){
-        this.partido = partido;
-        epartido.getGolesLocal();
-        epartido.getGolesVisitante();
-        epartido.getTirosArco();
-        epartido.getTirosEsquina();
-        epartido.getTarjetasRojas();
-        epartido.getTarjetaasAmarillas();
-    }
-    
+        
     public FrmDetallesPartido() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -248,8 +236,14 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
     }
             
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        E_Partido Epartido = new E_Partido(txtLocal.getText(), txtVisitante.getText(), txtTiro.getText(), txtSaque.getText(), txtTarjetasRojas.getText(), txtTarjetasAmarillas.getText());
-        dao.guardar(Epartido);
+        int golesLocal = Integer.parseInt(txtLocal.getText());
+        int golesVisitante = Integer.parseInt(txtVisitante.getText());
+        int tirosPuerta = Integer.parseInt(txtTiro.getText());
+        int saquesEsquina = Integer.parseInt(txtSaque.getText());
+        int tarjetasRojas = Integer.parseInt(txtTarjetasRojas.getText());
+        int tarjetasAmarillas = Integer.parseInt(txtTarjetasAmarillas.getText());
+        E_Partido epartidos = new E_Partido(golesLocal, golesVisitante, tirosPuerta, saquesEsquina, tarjetasRojas, tarjetasAmarillas);
+        dao.guardar(epartidos);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void txtLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLocalActionPerformed
