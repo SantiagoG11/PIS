@@ -23,7 +23,12 @@ import modelo.Partido;
 public class PartidoImplementacion implements DAOPartido{
 
     Conexion instanciaMsql = Conexion.getInstance();
-    static String escudoA;
+    static public String escudoA;
+    private EquipoImplementacion equipoImplementacion;
+
+    public PartidoImplementacion(EquipoImplementacion equipoImplementacion) {
+        this.equipoImplementacion = equipoImplementacion;
+    }
     
     @Override
     public boolean guardar(Partido t) {
@@ -71,13 +76,19 @@ public class PartidoImplementacion implements DAOPartido{
             consulta = conexion.prepareStatement("select *from partido");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
+            String nombreEquipo1 = rs.getString(3); // Cambiar por la columna correcta
+            String nombreEquipo2 = rs.getString(4); // Cambiar por la columna correcta
+            
+            // Aquí realizas una búsqueda para obtener los escudos correspondientes a los nombres de los equipos
+            String escudoEquipo1 = equipoImplementacion.obtenerEscudoPorNombreEquipo(nombreEquipo1);
+            String escudoEquipo2 = equipoImplementacion.obtenerEscudoPorNombreEquipo(nombreEquipo2);
                 Partido partido = new Partido(
-            rs.getString(1), // Cambiar por la columna correcta
-            new Equipo(rs.getString(2), null, escudoA),
-            new Equipo(rs.getString(3), null, null),
-            new Arbitro(null, rs.getString(4), null, null, 0), // Cambiar por la columna correcta
-            new Arbitro(null, rs.getString(5), null, null, 0),
+            rs.getString(2), // Cambiar por la columna correcta
+            new Equipo(rs.getString(3), null, escudoEquipo1),
+            new Equipo(rs.getString(4), null, escudoEquipo2),
+            new Arbitro(null, rs.getString(5), null, null, 0), // Cambiar por la columna correcta
             new Arbitro(null, rs.getString(6), null, null, 0),
+            new Arbitro(null, rs.getString(7), null, null, 0),
       rs.getString(8), rs.getString(9),
             new Campeonato(rs.getString(10))
             );
@@ -93,9 +104,5 @@ public class PartidoImplementacion implements DAOPartido{
     @Override
     public List<Partido> buscar(String apellido) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    static public void cargarEscudo(String escudo){
-        escudoA = escudo;
     }
 }

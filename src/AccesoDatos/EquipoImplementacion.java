@@ -72,6 +72,28 @@ public class EquipoImplementacion implements DAOEquipo {
 
         return lista;
     }
+    
+    
+    public String obtenerEscudoPorNombreEquipo(String nombreEquipo) {
+    String escudo = null;
+    PreparedStatement consulta = null;
+    Connection conexion = null;
+    
+    try {
+        conexion = instanciaMsql.conectar();
+        consulta = conexion.prepareStatement("SELECT * FROM equipo WHERE nombre = ?");
+        consulta.setString(1, nombreEquipo);
+        
+        ResultSet rs = consulta.executeQuery();
+        if (rs.next()) {
+            escudo = rs.getString(7);
+        }
+    } catch (Exception e) {
+            System.out.println(e.getMessage());
+    }
+    
+    return escudo;
+}
 
     @Override
     public List<Equipo> buscar(String apellido) {
@@ -83,7 +105,8 @@ public class EquipoImplementacion implements DAOEquipo {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
-    public void cargarEscudo() {
+    public List<Equipo> cargarEscudo() {
+        List<Equipo> lista = new ArrayList<>();
         PreparedStatement consulta = null;
         Connection conexion = null;
         try {
@@ -91,11 +114,18 @@ public class EquipoImplementacion implements DAOEquipo {
             consulta = conexion.prepareStatement("select *from equipo");
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
+                Equipo equipo = new Equipo(rs.getString(2), rs.getString(3), rs.getString(7));
+                equipo.setEntrenador(new Entrenador(rs.getString(4), "", "", "", 0));
                 PartidoImplementacion.escudoA = rs.getString(7);
+                equipo.setCampeonato1(new Campeonato(rs.getString(5)));
+                equipo.setCampeonato2(new Campeonato(rs.getString(6)));
+                lista.add(equipo);
             }
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        return lista;
     }
 }
