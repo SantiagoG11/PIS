@@ -35,6 +35,7 @@ public class FrmGeneralUsuario extends javax.swing.JFrame {
         listaPartidos=dao.listarTodos();
         mostrarPartido(listaPartidos);
         longitud = listaPartidos.size();
+
     }
 
     /**
@@ -213,6 +214,14 @@ public class FrmGeneralUsuario extends javax.swing.JFrame {
         Image scaledImage2 = image2.getScaledInstance(logoE1.getWidth(), logoE1.getHeight(), Image.SCALE_SMOOTH);
         Icon iconE2 = new ImageIcon(scaledImage2);
         logoE2.setIcon(iconE2);
+        
+        lblGolesLocal.setText(String.valueOf(partido.getE_partido().getGolesLocal()));
+          lblGolesVisitante.setText(String.valueOf(partido.getE_partido().getGolesVisitante()));
+          lblTirosArco1.setText(String.valueOf(partido.getE_partido().getTirosArco()));
+          lblSaques.setText(String.valueOf(partido.getE_partido().getTirosEsquina()));
+          lblTarjetasRojas.setText(String.valueOf(partido.getE_partido().getTarjetasRojas()));
+          lblTarjetasAmarillas.setText(String.valueOf(partido.getE_partido().getTarjetaasAmarillas()));
+        
     }
     
     
