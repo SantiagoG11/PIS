@@ -99,28 +99,17 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
             }
         });
 
-        txtLocal.setFocusable(false);
         txtLocal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtLocalActionPerformed(evt);
             }
         });
 
-        txtVisitante.setFocusable(false);
-
-        txtTiro.setFocusable(false);
-
-        txtSaque.setFocusable(false);
-
-        txtTarjetasRojas.setFocusable(false);
-
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mi proyecto (2) (1).png"))); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("ROG Fonts", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 102, 102));
         jLabel10.setText("F-natics");
-
-        txtTarjetasAmarillas.setFocusable(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);

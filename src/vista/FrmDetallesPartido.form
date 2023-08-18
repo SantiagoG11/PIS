@@ -226,32 +226,17 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtLocal">
-          <Properties>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLocalActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtVisitante">
-          <Properties>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTiro">
-          <Properties>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtSaque">
-          <Properties>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTarjetasRojas">
-          <Properties>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
@@ -272,9 +257,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTarjetasAmarillas">
-          <Properties>
-            <Property name="focusable" type="boolean" value="false"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
