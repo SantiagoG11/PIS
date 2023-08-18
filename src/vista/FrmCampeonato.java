@@ -8,8 +8,12 @@ import AccesoDatos.EquipoImplementacion;
 import AccesoDatos.PartidoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.EnumEstadio;
+import modelo.EnumEstadoPartidos;
 import modelo.Equipo;
 import modelo.Partido;
 
@@ -20,26 +24,24 @@ import modelo.Partido;
 public class FrmCampeonato extends javax.swing.JFrame {
 
     PartidoImplementacion dao;
-    EquipoImplementacion dao2;
     PartidoAbstractModel modelo1;
-    EquipoAbstractTableModel modelo2;
     static Partido partido;
-    static Equipo equipo;
+    private List<Partido> partidosCampeonato;
     /**
      * Creates new form FrmCampeonato
      */
     public FrmCampeonato() {
         initComponents();
-        dao = new PartidoImplementacion();
-        dao2 = new EquipoImplementacion();     
+        dao = new PartidoImplementacion();    
         modelo1 = new PartidoAbstractModel(dao.listarTodos());
-        modelo2 = new EquipoAbstractTableModel(dao2.listarTodos());
+        partidosCampeonato = new ArrayList<>();
         tablaPartido.setModel(modelo1);
         tablaPartido.updateUI();
-        tablaEquipos.setModel(modelo2);
-        tablaEquipos.updateUI();
         cerrar();
          this.setLocationRelativeTo(null);
+    }
+    public void cargarPartido (Partido partido){
+        partidosCampeonato.add(partido);
     }
 
     /**
@@ -55,15 +57,12 @@ public class FrmCampeonato extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaPartido = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tablaEquipos = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAgregarPartido = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        btGuardar = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -93,33 +92,15 @@ public class FrmCampeonato extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaPartido);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 370, 100));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 370, 260));
 
-        tablaEquipos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tablaEquipos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablaEquiposMouseClicked(evt);
+        btnAgregarPartido.setText("AGREGAR PARTIDO");
+        btnAgregarPartido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarPartidoActionPerformed(evt);
             }
         });
-        jScrollPane2.setViewportView(tablaEquipos);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 370, 100));
-
-        jButton1.setText("AGREGAR EQUIPOS");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, -1, -1));
-
-        jButton2.setText("AGREGAR PARTIDO");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
+        jPanel1.add(btnAgregarPartido, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NOMBRE DEL CAMPEONATO:");
@@ -134,8 +115,13 @@ public class FrmCampeonato extends javax.swing.JFrame {
         jLabel9.setText("F-natics");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
-        btGuardar.setText("GUARDAR");
-        jPanel1.add(btGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, -1, -1));
+        btnGuardar.setText("GUARDAR");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,12 +144,24 @@ public class FrmCampeonato extends javax.swing.JFrame {
         partido = modelo1.getListaPartidos().get(fila);
     }//GEN-LAST:event_tablaPartidoMouseClicked
 
-    private void tablaEquiposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquiposMouseClicked
-        int fila = tablaEquipos.getSelectedRow();
-        dao2 = new EquipoImplementacion();
-        modelo2 = new EquipoAbstractTableModel(dao2.listarTodos());
-        equipo = modelo2.getListaEquipos().get(fila);
-    }//GEN-LAST:event_tablaEquiposMouseClicked
+    private void btnAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPartidoActionPerformed
+        int filaSeleccionada = tablaPartido.getSelectedRow();
+        if (filaSeleccionada != -1) {
+            String fecha = (String) tablaPartido.getValueAt(filaSeleccionada, 0);
+            EnumEstadio estadio = (EnumEstadio) tablaPartido.getValueAt(filaSeleccionada, 1);
+            EnumEstadoPartidos estado = (EnumEstadoPartidos) tablaPartido.getValueAt(filaSeleccionada, 2);
+
+            Partido partidoSeleccionado = new Partido(estadio, estado, fecha);
+            
+            cargarPartido(partidoSeleccionado);
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecciona un partido de la tabla.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAgregarPartidoActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     
     public void cerrar(){
@@ -230,18 +228,15 @@ public class FrmCampeonato extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btGuardar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnAgregarPartido;
+    private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTable tablaEquipos;
     private javax.swing.JTable tablaPartido;
     // End of variables declaration//GEN-END:variables
 }
