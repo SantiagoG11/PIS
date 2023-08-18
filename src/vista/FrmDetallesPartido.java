@@ -63,7 +63,7 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
 
         jTextField13.setText("jTextField13");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel4.setBackground(new java.awt.Color(153, 153, 153));
 
