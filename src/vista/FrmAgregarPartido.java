@@ -45,7 +45,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         tablaArbitro.updateUI();
         arbitro = new Arbitro("", "", "", "", 0);
         equipo = new Equipo("", "", "");
-        partido = new Partido(EnumEstadio.valueOf(String.valueOf(cbEstadio.getSelectedItem())), new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), EnumEstadoPartidos.valueOf(String.valueOf(cbEstado.getSelectedItem())),"", new Campeonato(""));
+        partido = new Partido(String.valueOf(cbEstadio.getSelectedItem()), new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), String.valueOf(cbEstado.getSelectedItem()),"", new Campeonato(""));
         cerrar();
     }
     

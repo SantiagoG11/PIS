@@ -72,13 +72,13 @@ public class PartidoImplementacion implements DAOPartido{
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
                 Partido partido = new Partido(
-        EnumEstadio.valueOf(rs.getString(2)), // Cambiar por la columna correcta
+            rs.getString(2), // Cambiar por la columna correcta
             new Equipo(rs.getString(3), null, null),
             new Equipo(rs.getString(4), null, null),
             new Arbitro(null, rs.getString(5), null, null, 0), // Cambiar por la columna correcta
             new Arbitro(null, rs.getString(6), null, null, 0),
             new Arbitro(null, rs.getString(7), null, null, 0),
-        EnumEstadoPartidos.valueOf(rs.getString(9)), rs.getString(10),
+      rs.getString(9), rs.getString(10),
             new Campeonato(rs.getString(11))
             );
             lista.add(partido); 
