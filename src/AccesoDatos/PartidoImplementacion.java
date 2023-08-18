@@ -33,16 +33,16 @@ public class PartidoImplementacion implements DAOPartido{
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, arbitro_principal, arbitro_linea1, arbitro_linea2, estado , fecha, campeonato) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            consulta.setString(0, String.valueOf(t.getEstadio()));  
-            consulta.setString(1, t.getEquipoLocal().getNombre());
-            consulta.setString(2, t.getEquipoVisitante().getNombre());
-            consulta.setString(3, t.getArbitroPrincipal().getApellidos());
-            consulta.setString(4, t.getArbitroLinea1().getApellidos());
-            consulta.setString(5, t.getArbitroLinea2().getApellidos());
-            consulta.setString(6, String.valueOf(t.getEstado()));
-            consulta.setString(7, t.getFecha());
-            consulta.setString(8, t.getCampeonato().getNombre());
+            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, arbitro_principal, arbitro_linea1, arbitro_linea2, estado , fecha, campeonato) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            consulta.setString(1,t.getEstadio());  
+            consulta.setString(2, t.getEquipoLocal().getNombre());
+            consulta.setString(3, t.getEquipoVisitante().getNombre());
+            consulta.setString(4, t.getArbitroPrincipal().getApellidos());
+            consulta.setString(5, t.getArbitroLinea1().getApellidos());
+            consulta.setString(6, t.getArbitroLinea2().getApellidos());
+            consulta.setString(7,t.getEstado());
+            consulta.setString(8, t.getFecha());
+            consulta.setString(9, t.getCampeonato().getNombre());
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -72,14 +72,13 @@ public class PartidoImplementacion implements DAOPartido{
             ResultSet rs = consulta.executeQuery();
             while (rs.next()) {
                 Partido partido = new Partido(
-        EnumEstadio.valueOf(rs.getString(1)),
-        EnumEstadoPartidos.valueOf(rs.getString(8)), // Cambiar por la columna correcta
-            new Equipo(rs.getString(2), null, null),
+            rs.getString(2), // Cambiar por la columna correcta
             new Equipo(rs.getString(3), null, null),
-            new Arbitro(null, rs.getString(4), null, null, 0), // Cambiar por la columna correcta
-            new Arbitro(null, rs.getString(5), null, null, 0),
+            new Equipo(rs.getString(4), null, null),
+            new Arbitro(null, rs.getString(5), null, null, 0), // Cambiar por la columna correcta
             new Arbitro(null, rs.getString(6), null, null, 0),
-       rs.getString(9),
+            new Arbitro(null, rs.getString(7), null, null, 0),
+      rs.getString(8), rs.getString(9),
             new Campeonato(rs.getString(10))
             );
             lista.add(partido); 

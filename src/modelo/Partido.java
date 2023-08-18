@@ -10,8 +10,8 @@ package modelo;
  */
 public class Partido {
     
-    private EnumEstadio estadio;
-    private EnumEstadoPartidos estado;
+    private String estadio;
+    private String estado;
     private Equipo equipoLocal;
     private Equipo equipoVisitante;
     private Arbitro arbitroPrincipal;
@@ -21,7 +21,7 @@ public class Partido {
     private E_Partido e_partido;
     private Campeonato campeonato;
 
-    public Partido(EnumEstadio estadio, EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, String fecha, Campeonato campeonato) {
+    public Partido(String estadio, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, String estado, String fecha, Campeonato campeonato) {
         this.estadio = estadio;
         this.estado = estado;
         this.equipoLocal = equipoLocal;
@@ -36,28 +36,28 @@ public class Partido {
     /**
      * @return the estadio
      */
-    public EnumEstadio getEstadio() {
+    public String getEstadio() {
         return estadio;
     }
 
     /**
      * @param estadio the estadio to set
      */
-    public void setEstadio(EnumEstadio estadio) {
+    public void setEstadio(String estadio) {
         this.estadio = estadio;
     }
 
     /**
      * @return the estado
      */
-    public EnumEstadoPartidos getEstado() {
+    public String getEstado() {
         return estado;
     }
 
     /**
      * @param estado the estado to set
      */
-    public void setEstado(EnumEstadoPartidos estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
