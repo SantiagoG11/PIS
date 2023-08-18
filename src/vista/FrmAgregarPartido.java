@@ -13,8 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Arbitro;
 import modelo.Campeonato;
-import modelo.EnumEstadio;
-import modelo.EnumEstadoPartidos;
 import modelo.Equipo;
 import modelo.Partido;
 
