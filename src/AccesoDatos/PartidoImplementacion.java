@@ -23,7 +23,7 @@ import modelo.Partido;
 public class PartidoImplementacion implements DAOPartido{
 
     Conexion instanciaMsql = Conexion.getInstance();
-    static String escudoA;
+    static public String escudoA;
     
     @Override
     public boolean guardar(Partido t) {
@@ -73,7 +73,7 @@ public class PartidoImplementacion implements DAOPartido{
                 Partido partido = new Partido(
             rs.getString(1), // Cambiar por la columna correcta
             new Equipo(rs.getString(2), null, escudoA),
-            new Equipo(rs.getString(3), null, null),
+            new Equipo(rs.getString(3), null, escudoA),
             new Arbitro(null, rs.getString(4), null, null, 0), // Cambiar por la columna correcta
             new Arbitro(null, rs.getString(5), null, null, 0),
             new Arbitro(null, rs.getString(6), null, null, 0),
@@ -92,9 +92,5 @@ public class PartidoImplementacion implements DAOPartido{
     @Override
     public List<Partido> buscar(String apellido) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    static public void cargarEscudo(String escudo){
-        escudoA = escudo;
     }
 }
