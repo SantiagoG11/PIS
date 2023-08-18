@@ -32,7 +32,7 @@ public class Partido {
         this.fecha = fecha;
         this.campeonato = campeonato;
     }
-    
+
     /**
      * @return the estadio
      */
@@ -172,4 +172,6 @@ public class Partido {
     public void setCampeonato(Campeonato campeonato) {
         this.campeonato = campeonato;
     }
+    
+    
 }

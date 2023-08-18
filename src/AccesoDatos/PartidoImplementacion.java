@@ -12,8 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import modelo.Arbitro;
 import modelo.Campeonato;
-import modelo.EnumEstadio;
-import modelo.EnumEstadoPartidos;
 import modelo.Equipo;
 import modelo.Partido;
 
