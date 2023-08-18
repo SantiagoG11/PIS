@@ -6,12 +6,17 @@ package vista;
 
 import AccesoDatos.ArbitroImplementacion;
 import AccesoDatos.EquipoImplementacion;
+import AccesoDatos.PartidoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Arbitro;
+import modelo.Campeonato;
+import modelo.EnumEstadio;
+import modelo.EnumEstadoPartidos;
 import modelo.Equipo;
+import modelo.Partido;
 
 /**
  *
@@ -25,6 +30,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
     ArbitroImplementacion daoA;
     ArbitroAbstractTableModel modeloA;
     static Arbitro arbitro;
+    static Partido partido;
     
     public FrmAgregarPartido(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -37,6 +43,9 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         modeloA = new ArbitroAbstractTableModel(daoA.listarTodos());
         tablaArbitro.setModel(modeloA);
         tablaArbitro.updateUI();
+        arbitro = new Arbitro("", "", "", "", 0);
+        equipo = new Equipo("", "", "");
+        partido = new Partido(EnumEstadio.valueOf(String.valueOf(cbEstadio.getSelectedItem())), EnumEstadoPartidos.valueOf(String.valueOf(cbEstado.getSelectedItem())), new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), "", new Campeonato(""));
         cerrar();
     }
     
@@ -82,11 +91,16 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         txtFecha = new javax.swing.JTextField();
         cbEstadio = new javax.swing.JComboBox<>();
         btGuadar = new javax.swing.JButton();
+        btEquipoLocal = new javax.swing.JButton();
+        btArbitroLinea1 = new javax.swing.JButton();
+        btEquipoVisitante = new javax.swing.JButton();
+        btArbitroPrinc = new javax.swing.JButton();
+        btArbitroLinea2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaArbitro = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        cbEstado = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -123,6 +137,41 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
             }
         });
 
+        btEquipoLocal.setText("AGREGAR EQUIPO LOCAL");
+        btEquipoLocal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEquipoLocalActionPerformed(evt);
+            }
+        });
+
+        btArbitroLinea1.setText("AGREGAR ARBITRO LINEA 1");
+        btArbitroLinea1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btArbitroLinea1ActionPerformed(evt);
+            }
+        });
+
+        btEquipoVisitante.setText("AGREGAR EQUIPO VISITANTE");
+        btEquipoVisitante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEquipoVisitanteActionPerformed(evt);
+            }
+        });
+
+        btArbitroPrinc.setText("AGREGAR ARBITRO PRINCIPAL");
+        btArbitroPrinc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btArbitroPrincActionPerformed(evt);
+            }
+        });
+
+        btArbitroLinea2.setText("AGREGAR ARBITRO LINEA 2");
+        btArbitroLinea2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btArbitroLinea2ActionPerformed(evt);
+            }
+        });
+
         jLabel6.setText("ARBITROS");
 
         tablaArbitro.setModel(new javax.swing.table.DefaultTableModel(
@@ -136,22 +185,21 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3"
             }
         ));
+        tablaArbitro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaArbitroMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tablaArbitro);
 
         jLabel1.setText("Fecha:");
 
-        jButton1.setText("Agregar Equipo Local");
+        cbEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EN_CURSO", "PENDIENTE", "FINALIZADO" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(169, 169, 169))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,25 +208,43 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
                         .addGap(225, 225, 225))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel5)
-                        .addGap(18, 18, 18)
-                        .addComponent(cbEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(209, 209, 209))))
+                        .addGap(385, 385, 385))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jLabel6))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btGuadar)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btArbitroPrinc)
+                            .addComponent(btArbitroLinea1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(btArbitroLinea2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton1))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btEquipoVisitante)
+                            .addComponent(btEquipoLocal))))
+                .addGap(15, 15, 15))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jLabel6)))
-                .addGap(15, 21, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(169, 169, 169))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cbEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,21 +255,30 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(cbEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(jLabel5)))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbEstadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btEquipoVisitante)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btEquipoLocal))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btArbitroPrinc)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btArbitroLinea1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btArbitroLinea2))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btGuadar)
                 .addContainerGap(14, Short.MAX_VALUE))
@@ -213,7 +288,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 571, Short.MAX_VALUE)
+            .addGap(0, 590, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -241,8 +316,36 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
     }//GEN-LAST:event_tablaEquipoMouseClicked
 
     private void btGuadarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuadarActionPerformed
-        
+        partido.setFecha(txtFecha.getText());
+        new PartidoImplementacion().guardar(partido);
     }//GEN-LAST:event_btGuadarActionPerformed
+
+    private void btArbitroLinea2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btArbitroLinea2ActionPerformed
+        partido.setArbitroLinea2(arbitro);
+    }//GEN-LAST:event_btArbitroLinea2ActionPerformed
+
+    private void btArbitroLinea1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btArbitroLinea1ActionPerformed
+        partido.setArbitroLinea1(arbitro);
+    }//GEN-LAST:event_btArbitroLinea1ActionPerformed
+
+    private void btArbitroPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btArbitroPrincActionPerformed
+        partido.setArbitroPrincipal(arbitro);
+    }//GEN-LAST:event_btArbitroPrincActionPerformed
+
+    private void btEquipoVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEquipoVisitanteActionPerformed
+        partido.setEquipoVisitante(equipo);
+    }//GEN-LAST:event_btEquipoVisitanteActionPerformed
+
+    private void btEquipoLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEquipoLocalActionPerformed
+        partido.setEquipoLocal(equipo);
+    }//GEN-LAST:event_btEquipoLocalActionPerformed
+
+    private void tablaArbitroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaArbitroMouseClicked
+        int fila = tablaArbitro.getSelectedRow();
+        daoA = new ArbitroImplementacion();
+        modeloA = new ArbitroAbstractTableModel(daoA.listarTodos());
+        arbitro = modeloA.getLista().get(fila);
+    }//GEN-LAST:event_tablaArbitroMouseClicked
 
     /**
      * @param args the command line arguments
@@ -288,9 +391,14 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btArbitroLinea1;
+    private javax.swing.JButton btArbitroLinea2;
+    private javax.swing.JButton btArbitroPrinc;
+    private javax.swing.JButton btEquipoLocal;
+    private javax.swing.JButton btEquipoVisitante;
     private javax.swing.JButton btGuadar;
     private javax.swing.JComboBox<String> cbEstadio;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> cbEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
