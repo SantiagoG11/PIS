@@ -50,6 +50,7 @@ public class PartidoImplementacion implements DAOPartido{
         return false;
     }
 //cambio
+    //cambio2
     @Override
     public boolean eliminar(String cedula) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
