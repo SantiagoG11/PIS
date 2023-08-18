@@ -5,16 +5,11 @@
 package vista;
 
 import AccesoDatos.E_PartidoImplementacion;
-import AccesoDatos.EquipoImplementacion;
-import AccesoDatos.PartidoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.E_Partido;
-import modelo.EnumEstadio;
-import modelo.EnumEstadoPartidos;
-import modelo.Partido;
 
 /**
  *
