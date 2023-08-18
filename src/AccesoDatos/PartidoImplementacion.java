@@ -96,6 +96,73 @@ public class PartidoImplementacion implements DAOPartido{
         return lista;
     }
 
+    public Partido buscarFecha(String fecha) {
+        PreparedStatement consulta = null;
+        Connection conexion = null;
+        try {
+           conexion = instanciaMsql.conectar();
+           consulta = conexion.prepareStatement("select * from partido where fecha = '"+ fecha + "'");    
+           ResultSet rs = consulta.executeQuery();
+           while(rs.next()){
+               Partido partido =  new Partido(rs.getString(1), new Equipo(rs.getString(3), "", ""), new Equipo(rs.getString(2), "", ""), new Arbitro(null, rs.getString(4), null, null, 0), // Cambiar por la columna correcta
+            new Arbitro(null, rs.getString(5), null, null, 0),
+            new Arbitro(null, rs.getString(6), null, null, 0),
+      rs.getString(8), rs.getString(9),
+            new Campeonato(rs.getString(10)));
+               return partido;
+           }
+        } 
+        catch (Exception e) {
+        }
+        return null;
+    }
+    
+    public List<Partido> obtenerPartidoPorId(int id) {
+    List<Partido> lista = new ArrayList<>();
+    PreparedStatement consulta = null;
+    Connection conexion = null;
+    
+    try {
+        conexion = instanciaMsql.conectar();
+        consulta = conexion.prepareStatement("SELECT * FROM partido WHERE id = ?");
+        consulta.setInt(7, id);
+        ResultSet rs = consulta.executeQuery();
+        if (rs.next()) {
+            Partido partido =  new Partido(rs.getString(1), new Equipo(rs.getString(3), "", ""), new Equipo(rs.getString(2), "", ""), new Arbitro(null, rs.getString(4), null, null, 0), // Cambiar por la columna correcta
+            new Arbitro(null, rs.getString(5), null, null, 0),
+            new Arbitro(null, rs.getString(6), null, null, 0),
+      rs.getString(8), rs.getString(9),
+            new Campeonato(rs.getString(10)));
+        }
+    } catch (Exception e) {
+            System.out.println(e.getMessage());
+    }
+    return lista;
+}
+    
+//    public List<Equipo> cargarPartido() {
+//        List<Equipo> lista = new ArrayList<>();
+//        PreparedStatement consulta = null;
+//        Connection conexion = null;
+//        try {
+//            conexion = instanciaMsql.conectar();
+//            consulta = conexion.prepareStatement("select *from partido");
+//            ResultSet rs = consulta.executeQuery();
+//            while (rs.next()) {
+//                Equipo equipo = new Equipo(rs.getString(2), rs.getString(3), rs.getString(7));
+//                equipo.setEntrenador(new Entrenador(rs.getString(4), "", "", "", 0));
+//                equipo.setCampeonato1(new Campeonato(rs.getString(5)));
+//                equipo.setCampeonato2(new Campeonato(rs.getString(6)));
+//                lista.add(equipo);
+//            }
+//
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+//
+//        return lista;
+//    }
+
     @Override
     public List<Partido> buscar(String apellido) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

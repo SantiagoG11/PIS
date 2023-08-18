@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.E_Partido;
+import modelo.Entrenador;
 import modelo.Partido;
 
 /**
@@ -28,7 +29,7 @@ public class E_PartidoImplementacion implements DAOE_EQUIPO<E_Partido>{
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO e_partido (goles_locales, goles_visitante, tiros_puerta, saques_esquina, tarjetas_amarillas, tarjetas_rojas, nombre_equipo_local, nombre_equipo_visitante) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+            consulta = conexion.prepareStatement("INSERT INTO e_partido (goles_locales, goles_visitante, tiros_puerta, saques_esquina, tarjetas_amarillas, tarjetas_rojas, nombre_equipoLocal, nombre_equipoVisitante, fecha_Partido) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
             consulta.setInt(1, epartido.getGolesLocal());  
             consulta.setInt(2, epartido.getGolesVisitante());
             consulta.setInt(3, epartido.getTirosArco());
@@ -37,6 +38,7 @@ public class E_PartidoImplementacion implements DAOE_EQUIPO<E_Partido>{
             consulta.setInt(6, epartido.getTarjetasRojas());
             consulta.setString(7, partido.getEquipoLocal().getNombre());
             consulta.setString(8, partido.getEquipoVisitante().getNombre());
+            consulta.setString(9, partido.getFecha());
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

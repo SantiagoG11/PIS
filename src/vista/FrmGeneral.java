@@ -4,6 +4,7 @@
  */
 package vista;
 
+import AccesoDatos.E_PartidoImplementacion;
 import AccesoDatos.PartidoImplementacion;
 import java.awt.Image;
 import java.awt.event.WindowAdapter;
@@ -13,9 +14,11 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.Arbitro;
+import modelo.Campeonato;
 import modelo.E_Partido;
+import modelo.Equipo;
 import modelo.Partido;
-import static vista.FrmGeneralUsuario.partido;
 
 /**
  *
@@ -23,20 +26,22 @@ import static vista.FrmGeneralUsuario.partido;
  */
 public class FrmGeneral extends javax.swing.JFrame {
 
-    static public Partido partido;
+    static public Partido partidoGeneral;
     static public List<Partido> listaPartidos;
     static public int indice = 0;
-    public int longitud;
+    static public int longitud;
+    static PartidoImplementacion dao;
 
     public FrmGeneral() {
         initComponents();
         cerrar();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        PartidoImplementacion dao = new PartidoImplementacion();
+        dao = new PartidoImplementacion();
         listaPartidos = dao.listarTodos();
         mostrarPartido(listaPartidos);
         longitud = listaPartidos.size();
+        partidoGeneral = new Partido("", new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), "", "", new Campeonato(""));
     }
 
     /**
@@ -210,9 +215,17 @@ public class FrmGeneral extends javax.swing.JFrame {
     
     static public void cargarE_Partido(E_Partido epartido){
         listaPartidos.get(indice).setE_partido(epartido);
+        partidoGeneral = listaPartidos.get(indice);
+        new E_PartidoImplementacion().guardar(epartido, listaPartidos.get(indice));
+        lblGolesLocal.setText(String.valueOf(partidoGeneral.getE_partido().getGolesLocal()));
+        lblGolesVisitante.setText(String.valueOf(partidoGeneral.getE_partido().getGolesVisitante()));
+        lblTirosArco1.setText(String.valueOf(partidoGeneral.getE_partido().getTirosArco()));
+        lblSaques.setText(String.valueOf(partidoGeneral.getE_partido().getTirosEsquina()));
+        lblTarjetasRojas.setText(String.valueOf(partidoGeneral.getE_partido().getTarjetasRojas()));
+        lblTarjetasAmarillas.setText(String.valueOf(partidoGeneral.getE_partido().getTarjetaasAmarillas()));
     }
     
-    public void mostrarPartido(List<Partido> listap) {
+    static public void mostrarPartido(List<Partido> listap) {
 
         estadioP.setText("Estadio: " + String.valueOf(listap.get(indice).getEstadio()));
         fechaP.setText("Fecha: " + String.valueOf(listap.get(indice).getFecha()));
@@ -230,13 +243,14 @@ public class FrmGeneral extends javax.swing.JFrame {
         Image scaledImage2 = image2.getScaledInstance(logoE1.getWidth(), logoE1.getHeight(), Image.SCALE_SMOOTH);
         Icon iconE2 = new ImageIcon(scaledImage2);
         logoE2.setIcon(iconE2);
-
-        lblGolesLocal.setText(String.valueOf(partido.getE_partido().getGolesLocal()));
-        lblGolesVisitante.setText(String.valueOf(partido.getE_partido().getGolesVisitante()));
-        lblTirosArco1.setText(String.valueOf(partido.getE_partido().getTirosArco()));
-        lblSaques.setText(String.valueOf(partido.getE_partido().getTirosEsquina()));
-        lblTarjetasRojas.setText(String.valueOf(partido.getE_partido().getTarjetasRojas()));
-        lblTarjetasAmarillas.setText(String.valueOf(partido.getE_partido().getTarjetaasAmarillas()));
+        
+        partidoGeneral = dao.buscarFecha(listap.get(indice).getFecha());
+        lblGolesLocal.setText(String.valueOf(partidoGeneral.getE_partido().getGolesLocal()));
+        lblGolesVisitante.setText(String.valueOf(partidoGeneral.getE_partido().getGolesVisitante()));
+        lblTirosArco1.setText(String.valueOf(partidoGeneral.getE_partido().getTirosArco()));
+        lblSaques.setText(String.valueOf(partidoGeneral.getE_partido().getTirosEsquina()));
+        lblTarjetasRojas.setText(String.valueOf(partidoGeneral.getE_partido().getTarjetasRojas()));
+        lblTarjetasAmarillas.setText(String.valueOf(partidoGeneral.getE_partido().getTarjetaasAmarillas()));
     }
 
     public void cerrar() {
@@ -267,6 +281,7 @@ public class FrmGeneral extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         new FrmDetallesPartido().setVisible(true);
+        FrmDetallesPartido.cargarPartido(listaPartidos.get(indice));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -327,30 +342,30 @@ public class FrmGeneral extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel EstadoP;
-    private javax.swing.JLabel estadioP;
-    private javax.swing.JLabel fechaP;
+    private static javax.swing.JLabel EstadoP;
+    private static javax.swing.JLabel estadioP;
+    private static javax.swing.JLabel fechaP;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private static javax.swing.JLabel jLabel2;
+    private static javax.swing.JLabel jLabel4;
+    private static javax.swing.JLabel jLabel5;
+    private static javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel26;
-    private javax.swing.JLabel lblGolesLocal;
-    private javax.swing.JLabel lblGolesVisitante;
-    private javax.swing.JLabel lblSaques;
-    private javax.swing.JLabel lblTarjetasAmarillas;
-    private javax.swing.JLabel lblTarjetasRojas;
-    private javax.swing.JLabel lblTirosArco1;
-    private javax.swing.JLabel logoE1;
-    private javax.swing.JLabel logoE2;
-    private javax.swing.JLabel nombreE1;
-    private javax.swing.JLabel nombreE2;
+    private static javax.swing.JLabel lblGolesLocal;
+    private static javax.swing.JLabel lblGolesVisitante;
+    private static javax.swing.JLabel lblSaques;
+    private static javax.swing.JLabel lblTarjetasAmarillas;
+    private static javax.swing.JLabel lblTarjetasRojas;
+    private static javax.swing.JLabel lblTirosArco1;
+    private static javax.swing.JLabel logoE1;
+    private static javax.swing.JLabel logoE2;
+    private static javax.swing.JLabel nombreE1;
+    private static javax.swing.JLabel nombreE2;
     private javax.swing.JPanel pl;
     // End of variables declaration//GEN-END:variables
 }

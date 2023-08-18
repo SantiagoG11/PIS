@@ -9,7 +9,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.Arbitro;
+import modelo.Campeonato;
 import modelo.E_Partido;
+import modelo.Equipo;
 import modelo.Partido;
 
 /**
@@ -18,7 +21,7 @@ import modelo.Partido;
  */
 public class FrmDetallesPartido extends javax.swing.JFrame {
     E_PartidoImplementacion dao;
-    static Partido partido;
+    static Partido partidoD;
     
     
     //        txtLocal.setText(String.valueOf(partido.getE_partido().getGolesLocal()));
@@ -32,6 +35,7 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         dao = new E_PartidoImplementacion();
+        partidoD = new Partido("", new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), "", "", new Campeonato(""));
     }
 
     /**
@@ -202,6 +206,9 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    static public void cargarPartido(Partido partido){
+        partidoD = partido;
+    }
     
     public void cerrar(){
         try {
