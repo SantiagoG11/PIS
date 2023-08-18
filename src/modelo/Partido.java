@@ -30,6 +30,11 @@ public class Partido {
         this.arbitroLinea2 = arbitroLinea2;
         this.fecha = fecha;
     }
+    public Partido (EnumEstadio estadio, EnumEstadoPartidos estado, String Fecha){
+        this.estadio = estadio;
+        this.estado = estado;
+        this.fecha = fecha;
+    }
     
 
     
