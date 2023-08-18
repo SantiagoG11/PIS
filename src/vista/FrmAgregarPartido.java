@@ -6,12 +6,14 @@ package vista;
 
 import AccesoDatos.ArbitroImplementacion;
 import AccesoDatos.EquipoImplementacion;
+import AccesoDatos.PartidoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Arbitro;
 import modelo.Equipo;
+import modelo.Partido;
 
 /**
  *
@@ -25,6 +27,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
     ArbitroImplementacion daoA;
     ArbitroAbstractTableModel modeloA;
     static Arbitro arbitro;
+    static private Partido partido;
     
     public FrmAgregarPartido(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -121,12 +124,32 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         cbEstadio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPLIMPICO LUZHNIK", "IGNAL IDUNA_PARK", "STADE FRANCE", "SANTIAGO BERNABEU", "CAMP NOU" }));
 
         btGuadar.setText("GUARDAR");
+        btGuadar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGuadarActionPerformed(evt);
+            }
+        });
 
         btEquipoLocal.setText("AGREGAR EQUIPO LOCAL");
+        btEquipoLocal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEquipoLocalActionPerformed(evt);
+            }
+        });
 
         btArbitroLinea1.setText("AGREGAR ARBITRO LINEA 1");
+        btArbitroLinea1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btArbitroLinea1ActionPerformed(evt);
+            }
+        });
 
         btEquipoVisitante.setText("AGREGAR EQUIPO VISITANTE");
+        btEquipoVisitante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEquipoVisitanteActionPerformed(evt);
+            }
+        });
 
         btArbitroPrinc.setText("AGREGAR ARBITRO PRINCIPAL");
         btArbitroPrinc.addActionListener(new java.awt.event.ActionListener() {
@@ -136,6 +159,11 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         });
 
         btArbitroLinea2.setText("AGREGAR ARBITRO LINEA 2");
+        btArbitroLinea2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btArbitroLinea2ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("ARBITROS");
 
@@ -235,7 +263,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btGuadar)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -251,7 +279,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGap(0, 450, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -263,7 +291,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btArbitroPrincActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btArbitroPrincActionPerformed
-        // TODO add your handling code here:
+        partido.setArbitroPrincipal(arbitro);
     }//GEN-LAST:event_btArbitroPrincActionPerformed
 
     private void tablaEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaEquipoMouseClicked
@@ -272,6 +300,26 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         modelo = new EquipoAbstractTableModel(dao.listarTodos());
         equipo = modelo.getListaEquipos().get(fila);
     }//GEN-LAST:event_tablaEquipoMouseClicked
+
+    private void btEquipoVisitanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEquipoVisitanteActionPerformed
+        partido.setEquipoVisitante(equipo);
+    }//GEN-LAST:event_btEquipoVisitanteActionPerformed
+
+    private void btEquipoLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEquipoLocalActionPerformed
+        partido.setEquipoLocal(equipo);
+    }//GEN-LAST:event_btEquipoLocalActionPerformed
+
+    private void btArbitroLinea1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btArbitroLinea1ActionPerformed
+        partido.setArbitroLinea1(arbitro);
+    }//GEN-LAST:event_btArbitroLinea1ActionPerformed
+
+    private void btArbitroLinea2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btArbitroLinea2ActionPerformed
+        partido.setArbitroLinea2(arbitro);
+    }//GEN-LAST:event_btArbitroLinea2ActionPerformed
+
+    private void btGuadarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuadarActionPerformed
+        new PartidoImplementacion().guardar(partido);
+    }//GEN-LAST:event_btGuadarActionPerformed
 
     /**
      * @param args the command line arguments
