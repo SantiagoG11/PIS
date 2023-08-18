@@ -103,7 +103,6 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="logoE2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Imagen equipo 1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -118,7 +117,6 @@
             </Component>
             <Component class="javax.swing.JLabel" name="logoE1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Imagen equipo 2"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
