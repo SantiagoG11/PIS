@@ -5,6 +5,7 @@
 package vista;
 
 import AccesoDatos.EntrenadorImplementacion;
+import javax.swing.JOptionPane;
 import modelo.Entrenador;
 
 /**
@@ -15,7 +16,7 @@ public class FrmAgregarEntrenadorEquipo extends javax.swing.JFrame {
 
     EntrenadorImplementacion dao;
     EntrenadorAbstractModel modelo;
-    static Entrenador entrenador;
+    static Entrenador entrenador = null;
     
     public FrmAgregarEntrenadorEquipo() {
         initComponents();
@@ -77,6 +78,11 @@ public class FrmAgregarEntrenadorEquipo extends javax.swing.JFrame {
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 380, 170));
 
         btnEntrenador.setText("Agregar Entrenador");
+        btnEntrenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEntrenadorActionPerformed(evt);
+            }
+        });
         jPanel4.add(btnEntrenador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, -1));
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 630, 290));
@@ -111,6 +117,21 @@ public class FrmAgregarEntrenadorEquipo extends javax.swing.JFrame {
         modelo = new EntrenadorAbstractModel(dao.listarTodos());
         entrenador = modelo.getLista().get(fila);
     }//GEN-LAST:event_tablaEntrenadorMouseClicked
+
+    private void btnEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrenadorActionPerformed
+        // TODO add your handling code here:
+        
+        if (entrenador==null) {
+            
+            JOptionPane.showMessageDialog(null, "No se ha seleccionado un entrenador");
+            
+        }else{
+        
+            FrmGuardarEquipo.recibirEntrenador(entrenador);
+        
+        }
+        
+    }//GEN-LAST:event_btnEntrenadorActionPerformed
 
     /**
      * @param args the command line arguments

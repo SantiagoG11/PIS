@@ -5,6 +5,8 @@
 package vista;
 
 import AccesoDatos.CampeonatoImplementacion;
+import javax.swing.JOptionPane;
+import modelo.Campeonato;
 
 /**
  *
@@ -14,6 +16,8 @@ public class FrmAgregarCampeonatoEquipo extends javax.swing.JFrame {
     
     CampeonatoImplementacion dao;
     CampeonatoAbstractModel modelo;
+    static Campeonato campeonato = null;
+    
     /**
      * Creates new form FrmAgregarCampeonatoEntrenador
      */
@@ -78,9 +82,19 @@ public class FrmAgregarCampeonatoEquipo extends javax.swing.JFrame {
         jPanel4.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 380, 170));
 
         btnCampeonato1.setText("Agregar Campeonato 1");
+        btnCampeonato1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCampeonato1ActionPerformed(evt);
+            }
+        });
         jPanel4.add(btnCampeonato1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
         btnCampeonato2.setText("Agregar Campeonato 2");
+        btnCampeonato2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCampeonato2ActionPerformed(evt);
+            }
+        });
         jPanel4.add(btnCampeonato2, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 230, -1, -1));
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 630, 290));
@@ -114,7 +128,30 @@ public class FrmAgregarCampeonatoEquipo extends javax.swing.JFrame {
         int fila = tablaCampeonato.getSelectedRow();
         dao = new CampeonatoImplementacion();
         modelo = new CampeonatoAbstractModel(dao.listarTodos());
+        campeonato = modelo.getLista().get(fila);
     }//GEN-LAST:event_tablaCampeonatoMouseClicked
+
+    private void btnCampeonato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampeonato1ActionPerformed
+        // TODO add your handling code here:
+        
+        if (campeonato == null) {
+            JOptionPane.showMessageDialog(null, "No se ha seleccionado un compeonato");
+        }else{
+            FrmGuardarEquipo.recibirCampeonato(campeonato, 1);
+        }
+        
+    }//GEN-LAST:event_btnCampeonato1ActionPerformed
+
+    private void btnCampeonato2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCampeonato2ActionPerformed
+        // TODO add your handling code here:
+        
+        if (campeonato == null) {
+            JOptionPane.showMessageDialog(null, "No se ha seleccionado un compeonato");
+        }else{
+            FrmGuardarEquipo.recibirCampeonato(campeonato, 2);
+        }
+        
+    }//GEN-LAST:event_btnCampeonato2ActionPerformed
 
     /**
      * @param args the command line arguments

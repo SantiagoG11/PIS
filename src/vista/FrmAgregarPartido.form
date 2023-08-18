@@ -35,7 +35,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="520" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="450" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -156,7 +156,7 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btGuadar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="84" max="32767" attributes="0"/>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -217,21 +217,33 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="GUARDAR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btGuadarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btEquipoLocal">
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREGAR EQUIPO LOCAL"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btEquipoLocalActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btArbitroLinea1">
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREGAR ARBITRO LINEA 1"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btArbitroLinea1ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btEquipoVisitante">
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREGAR EQUIPO VISITANTE"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btEquipoVisitanteActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btArbitroPrinc">
           <Properties>
@@ -245,6 +257,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="AGREGAR ARBITRO LINEA 2"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btArbitroLinea2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>

@@ -121,6 +121,11 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         cbEstadio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPLIMPICO LUZHNIK", "IGNAL IDUNA_PARK", "STADE FRANCE", "SANTIAGO BERNABEU", "CAMP NOU" }));
 
         btGuadar.setText("GUARDAR");
+        btGuadar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGuadarActionPerformed(evt);
+            }
+        });
 
         btEquipoLocal.setText("AGREGAR EQUIPO LOCAL");
 
@@ -272,6 +277,10 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         modelo = new EquipoAbstractTableModel(dao.listarTodos());
         equipo = modelo.getListaEquipos().get(fila);
     }//GEN-LAST:event_tablaEquipoMouseClicked
+
+    private void btGuadarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuadarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btGuadarActionPerformed
 
     /**
      * @param args the command line arguments

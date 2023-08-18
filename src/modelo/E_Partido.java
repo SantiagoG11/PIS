@@ -16,6 +16,17 @@ public class E_Partido {
     private int golesVisitante;
     private int golesLocal;
 
+    public E_Partido(int tarjetasRojas, int tarjetaasAmarillas, int tirosArco, int tirosEsquina, int golesVisitante, int golesLocal) {
+        this.tarjetasRojas = tarjetasRojas;
+        this.tarjetaasAmarillas = tarjetaasAmarillas;
+        this.tirosArco = tirosArco;
+        this.tirosEsquina = tirosEsquina;
+        this.golesVisitante = golesVisitante;
+        this.golesLocal = golesLocal;
+    }
+
+
+
     /**
      * @return the tarjetasRojas
      */
