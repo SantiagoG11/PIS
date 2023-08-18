@@ -82,4 +82,20 @@ public class EquipoImplementacion implements DAOEquipo {
     public boolean eliminar(String cedula) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
+    public void cargarEscudo() {
+        PreparedStatement consulta = null;
+        Connection conexion = null;
+        try {
+            conexion = instanciaMsql.conectar();
+            consulta = conexion.prepareStatement("select *from equipo");
+            ResultSet rs = consulta.executeQuery();
+            while (rs.next()) {
+                PartidoImplementacion.escudoA = rs.getString(7);
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
