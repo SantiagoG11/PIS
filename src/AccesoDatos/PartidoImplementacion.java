@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Arbitro;
+import modelo.Campeonato;
 import modelo.EnumEstadio;
 import modelo.EnumEstadoPartidos;
 import modelo.Equipo;
@@ -32,7 +33,7 @@ public class PartidoImplementacion implements DAOPartido{
         
         try {
             conexion = instanciaMsql.conectar();
-            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, arbitro_principal, arbitro_linea1, arbitro_linea2, estado , fecha) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            consulta = conexion.prepareStatement("INSERT INTO partido (estadio, equipo_local, equipo_visitante, arbitro_principal, arbitro_linea1, arbitro_linea2, estado , fecha, campeonato) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             consulta.setString(0, String.valueOf(t.getEstadio()));  
             consulta.setString(1, t.getEquipoLocal().getNombre());
             consulta.setString(2, t.getEquipoVisitante().getNombre());
@@ -41,6 +42,7 @@ public class PartidoImplementacion implements DAOPartido{
             consulta.setString(5, t.getArbitroLinea2().getApellidos());
             consulta.setString(6, String.valueOf(t.getEstado()));
             consulta.setString(7, t.getFecha());
+            consulta.setString(8, t.getCampeonato().getNombre());
             consulta.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -77,7 +79,8 @@ public class PartidoImplementacion implements DAOPartido{
             new Arbitro(null, rs.getString(4), null, null, 0), // Cambiar por la columna correcta
             new Arbitro(null, rs.getString(5), null, null, 0),
             new Arbitro(null, rs.getString(6), null, null, 0),
-       rs.getString(9)
+       rs.getString(9),
+            new Campeonato(rs.getString(10))
             );
             lista.add(partido); 
             }
