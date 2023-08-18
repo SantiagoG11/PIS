@@ -62,9 +62,14 @@ public class FrmGeneralUsuario extends javax.swing.JFrame {
         lblGolesLocal = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        lblTAmarillas = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblTarjetasAmarillas = new javax.swing.JLabel();
+        lblTirosArco1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblSaques = new javax.swing.JLabel();
+        lblTarjetasRojas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -131,17 +136,41 @@ public class FrmGeneralUsuario extends javax.swing.JFrame {
         jLabel11.setText("F-natics");
         jPanel26.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, -1, -1));
 
-        jLabel1.setText("Tarjetas Amarillas");
-        jPanel26.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
-
-        lblTAmarillas.setForeground(new java.awt.Color(255, 255, 255));
-        lblTAmarillas.setText("jLabel2");
-        jPanel26.add(lblTAmarillas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
-
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Tiros a puerta");
-        jPanel26.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+        jPanel26.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, 20));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Saques de esquina");
+        jPanel26.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
+
+        lblTarjetasAmarillas.setForeground(new java.awt.Color(255, 255, 255));
+        lblTarjetasAmarillas.setText("jLabel3");
+        jPanel26.add(lblTarjetasAmarillas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
+
+        lblTirosArco1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTirosArco1.setText("jLabel3");
+        jPanel26.add(lblTirosArco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Tarjetas Rojas");
+        jPanel26.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Tarjetas Amarillas");
+        jPanel26.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, -1, -1));
+
+        lblSaques.setForeground(new java.awt.Color(255, 255, 255));
+        lblSaques.setText("jLabel3");
+        jPanel26.add(lblSaques, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, -1));
+
+        lblTarjetasRojas.setForeground(new java.awt.Color(255, 255, 255));
+        lblTarjetasRojas.setText("jLabel3");
+        jPanel26.add(lblTarjetasRojas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -276,15 +305,20 @@ public class FrmGeneralUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel fechaP;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel26;
     private javax.swing.JLabel lblGolesLocal;
     private javax.swing.JLabel lblGolesVisitante;
-    private javax.swing.JLabel lblTAmarillas;
+    private javax.swing.JLabel lblSaques;
+    private javax.swing.JLabel lblTarjetasAmarillas;
+    private javax.swing.JLabel lblTarjetasRojas;
+    private javax.swing.JLabel lblTirosArco1;
     private javax.swing.JLabel logoE1;
     private javax.swing.JLabel logoE2;
     private javax.swing.JLabel nombreE1;
