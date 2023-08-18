@@ -49,6 +49,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         cerrar();
     }
     
+    
     public void cerrar(){
         try {
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
