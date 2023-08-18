@@ -201,8 +201,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Hubo un error, intente nuevamente");
         }
         
-        
-        
     }
     
     static public void recibirEntrenador(Entrenador entrenador){

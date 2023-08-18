@@ -5,6 +5,7 @@
 package vista;
 
 import AccesoDatos.JugadorImplementacion;
+import javax.swing.JOptionPane;
 import modelo.Jugador;
 
 
@@ -15,7 +16,7 @@ import modelo.Jugador;
 public class FrmListaJugadores extends javax.swing.JFrame {
     JugadorImplementacion dao;
     JugadoresAbstractTableModel modelo;
-    static Jugador jugador;
+    static Jugador jugador = null;
     /**
      * Creates new form FrmAgregarJugador
      */
@@ -149,6 +150,17 @@ public class FrmListaJugadores extends javax.swing.JFrame {
 
     private void btnAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJugadorActionPerformed
         // TODO add your handling code here:
+        
+        if (jugador == null) {
+            
+            JOptionPane.showMessageDialog(null, "No se ha seleccionado un jugador");
+            
+        }else{
+        
+            FrmGuardarEquipo.recibirJugador(jugador);
+            
+        }
+        
     }//GEN-LAST:event_btnAgregarJugadorActionPerformed
 
     /**
