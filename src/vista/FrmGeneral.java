@@ -97,7 +97,7 @@ public class FrmGeneral extends javax.swing.JFrame {
         pl.add(estadioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, -1));
 
         fechaP.setText("Fecha");
-        pl.add(fechaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 80, -1));
+        pl.add(fechaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 140, -1));
 
         EstadoP.setText("Estado del partido");
         pl.add(EstadoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, -1));
