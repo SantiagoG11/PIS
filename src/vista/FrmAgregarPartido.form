@@ -206,11 +206,11 @@
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="5">
-                <StringItem index="0" value="OPLIMPICO LUZHNIK"/>
-                <StringItem index="1" value="IGNAL IDUNA_PARK"/>
-                <StringItem index="2" value="STADE FRANCE"/>
-                <StringItem index="3" value="SANTIAGO BERNABEU"/>
-                <StringItem index="4" value="CAMP NOU"/>
+                <StringItem index="0" value="OPLIMPICO_LUZHNIKI"/>
+                <StringItem index="1" value="IGNAL_IDUNA_PARK"/>
+                <StringItem index="2" value="STADE_FRANCE"/>
+                <StringItem index="3" value="SANTIAGO_BERNABEU"/>
+                <StringItem index="4" value="CAMP_NOU"/>
               </StringArray>
             </Property>
           </Properties>

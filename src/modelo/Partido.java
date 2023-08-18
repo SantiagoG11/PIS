@@ -21,7 +21,7 @@ public class Partido {
     private E_Partido e_partido;
     private Campeonato campeonato;
 
-    public Partido(EnumEstadio estadio, EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, String fecha, Campeonato campeonato) {
+    public Partido(EnumEstadio estadio, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, EnumEstadoPartidos estado, String fecha, Campeonato campeonato) {
         this.estadio = estadio;
         this.estado = estado;
         this.equipoLocal = equipoLocal;

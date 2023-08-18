@@ -45,7 +45,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         tablaArbitro.updateUI();
         arbitro = new Arbitro("", "", "", "", 0);
         equipo = new Equipo("", "", "");
-        partido = new Partido(EnumEstadio.valueOf(String.valueOf(cbEstadio.getSelectedItem())), EnumEstadoPartidos.valueOf(String.valueOf(cbEstado.getSelectedItem())), new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), "", new Campeonato(""));
+        partido = new Partido(EnumEstadio.valueOf(String.valueOf(cbEstadio.getSelectedItem())), new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), EnumEstadoPartidos.valueOf(String.valueOf(cbEstado.getSelectedItem())),"", new Campeonato(""));
         cerrar();
     }
     
@@ -129,7 +129,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
 
         jLabel5.setText("EQUIPOS ");
 
-        cbEstadio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPLIMPICO LUZHNIK", "IGNAL IDUNA_PARK", "STADE FRANCE", "SANTIAGO BERNABEU", "CAMP NOU" }));
+        cbEstadio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPLIMPICO_LUZHNIKI", "IGNAL_IDUNA_PARK", "STADE_FRANCE", "SANTIAGO_BERNABEU", "CAMP_NOU" }));
 
         btGuadar.setText("GUARDAR");
         btGuadar.addActionListener(new java.awt.event.ActionListener() {
