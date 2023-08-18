@@ -43,7 +43,6 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         tablaArbitro.updateUI();
         arbitro = new Arbitro("", "", "", "", 0);
         equipo = new Equipo("", "", "");
-        partido = new Partido(String.valueOf(cbEstadio.getSelectedItem()), new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), String.valueOf(cbEstado.getSelectedItem()),"", new Campeonato(""));
         cerrar();
     }
     
@@ -128,6 +127,11 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         jLabel5.setText("EQUIPOS ");
 
         cbEstadio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPLIMPICO_LUZHNIKI", "IGNAL_IDUNA_PARK", "STADE_FRANCE", "SANTIAGO_BERNABEU", "CAMP_NOU" }));
+        cbEstadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbEstadioActionPerformed(evt);
+            }
+        });
 
         btGuadar.setText("GUARDAR");
         btGuadar.addActionListener(new java.awt.event.ActionListener() {
@@ -315,6 +319,7 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
     }//GEN-LAST:event_tablaEquipoMouseClicked
 
     private void btGuadarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuadarActionPerformed
+        partido = new Partido((String)cbEstadio.getSelectedItem(), new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), String.valueOf(cbEstado.getSelectedItem()),"", new Campeonato(""));
         partido.setFecha(txtFecha.getText());
         new PartidoImplementacion().guardar(partido);
     }//GEN-LAST:event_btGuadarActionPerformed
@@ -345,6 +350,10 @@ public class FrmAgregarPartido extends javax.swing.JDialog {
         modeloA = new ArbitroAbstractTableModel(daoA.listarTodos());
         arbitro = modeloA.getLista().get(fila);
     }//GEN-LAST:event_tablaArbitroMouseClicked
+
+    private void cbEstadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbEstadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbEstadioActionPerformed
 
     /**
      * @param args the command line arguments
