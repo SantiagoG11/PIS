@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Partido;
+import static vista.FrmGeneralUsuario.partido;
 
 /**
  *
@@ -28,11 +29,11 @@ public class FrmGeneral extends javax.swing.JFrame {
 
     public FrmGeneral() {
         initComponents();
-        cerrar();  
+        cerrar();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         PartidoImplementacion dao = new PartidoImplementacion();
-        listaPartidos=dao.listarTodos();
+        listaPartidos = dao.listarTodos();
         mostrarPartido(listaPartidos);
         longitud = listaPartidos.size();
     }
@@ -59,8 +60,18 @@ public class FrmGeneral extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         nombreE1 = new javax.swing.JLabel();
         nombreE2 = new javax.swing.JLabel();
+        lblGolesLocal = new javax.swing.JLabel();
+        lblGolesVisitante = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblTirosArco1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblSaques = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        lblTarjetasRojas = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblTarjetasAmarillas = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,7 +111,7 @@ public class FrmGeneral extends javax.swing.JFrame {
         pl.add(fechaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 140, -1));
 
         EstadoP.setText("Estado del partido");
-        pl.add(EstadoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 120, -1));
+        pl.add(EstadoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 120, -1));
 
         jButton4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jButton4.setText(">");
@@ -125,6 +136,8 @@ public class FrmGeneral extends javax.swing.JFrame {
 
         nombreE2.setText("Nombre Equipo");
         pl.add(nombreE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
+        pl.add(lblGolesLocal, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 60, 50));
+        pl.add(lblGolesVisitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 60, 50));
 
         jPanel26.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 660, 330));
 
@@ -135,6 +148,50 @@ public class FrmGeneral extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 102, 102));
         jLabel11.setText("F-natics");
         jPanel26.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Tiros a puerta");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel26.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, 20));
+
+        lblTirosArco1.setForeground(new java.awt.Color(255, 255, 255));
+        lblTirosArco1.setText("jLabel3");
+        lblTirosArco1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel26.add(lblTirosArco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Saques de esquina");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel26.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
+
+        lblSaques.setForeground(new java.awt.Color(255, 255, 255));
+        lblSaques.setText("jLabel3");
+        lblSaques.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel26.add(lblSaques, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Tarjetas Rojas");
+        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel26.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
+
+        lblTarjetasRojas.setForeground(new java.awt.Color(255, 255, 255));
+        lblTarjetasRojas.setText("jLabel3");
+        lblTarjetasRojas.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel26.add(lblTarjetasRojas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Tarjetas Amarillas");
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel26.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, -1, -1));
+
+        lblTarjetasAmarillas.setForeground(new java.awt.Color(255, 255, 255));
+        lblTarjetasAmarillas.setText("jLabel3");
+        lblTarjetasAmarillas.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel26.add(lblTarjetasAmarillas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -150,10 +207,9 @@ public class FrmGeneral extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    public void mostrarPartido(List <Partido> listap){
-        
-        estadioP.setText("Estadio: "+String.valueOf(listap.get(indice).getEstadio()));
+    public void mostrarPartido(List<Partido> listap) {
+
+        estadioP.setText("Estadio: " + String.valueOf(listap.get(indice).getEstadio()));
         fechaP.setText("Fecha: " + String.valueOf(listap.get(indice).getFecha()));
         EstadoP.setText("Estado: " + listap.get(indice).getEstado());
         nombreE1.setText(listap.get(indice).getEquipoLocal().getNombre());
@@ -163,73 +219,73 @@ public class FrmGeneral extends javax.swing.JFrame {
         Image scaledImage = image1.getScaledInstance(logoE1.getWidth(), logoE1.getHeight(), Image.SCALE_SMOOTH);
         Icon iconE1 = new ImageIcon(scaledImage);
         logoE1.setIcon(iconE1);
-        
+
         ImageIcon escudoE2 = new ImageIcon(listap.get(indice).getEquipoVisitante().getEscudo());
         Image image2 = escudoE2.getImage();
         Image scaledImage2 = image2.getScaledInstance(logoE1.getWidth(), logoE1.getHeight(), Image.SCALE_SMOOTH);
         Icon iconE2 = new ImageIcon(scaledImage2);
         logoE2.setIcon(iconE2);
+
+        lblGolesLocal.setText(String.valueOf(partido.getE_partido().getGolesLocal()));
+        lblGolesVisitante.setText(String.valueOf(partido.getE_partido().getGolesVisitante()));
+        lblTirosArco1.setText(String.valueOf(partido.getE_partido().getTirosArco()));
+        lblSaques.setText(String.valueOf(partido.getE_partido().getTirosEsquina()));
+        lblTarjetasRojas.setText(String.valueOf(partido.getE_partido().getTarjetasRojas()));
+        lblTarjetasAmarillas.setText(String.valueOf(partido.getE_partido().getTarjetaasAmarillas()));
     }
-    
-    
-    
-    public void cerrar(){
+
+    public void cerrar() {
         try {
             this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             addWindowListener(
-               new WindowAdapter() {
-                  public void windowClosing(WindowEvent e){
-                      confirmarSalida();
-                  }
-               }
+                    new WindowAdapter() {
+                public void windowClosing(WindowEvent e) {
+                    confirmarSalida();
+                }
+            }
             );
             this.setVisible(true);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
-    
-    
-    public void confirmarSalida(){
+
+    public void confirmarSalida() {
         int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la venta?", "Advertencia", JOptionPane.YES_NO_OPTION);
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
             System.exit(0);
         }
     }
-            
-            
+
     //cambio
-    
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       new FrmDetallesPartido().setVisible(true);
+        new FrmDetallesPartido().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if(indice != 0){
-            indice = indice-1;
+        if (indice != 0) {
+            indice = indice - 1;
             mostrarPartido(listaPartidos);
         }
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        
-        if (indice+1 <= longitud) {
-            indice = indice+1;
+
+        if (indice + 1 <= longitud) {
+            indice = indice + 1;
             mostrarPartido(listaPartidos);
         }
-        
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -274,8 +330,18 @@ public class FrmGeneral extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JLabel lblGolesLocal;
+    private javax.swing.JLabel lblGolesVisitante;
+    private javax.swing.JLabel lblSaques;
+    private javax.swing.JLabel lblTarjetasAmarillas;
+    private javax.swing.JLabel lblTarjetasRojas;
+    private javax.swing.JLabel lblTirosArco1;
     private javax.swing.JLabel logoE1;
     private javax.swing.JLabel logoE2;
     private javax.swing.JLabel nombreE1;
