@@ -31,17 +31,21 @@ public class FrmGeneral extends javax.swing.JFrame {
     static public int indice = 0;
     static public int longitud;
     static PartidoImplementacion dao;
-
+    static public E_PartidoImplementacion daoE;
+    static public E_Partido ePartido;
+    
     public FrmGeneral() {
         initComponents();
-        cerrar();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         dao = new PartidoImplementacion();
         listaPartidos = dao.listarTodos();
-        mostrarPartido(listaPartidos);
         longitud = listaPartidos.size();
+        daoE = new E_PartidoImplementacion();
+        ePartido = new E_Partido(0, 0, 0, 0, 0, 0);
         partidoGeneral = new Partido("", new Equipo("", "", ""), new Equipo("", "", ""), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), new Arbitro("", "", "", "", 0), "", "", new Campeonato(""));
+        mostrarPartido(listaPartidos);
+        cerrar();
     }
 
     /**
@@ -244,7 +248,9 @@ public class FrmGeneral extends javax.swing.JFrame {
         Icon iconE2 = new ImageIcon(scaledImage2);
         logoE2.setIcon(iconE2);
         
-        partidoGeneral = dao.buscarFecha(listap.get(indice).getFecha());
+        partidoGeneral = dao.buscarFecha(fechaP.getText());
+        ePartido = daoE.buscarFecha(partidoGeneral.getFecha());
+        partidoGeneral.setE_partido(ePartido);
         lblGolesLocal.setText(String.valueOf(partidoGeneral.getE_partido().getGolesLocal()));
         lblGolesVisitante.setText(String.valueOf(partidoGeneral.getE_partido().getGolesVisitante()));
         lblTirosArco1.setText(String.valueOf(partidoGeneral.getE_partido().getTirosArco()));

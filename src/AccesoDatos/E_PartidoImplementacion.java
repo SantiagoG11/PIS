@@ -82,6 +82,23 @@ public class E_PartidoImplementacion implements DAOE_EQUIPO<E_Partido>{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    public E_Partido buscarFecha(String fecha) {
+        PreparedStatement consulta = null;
+        Connection conexion = null;
+        try {
+           conexion = instanciaMsql.conectar();
+           consulta = conexion.prepareStatement("select * from e_partido where fecha = '"+ fecha + "'");    
+           ResultSet rs = consulta.executeQuery();
+           while(rs.next()){
+               E_Partido ePartido = new E_Partido(rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getInt(5), rs.getInt(6), rs.getInt(7));
+               return ePartido;
+           }
+        } 
+        catch (Exception e) {
+        }
+        return null;
+    }
+
     @Override
     public List<E_Partido> buscar(String apellido) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
