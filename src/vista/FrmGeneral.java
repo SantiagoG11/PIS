@@ -88,10 +88,10 @@ public class FrmGeneral extends javax.swing.JFrame {
         pl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         logoE2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pl.add(logoE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 180, 150));
+        pl.add(logoE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 180, 180));
 
         logoE1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pl.add(logoE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 180, 150));
+        pl.add(logoE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 180, 180));
 
         estadioP.setText("Estadio");
         pl.add(estadioP, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 250, -1));
@@ -160,12 +160,14 @@ public class FrmGeneral extends javax.swing.JFrame {
         nombreE2.setText(listap.get(indice).getEquipoVisitante().getNombre());
         ImageIcon escudoE1 = new ImageIcon(listap.get(indice).getEquipoLocal().getEscudo());
         Image image1 = escudoE1.getImage();
-        Icon iconE1 = new ImageIcon(image1);
+        Image scaledImage = image1.getScaledInstance(logoE1.getWidth(), logoE1.getHeight(), Image.SCALE_SMOOTH);
+        Icon iconE1 = new ImageIcon(scaledImage);
         logoE1.setIcon(iconE1);
         
         ImageIcon escudoE2 = new ImageIcon(listap.get(indice).getEquipoVisitante().getEscudo());
         Image image2 = escudoE2.getImage();
-        Icon iconE2 = new ImageIcon(image2);
+        Image scaledImage2 = image2.getScaledInstance(logoE1.getWidth(), logoE1.getHeight(), Image.SCALE_SMOOTH);
+        Icon iconE2 = new ImageIcon(scaledImage2);
         logoE2.setIcon(iconE2);
     }
     
