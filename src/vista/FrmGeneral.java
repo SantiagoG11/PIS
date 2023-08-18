@@ -198,7 +198,7 @@ public class FrmGeneral extends javax.swing.JFrame {
     }
             
             
-    
+    //cambio
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        new FrmDetallesPartido().setVisible(true);
