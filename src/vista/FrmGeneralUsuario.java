@@ -216,11 +216,11 @@ public class FrmGeneralUsuario extends javax.swing.JFrame {
         logoE2.setIcon(iconE2);
         
         lblGolesLocal.setText(String.valueOf(partido.getE_partido().getGolesLocal()));
-          lblGolesVisitante.setText(String.valueOf(partido.getE_partido().getGolesVisitante()));
-          lblTirosArco1.setText(String.valueOf(partido.getE_partido().getTirosArco()));
-          lblSaques.setText(String.valueOf(partido.getE_partido().getTirosEsquina()));
-          lblTarjetasRojas.setText(String.valueOf(partido.getE_partido().getTarjetasRojas()));
-          lblTarjetasAmarillas.setText(String.valueOf(partido.getE_partido().getTarjetaasAmarillas()));
+        lblGolesVisitante.setText(String.valueOf(partido.getE_partido().getGolesVisitante()));
+        lblTirosArco1.setText(String.valueOf(partido.getE_partido().getTirosArco()));
+        lblSaques.setText(String.valueOf(partido.getE_partido().getTirosEsquina()));
+        lblTarjetasRojas.setText(String.valueOf(partido.getE_partido().getTarjetasRojas()));
+        lblTarjetasAmarillas.setText(String.valueOf(partido.getE_partido().getTarjetaasAmarillas()));
         
     }
     

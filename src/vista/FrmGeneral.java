@@ -13,6 +13,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.E_Partido;
 import modelo.Partido;
 import static vista.FrmGeneralUsuario.partido;
 
@@ -23,8 +24,8 @@ import static vista.FrmGeneralUsuario.partido;
 public class FrmGeneral extends javax.swing.JFrame {
 
     static public Partido partido;
-    public List<Partido> listaPartidos;
-    public int indice = 0;
+    static public List<Partido> listaPartidos;
+    static public int indice = 0;
     public int longitud;
 
     public FrmGeneral() {
@@ -206,7 +207,11 @@ public class FrmGeneral extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    static public void cargarE_Partido(E_Partido epartido){
+        listaPartidos.get(indice).setE_partido(epartido);
+    }
+    
     public void mostrarPartido(List<Partido> listap) {
 
         estadioP.setText("Estadio: " + String.valueOf(listap.get(indice).getEstadio()));
