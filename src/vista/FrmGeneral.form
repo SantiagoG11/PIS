@@ -103,7 +103,6 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="logoE2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Imagen equipo 1"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -118,7 +117,6 @@
             </Component>
             <Component class="javax.swing.JLabel" name="logoE1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Imagen equipo 2"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -168,6 +166,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="&gt;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="600" y="160" width="50" height="30"/>
@@ -181,6 +182,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="&lt;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                   <AbsoluteConstraints x="10" y="150" width="50" height="30"/>

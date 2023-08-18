@@ -5,9 +5,12 @@
 package vista;
 
 import AccesoDatos.PartidoImplementacion;
+import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.List;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Partido;
@@ -21,6 +24,7 @@ public class FrmGeneral extends javax.swing.JFrame {
     static public Partido partido;
     public List<Partido> listaPartidos;
     public int indice = 0;
+    public int longitud;
 
     public FrmGeneral() {
         initComponents();
@@ -30,6 +34,7 @@ public class FrmGeneral extends javax.swing.JFrame {
         PartidoImplementacion dao = new PartidoImplementacion();
         listaPartidos=dao.listarTodos();
         mostrarPartido(listaPartidos);
+        longitud = listaPartidos.size();
     }
 
     /**
@@ -82,11 +87,9 @@ public class FrmGeneral extends javax.swing.JFrame {
         pl.setBackground(new java.awt.Color(204, 204, 204));
         pl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logoE2.setText("Imagen equipo 1");
         logoE2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pl.add(logoE2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 90, 180, 150));
 
-        logoE1.setText("Imagen equipo 2");
         logoE1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         pl.add(logoE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 180, 150));
 
@@ -101,10 +104,20 @@ public class FrmGeneral extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jButton4.setText(">");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         pl.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 50, 30));
 
         jButton2.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jButton2.setText("<");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         pl.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 50, 30));
 
         nombreE1.setText("Nombre equipo");
@@ -140,8 +153,20 @@ public class FrmGeneral extends javax.swing.JFrame {
     
     public void mostrarPartido(List <Partido> listap){
         
-        estadioP.setText(String.valueOf(listap.get(indice).getEstadio()));     //listap.get(indice).getEstadio();
+        estadioP.setText("Estadio: "+String.valueOf(listap.get(indice).getEstadio()));
+        fechaP.setText("Fecha: " + String.valueOf(listap.get(indice).getFecha()));
+        EstadoP.setText("Estado: " + listap.get(indice).getEstado());
+        nombreE1.setText(listap.get(indice).getEquipoLocal().getNombre());
+        nombreE2.setText(listap.get(indice).getEquipoVisitante().getNombre());
+        ImageIcon escudoE1 = new ImageIcon(listap.get(indice).getEquipoLocal().getEscudo());
+        Image image1 = escudoE1.getImage();
+        Icon iconE1 = new ImageIcon(image1);
+        logoE1.setIcon(iconE1);
         
+        ImageIcon escudoE2 = new ImageIcon(listap.get(indice).getEquipoVisitante().getEscudo());
+        Image image2 = escudoE1.getImage();
+        Icon iconE2 = new ImageIcon(image2);
+        logoE1.setIcon(iconE2);
     }
     
     
@@ -178,6 +203,25 @@ public class FrmGeneral extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        new FrmDetallesPartido().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        if(indice != 0){
+            indice = indice-1;
+            mostrarPartido(listaPartidos);
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+        if (indice+1 <= longitud) {
+            indice = indice+1;
+            mostrarPartido(listaPartidos);
+        }
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
