@@ -148,7 +148,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         String nombre = txtNombre.getText();
-        Campeonato campeonato = new Campeonato(nombre, partidosCampeonato);
+        Campeonato campeonato = new Campeonato(nombre);
         boolean exito = new CampeonatoImplementacion().guardar(campeonato);
         if (exito) {
         JOptionPane.showMessageDialog(this, "Campeonato agregado correctamente");
