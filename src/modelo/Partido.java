@@ -19,8 +19,9 @@ public class Partido {
     private Arbitro arbitroLinea2;
     private String fecha;
     private E_Partido e_partido;
+    private Campeonato campeonato;
 
-    public Partido(EnumEstadio estadio, EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, String fecha) {
+    public Partido(EnumEstadio estadio, EnumEstadoPartidos estado, Equipo equipoLocal, Equipo equipoVisitante, Arbitro arbitroPrincipal, Arbitro arbitroLinea1, Arbitro arbitroLinea2, String fecha, Campeonato campeonato) {
         this.estadio = estadio;
         this.estado = estado;
         this.equipoLocal = equipoLocal;
@@ -29,16 +30,9 @@ public class Partido {
         this.arbitroLinea1 = arbitroLinea1;
         this.arbitroLinea2 = arbitroLinea2;
         this.fecha = fecha;
-    }
-    public Partido (EnumEstadio estadio, EnumEstadoPartidos estado, String Fecha){
-        this.estadio = estadio;
-        this.estado = estado;
-        this.fecha = fecha;
+        this.campeonato = campeonato;
     }
     
-
-    
-
     /**
      * @return the estadio
      */
@@ -165,5 +159,17 @@ public class Partido {
         this.e_partido = e_partido;
     }
 
-    
+    /**
+     * @return the campeonato
+     */
+    public Campeonato getCampeonato() {
+        return campeonato;
+    }
+
+    /**
+     * @param campeonato the campeonato to set
+     */
+    public void setCampeonato(Campeonato campeonato) {
+        this.campeonato = campeonato;
+    }
 }
