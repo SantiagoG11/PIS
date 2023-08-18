@@ -195,7 +195,7 @@ public class FrmGuardarEntrenador extends javax.swing.JFrame {
         int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
         if (valor == JOptionPane.YES_OPTION) {
             //se puede ingresar un mensaje de agradecimiento
-            System.exit(0);
+            this.setVisible(false);
         }
     }
             

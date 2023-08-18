@@ -5,6 +5,9 @@
 package vista;
 
 import AccesoDatos.JugadorImplementacion;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.Jugador;
 
@@ -27,6 +30,7 @@ public class FrmListaJugadores extends javax.swing.JFrame {
         modelo = new JugadoresAbstractTableModel(dao.listarTodos());
         tablaListaJugadores.setModel(modelo);
         tablaListaJugadores.updateUI();
+        cerrar();
     }
 
     /**
@@ -141,6 +145,35 @@ public class FrmListaJugadores extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void cerrar(){
+        try {
+            this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            addWindowListener(
+               new WindowAdapter() {
+                  public void windowClosing(WindowEvent e){
+                      confirmarSalida();
+                  }
+               }
+            );
+            this.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    public void confirmarSalida(){
+        int valor = JOptionPane.showConfirmDialog(this, "¿Seguro de cerrar la app?", "Advertencia", JOptionPane.YES_NO_OPTION);
+        if (valor == JOptionPane.YES_OPTION) {
+            //se puede ingresar un mensaje de agradecimiento
+            this.setVisible(false);
+            //cambio para github
+        }
+    }
+    
+    
     private void tablaListaJugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaListaJugadoresMouseClicked
         int fila = tablaListaJugadores.getSelectedRow();
         dao = new JugadorImplementacion();
