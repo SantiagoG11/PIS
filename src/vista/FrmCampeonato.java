@@ -4,7 +4,7 @@
  */
 package vista;
 
-import AccesoDatos.EquipoImplementacion;
+import AccesoDatos.CampeonatoImplementacion;
 import AccesoDatos.PartidoImplementacion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -12,9 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import modelo.EnumEstadio;
-import modelo.EnumEstadoPartidos;
-import modelo.Equipo;
+import modelo.Campeonato;
 import modelo.Partido;
 
 /**
@@ -24,7 +22,7 @@ import modelo.Partido;
 public class FrmCampeonato extends javax.swing.JFrame {
 
     PartidoImplementacion dao;
-    PartidoAbstractModel modelo1;
+    PartidoAbstractModel modelo;
     static Partido partido;
     private List<Partido> partidosCampeonato;
     /**
@@ -33,9 +31,9 @@ public class FrmCampeonato extends javax.swing.JFrame {
     public FrmCampeonato() {
         initComponents();
         dao = new PartidoImplementacion();    
-        modelo1 = new PartidoAbstractModel(dao.listarTodos());
+        modelo = new PartidoAbstractModel(dao.listarTodos());
         partidosCampeonato = new ArrayList<>();
-        tablaPartido.setModel(modelo1);
+        tablaPartido.setModel(modelo);
         tablaPartido.updateUI();
         cerrar();
          this.setLocationRelativeTo(null);
@@ -59,7 +57,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
         tablaPartido = new javax.swing.JTable();
         btnAgregarPartido = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
@@ -105,7 +103,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("NOMBRE DEL CAMPEONATO:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 310, -1));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 310, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Mi proyecto (2) (1).png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
@@ -140,27 +138,23 @@ public class FrmCampeonato extends javax.swing.JFrame {
     private void tablaPartidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaPartidoMouseClicked
         int fila = tablaPartido.getSelectedRow();
         dao = new PartidoImplementacion();
-        modelo1 = new PartidoAbstractModel(dao.listarTodos());
-        partido = modelo1.getListaPartidos().get(fila);
+        modelo = new PartidoAbstractModel(dao.listarTodos());
+        partido = modelo.getListaPartidos().get(fila);
     }//GEN-LAST:event_tablaPartidoMouseClicked
 
     private void btnAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPartidoActionPerformed
-        int filaSeleccionada = tablaPartido.getSelectedRow();
-        if (filaSeleccionada != -1) {
-            String fecha = (String) tablaPartido.getValueAt(filaSeleccionada, 0);
-            EnumEstadio estadio = (EnumEstadio) tablaPartido.getValueAt(filaSeleccionada, 1);
-            EnumEstadoPartidos estado = (EnumEstadoPartidos) tablaPartido.getValueAt(filaSeleccionada, 2);
 
-            Partido partidoSeleccionado = new Partido(estadio, estado, fecha);
-            
-            cargarPartido(partidoSeleccionado);
-        } else {
-            JOptionPane.showMessageDialog(this, "Selecciona un partido de la tabla.", "Advertencia", JOptionPane.WARNING_MESSAGE);
-        }
     }//GEN-LAST:event_btnAgregarPartidoActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
+        String nombre = txtNombre.getText();
+        Campeonato campeonato = new Campeonato(nombre, partidosCampeonato);
+        boolean exito = new CampeonatoImplementacion().guardar(campeonato);
+        if (exito) {
+        JOptionPane.showMessageDialog(this, "Campeonato agregado correctamente");
+    } else {
+        JOptionPane.showMessageDialog(this, "Error al agregar el campeonato");
+    }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     
@@ -236,7 +230,7 @@ public class FrmCampeonato extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tablaPartido;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
