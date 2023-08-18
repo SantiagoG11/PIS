@@ -139,37 +139,45 @@ public class FrmGeneralUsuario extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Tiros a puerta");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, 20));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Saques de esquina");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, -1, -1));
 
         lblTarjetasAmarillas.setForeground(new java.awt.Color(255, 255, 255));
         lblTarjetasAmarillas.setText("jLabel3");
+        lblTarjetasAmarillas.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(lblTarjetasAmarillas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 150, -1, -1));
 
         lblTirosArco1.setForeground(new java.awt.Color(255, 255, 255));
         lblTirosArco1.setText("jLabel3");
+        lblTirosArco1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(lblTirosArco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Tarjetas Rojas");
+        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Tarjetas Amarillas");
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, -1, -1));
 
         lblSaques.setForeground(new java.awt.Color(255, 255, 255));
         lblSaques.setText("jLabel3");
+        lblSaques.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(lblSaques, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, -1, -1));
 
         lblTarjetasRojas.setForeground(new java.awt.Color(255, 255, 255));
         lblTarjetasRojas.setText("jLabel3");
+        lblTarjetasRojas.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(lblTarjetasRojas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
