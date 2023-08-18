@@ -10,6 +10,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import modelo.E_Partido;
+import modelo.Partido;
 
 /**
  *
@@ -17,7 +18,8 @@ import modelo.E_Partido;
  */
 public class FrmDetallesPartido extends javax.swing.JFrame {
     E_PartidoImplementacion dao;
-        
+    static Partido partido;
+    
     public FrmDetallesPartido() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -238,7 +240,7 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
         int tarjetasRojas = Integer.parseInt(txtTarjetasRojas.getText());
         int tarjetasAmarillas = Integer.parseInt(txtTarjetasAmarillas.getText());
         E_Partido epartidos = new E_Partido(golesLocal, golesVisitante, tirosPuerta, saquesEsquina, tarjetasRojas, tarjetasAmarillas);
-        dao.guardar(epartidos);
+        dao.guardar(epartidos, partido);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void txtLocalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLocalActionPerformed

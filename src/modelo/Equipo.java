@@ -111,5 +111,19 @@ public class Equipo {
         this.campeonato2 = campeonato2;
     }
 
+    /**
+     * @return the escudo
+     */
+    public String getEscudo() {
+        return escudo;
+    }
+
+    /**
+     * @param escudo the escudo to set
+     */
+    public void setEscudo(String escudo) {
+        this.escudo = escudo;
+    }
+
 
 }

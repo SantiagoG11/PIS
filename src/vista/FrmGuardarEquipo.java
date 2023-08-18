@@ -37,6 +37,8 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         initComponents();
         cerrar();
         this.setLocationRelativeTo(null);
+        equipo = new Equipo("", "", "");
+        
     }
 
     /**
@@ -204,7 +206,6 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     }
     
     static public void recibirEntrenador(Entrenador entrenador){
-        
         equipo.setEntrenador(entrenador);
         JOptionPane.showMessageDialog(null, "El entrenador ha sido correctamente agregado");
     }
@@ -287,7 +288,9 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGuardarActionPerformed
-        Equipo equipo = new Equipo(txtNombre.getText(), txtCiudad.getText(), imagePath);
+        equipo.setNombre(txtNombre.getText());
+        equipo.setCiudad(txtCiudad.getText());
+        equipo.setEscudo(imagePath);
         EquipoImplementacion equipoImplementacion = new EquipoImplementacion();
         equipoImplementacion.guardar(equipo);
     }//GEN-LAST:event_btGuardarActionPerformed
