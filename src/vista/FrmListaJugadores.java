@@ -109,6 +109,11 @@ public class FrmListaJugadores extends javax.swing.JFrame {
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
         btnAgregarJugador.setText("AGREGAR JUGADOR");
+        btnAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarJugadorActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 530, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,6 +146,10 @@ public class FrmListaJugadores extends javax.swing.JFrame {
         modelo = new JugadoresAbstractTableModel(dao.listarTodos());
         jugador = modelo.getLista().get(fila);
     }//GEN-LAST:event_tablaListaJugadoresMouseClicked
+
+    private void btnAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarJugadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarJugadorActionPerformed
 
     /**
      * @param args the command line arguments

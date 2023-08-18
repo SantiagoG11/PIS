@@ -9,11 +9,16 @@ import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import modelo.Campeonato;
+import modelo.Entrenador;
 import modelo.Equipo;
+import modelo.Jugador;
 
 /**
  *
@@ -23,6 +28,10 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     
     String imagePath;
     static Equipo equipo;
+    static public List<Jugador> listaJugadores = new ArrayList<>();
+    static public Entrenador entrenador;
+    static public Campeonato campeonato;
+    
     
     public FrmGuardarEquipo() {
         initComponents();
@@ -55,6 +64,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         btGuardar = new javax.swing.JButton();
         btAgregarJugador = new javax.swing.JButton();
         btEntreCampeo = new javax.swing.JButton();
+        btEntreCampeo1 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(587, 428));
@@ -150,13 +160,21 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         });
         jPanel2.add(btAgregarJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, 140, -1));
 
-        btEntreCampeo.setText("AgregarEntrenadorYCampeonato");
+        btEntreCampeo.setText("Agregar Campeonato");
         btEntreCampeo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btEntreCampeoActionPerformed(evt);
             }
         });
-        jPanel2.add(btEntreCampeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 220, -1));
+        jPanel2.add(btEntreCampeo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 490, 220, -1));
+
+        btEntreCampeo1.setText("Agregar Entrenador");
+        btEntreCampeo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEntreCampeo1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btEntreCampeo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 460, 220, -1));
 
         jPanel1.add(jPanel2, java.awt.BorderLayout.CENTER);
 
@@ -174,6 +192,39 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    static public void recibirJugador(Jugador jugador){
+        
+        if (listaJugadores.add(jugador)) {
+            JOptionPane.showMessageDialog(null, "Se agregó el jugador correctamente");
+        }else{
+            JOptionPane.showMessageDialog(null, "Hubo un error, intente nuevamente");
+        }
+        
+        
+        
+    }
+    
+    static public void recibirEntrenador(Entrenador entrenador){
+        
+        equipo.setEntrenador(entrenador);
+        JOptionPane.showMessageDialog(null, "El entrenador ha sido correctamente agregado");
+    }
+    
+    
+    static public void recibirCampeonato(Campeonato campeonato, int bandera ){
+        
+        if (bandera == 1) {
+            
+            equipo.setCampeonato1(campeonato);
+            
+        }else{
+            
+            equipo.setCampeonato2(campeonato);
+            
+        }
+        
+    }
     
     public void cerrar(){
         try {
@@ -245,11 +296,17 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
 
     private void btEntreCampeoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntreCampeoActionPerformed
         // TODO add your handling code here:
+        new FrmAgregarCampeonatoEquipo().setVisible(true);
     }//GEN-LAST:event_btEntreCampeoActionPerformed
 
     private void btAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAgregarJugadorActionPerformed
         new FrmListaJugadores().setVisible(true);
     }//GEN-LAST:event_btAgregarJugadorActionPerformed
+
+    private void btEntreCampeo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEntreCampeo1ActionPerformed
+        // TODO add your handling code here:
+        new FrmAgregarEntrenadorEquipo().setVisible(true);
+    }//GEN-LAST:event_btEntreCampeo1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,6 +349,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btAgregarJugador;
     private javax.swing.JButton btEntreCampeo;
+    private javax.swing.JButton btEntreCampeo1;
     private javax.swing.JButton btGuardar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
