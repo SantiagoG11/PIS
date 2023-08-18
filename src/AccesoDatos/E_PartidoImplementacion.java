@@ -17,10 +17,11 @@ import modelo.Partido;
  *
  * @author santi
  */
-public class E_PartidoImplementacion implements DAO{
+public class E_PartidoImplementacion implements DAOE_EQUIPO<E_Partido>{
     Conexion instanciaMsql = Conexion.getInstance();
     
     
+    @Override
     public boolean guardar(E_Partido epartido, Partido partido) {
         PreparedStatement consulta = null;
         Connection conexion = null;
@@ -75,17 +76,12 @@ public class E_PartidoImplementacion implements DAO{
     }
 
     @Override
-    public List<Partido> buscar(String apellido) {
+    public boolean modificar(E_Partido t) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public boolean guardar(Object t) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public boolean modificar(Object t) {
+    public List<E_Partido> buscar(String apellido) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
