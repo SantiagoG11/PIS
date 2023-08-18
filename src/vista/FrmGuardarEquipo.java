@@ -198,6 +198,7 @@ public class FrmGuardarEquipo extends javax.swing.JFrame {
     static public void recibirJugador(Jugador jugador){
         
         if (listaJugadores.add(jugador)) {
+            equipo.setListaJugadores(listaJugadores);
             JOptionPane.showMessageDialog(null, "Se agregó el jugador correctamente");
         }else{
             JOptionPane.showMessageDialog(null, "Hubo un error, intente nuevamente");
