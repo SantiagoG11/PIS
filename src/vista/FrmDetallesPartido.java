@@ -20,6 +20,14 @@ public class FrmDetallesPartido extends javax.swing.JFrame {
     E_PartidoImplementacion dao;
     static Partido partido;
     
+    
+    //        txtLocal.setText(String.valueOf(partido.getE_partido().getGolesLocal()));
+//        txtVisitante.setText(String.valueOf(partido.getE_partido().getGolesVisitante()));
+//        txtTiro.setText(String.valueOf(partido.getE_partido().getTirosArco()));
+//        txtSaque.setText(String.valueOf(partido.getE_partido().getTirosEsquina()));
+//        txtTarjetasRojas.setText(String.valueOf(partido.getE_partido().getTarjetasRojas()));
+//        txtTarjetasAmarillas.setText(String.valueOf(partido.getE_partido().getTarjetaasAmarillas()));
+    
     public FrmDetallesPartido() {
         initComponents();
         this.setLocationRelativeTo(null);
