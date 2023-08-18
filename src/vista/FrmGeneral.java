@@ -164,9 +164,9 @@ public class FrmGeneral extends javax.swing.JFrame {
         logoE1.setIcon(iconE1);
         
         ImageIcon escudoE2 = new ImageIcon(listap.get(indice).getEquipoVisitante().getEscudo());
-        Image image2 = escudoE1.getImage();
+        Image image2 = escudoE2.getImage();
         Icon iconE2 = new ImageIcon(image2);
-        logoE1.setIcon(iconE2);
+        logoE2.setIcon(iconE2);
     }
     
     

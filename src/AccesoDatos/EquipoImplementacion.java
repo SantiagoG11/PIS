@@ -92,7 +92,6 @@ public class EquipoImplementacion implements DAOEquipo {
         conexion = instanciaMsql.conectar();
         consulta = conexion.prepareStatement("SELECT * FROM equipo WHERE nombre = ?");
         consulta.setString(1, nombreEquipo);
-        
         ResultSet rs = consulta.executeQuery();
         if (rs.next()) {
             escudo = rs.getString(7);
@@ -115,7 +114,6 @@ public class EquipoImplementacion implements DAOEquipo {
             while (rs.next()) {
                 Equipo equipo = new Equipo(rs.getString(2), rs.getString(3), rs.getString(7));
                 equipo.setEntrenador(new Entrenador(rs.getString(4), "", "", "", 0));
-                PartidoImplementacion.escudoA = rs.getString(7);
                 equipo.setCampeonato1(new Campeonato(rs.getString(5)));
                 equipo.setCampeonato2(new Campeonato(rs.getString(6)));
                 lista.add(equipo);
